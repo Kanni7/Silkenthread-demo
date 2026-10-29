@@ -99,10 +99,10 @@ docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
 - Breakpoints: 750 px (tablet) and 990 px (desktop), as in Dawn/Craft.
 - The crawl was interrupted twice by connection resets (no 429/CAPTCHA) and resumed on request.
 
-## Redesign (branch `redesign`)
+## Redesign
 
-`main` is the faithful baseline; the `redesign` branch adds `src/styles/redesign.css`, loaded last. It
-re-skins the site only through Craft's CSS variables (no markup, data or image changes):
+All work is on `main` (the faithful, pre-redesign homepage is commit `655bb89`). `src/styles/redesign.css`,
+loaded last, re-skins the site only through Craft's CSS variables (no markup, data or image changes):
 
 - Palette tokens: turquoise `#00AEB5` (brand), terracotta `#C76B4A` (non-text accents) with a deeper
   step `#A8553A` for filled CTAs/badges (white text 5.2:1), warm ivory `#F5E8D8`, cocoa `#3D2925` (text).
