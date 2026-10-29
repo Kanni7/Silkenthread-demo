@@ -9,6 +9,12 @@
   --color-foreground: var(--st-text);
 }
 
+/* The supplied PNG logo has an opaque white canvas. Multiply makes that canvas
+   inherit the warm header surface without changing the source artwork. */
+.header__heading-logo {
+  mix-blend-mode: multiply;
+}
+
 /* ---- Shared: pill shortcuts (Shop by occasion, Sale) ---- */
 .st-shortcut {
   display: inline-flex;
@@ -480,4 +486,25 @@
 .st-price-card:focus-visible .st-price-card__corner,
 .st-price-card:focus-visible .st-price-card__flourish {
   color: rgb(var(--st-teal));
+}
+
+/* ---- Homepage product carousel: slow right-to-left drift (src/scripts/slider.js) ---- */
+slider-component.st-marquee-on .slider {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+/* Loop copies only exist while the drift runs (hidden without JS and for reduced motion). */
+slider-component:not(.st-marquee-on) .st-marquee-clone {
+  display: none;
+}
+.st-marquee-toggle .icon {
+  width: 1rem;
+  height: 1rem;
+}
+.st-marquee-toggle .icon-play,
+.st-marquee-toggle.is-paused .icon-pause {
+  display: none;
+}
+.st-marquee-toggle.is-paused .icon-play {
+  display: block;
 }

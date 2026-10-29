@@ -3,8 +3,9 @@
 // wrapIcons: the live collection-list buttons render an empty .svg-wrapper ("inline_asset_content: Asset not
 // found"), so their arrows are invisible. Reproduced on purpose for the baseline.
 import Icon from './Icon.astro';
-interface Props { class: string; controls?: string; total: number; counter?: boolean; wrapIcons?: boolean }
-const { class: cls, controls, total, counter = true, wrapIcons = false } = Astro.props;
+// toggle: pause/play button for an auto-moving (marquee) slider.
+interface Props { class: string; controls?: string; total: number; counter?: boolean; wrapIcons?: boolean; toggle?: boolean }
+const { class: cls, controls, total, counter = true, wrapIcons = false, toggle = false } = Astro.props;
 ---
 <div class={cls}>
   <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="Slide left" aria-controls={controls}>
@@ -17,6 +18,12 @@ const { class: cls, controls, total, counter = true, wrapIcons = false } = Astro
       <span class="visually-hidden">of</span>
       <span class="slider-counter--total">{total}</span>
     </div>
+  )}
+  {toggle && (
+    <button type="button" class="slider-button st-marquee-toggle" data-marquee-toggle aria-controls={controls} aria-label="Pause product carousel">
+      <Icon name="pause" />
+      <Icon name="play" />
+    </button>
   )}
   <button type="button" class="slider-button slider-button--next" name="next" aria-label="Slide right" aria-controls={controls}>
     {wrapIcons ? <span class="svg-wrapper"></span> : <Icon name="caret" />}

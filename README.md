@@ -122,3 +122,7 @@ re-skins the site only through Craft's CSS variables (no markup, data or image c
 - Price bands (`src/components/PriceBands.astro`): the four laurel price images are now ivory cards with
   block-print corners and flourishes, live text labels from the price collections' titles, and a
   turquoise hover/focus state. Configured by `priceBands` in `navigation.json`.
+- Product carousel drift (`productMarquee` in `navigation.json`, logic in `src/scripts/slider.js`): the
+  homepage carousel moves slowly right-to-left in a seamless loop (inert, aria-hidden copies of the cards).
+  Pause/play button; pauses on hover, card focus, touch/drag/wheel (resumes after 4 s), off-screen and in
+  hidden tabs; does not auto-start with prefers-reduced-motion.

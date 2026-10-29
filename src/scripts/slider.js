@@ -14,6 +14,50 @@ class SliderComponent extends HTMLElement {
     this.slider.addEventListener('scroll', () => this.update(), { passive: true });
     this.prev?.addEventListener('click', (e) => this.step(e, -1));
     this.next.addEventListener('click', (e) => this.step(e, 1));
+    if (this.dataset.marquee) this.marquee(Number(this.dataset.marquee));
+  }
+
+  // Redesign: slow right-to-left drift in a seamless loop (inert clones follow the originals). Pauses on
+  // hover, keyboard focus, touch/drag/wheel (resumes after a few seconds), off-screen, hidden tab, the
+  // pause button, and never starts for prefers-reduced-motion.
+  marquee(speed) {
+    const firstClone = this.querySelector('.st-marquee-clone');
+    const toggle = this.querySelector('[data-marquee-toggle]');
+    if (!firstClone) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+    let pos = 0, last = 0, holdUntil = 0, hover = false, focus = false, visible = true;
+    const setPaused = (paused) => {
+      this.userPaused = paused;
+      if (!paused) this.classList.add('st-marquee-on');
+      toggle?.classList.toggle('is-paused', paused);
+      toggle?.setAttribute('aria-label', paused ? 'Play product carousel' : 'Pause product carousel');
+    };
+    const hold = () => (holdUntil = performance.now() + 4000);
+    const running = () => !this.userPaused && !hover && !focus && visible && !document.hidden && performance.now() > holdUntil;
+    const tick = (t) => {
+      const dt = last ? Math.min(t - last, 50) : 0;
+      last = t;
+      if (running()) {
+        const loop = firstClone.offsetLeft - this.items[0].offsetLeft;
+        pos += (speed * dt) / 1000;
+        if (loop > 0 && pos >= loop) pos -= loop;
+        this.slider.scrollLeft = pos;
+      } else {
+        pos = this.slider.scrollLeft;
+      }
+      requestAnimationFrame(tick);
+    };
+    this.addEventListener('pointerenter', (e) => e.pointerType === 'mouse' && (hover = true));
+    this.addEventListener('pointerleave', (e) => e.pointerType === 'mouse' && (hover = false));
+    // Keyboard focus on a card pauses; focus on the controls (e.g. the Play button just pressed) doesn't.
+    this.slider.addEventListener('focusin', () => (focus = true));
+    this.slider.addEventListener('focusout', (e) => !this.slider.contains(e.relatedTarget) && (focus = false));
+    for (const type of ['pointerdown', 'wheel', 'touchstart']) this.slider.addEventListener(type, hold, { passive: true });
+    new IntersectionObserver(([entry]) => (visible = entry.isIntersecting)).observe(this);
+    toggle?.addEventListener('click', () => { setPaused(!this.userPaused); holdUntil = 0; });
+    reduce.addEventListener('change', (e) => e.matches && setPaused(true));
+    setPaused(reduce.matches);
+    requestAnimationFrame(tick);
   }
 
   measure() {
@@ -37,7 +81,7 @@ class SliderComponent extends HTMLElement {
 
   step(event, dir) {
     event.preventDefault();
-    this.slider.scrollTo({ left: this.slider.scrollLeft + dir * this.offset });
+    this.slider.scrollTo({ left: this.slider.scrollLeft + dir * this.offset, behavior: 'smooth' });
   }
 }
 

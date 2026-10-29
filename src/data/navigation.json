@@ -1,5 +1,5 @@
 {
-  "_about": "Redesign navigation. Category names and links are resolved from menu.json (the live menu) at build time; every href is an existing live route.",
+  "_about": "Redesign navigation and homepage discovery settings. Category names and links are resolved from menu.json (the live menu) at build time; every href is an existing live route.",
   "primary": [
     {
       "label": "Bestsellers",
@@ -114,5 +114,10 @@
     "section": "16637408496d439d7e",
     "heading": "Shop by price",
     "_note": "Homepage multicolumn section (laurel price images) rendered as PriceBands cards."
+  },
+  "productMarquee": {
+    "section": "166180024032d53842",
+    "speed": 35,
+    "_note": "Homepage product carousel drifts right-to-left (px per second). Pauses on hover/focus/touch, off-screen, and for prefers-reduced-motion; has a pause button."
   }
 }

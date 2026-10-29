@@ -59,3 +59,4 @@ export const homeTiles = {
 };
 
 export const priceBands = nav.priceBands;
+export const productMarquee = nav.productMarquee;

@@ -10,6 +10,7 @@
   --st-terracotta: 199,107,74;       /* #C76B4A accent: non-text highlights (underlines, hover accents) */
   --st-terracotta-deep: 168,85,58;   /* #A8553A deeper step of the accent for filled CTAs/badges: white text
                                         is 5.2:1 here vs 3.7:1 on #C76B4A (WCAG AA needs 4.5:1) */
+  --st-page: 252,248,243;            /* #FCF8F3 main page background */
   --st-ivory: 245,232,216;           /* #F5E8D8 warm neutral surfaces */
   --st-cocoa: 61,41,37;              /* #3D2925 text */
 
@@ -29,7 +30,10 @@
 
 /* ---- Text: cocoa instead of near-black on the default scheme ---- */
 :root,
-.color-background-1 {
+.color-background-1,
+.color-background-2 {
+  --color-background: var(--st-page);
+  --gradient-background: rgb(var(--st-page));
   --color-foreground: var(--st-text);
   --color-shadow: var(--st-text);
   --color-badge-foreground: var(--st-text);
