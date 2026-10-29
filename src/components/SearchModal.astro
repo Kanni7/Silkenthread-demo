@@ -1,16 +1,21 @@
 ---
-// Header search (Craft details-modal + predictive search). Results come from the local catalog (src/scripts/search.js).
+// Header search (Craft details-modal). Typed queries submit to /search (Shopify storefront search on the live
+// store). Redesign: optional "pill" trigger that reads as a search field, a clearer placeholder, and quick
+// links to existing collections (weave / fabric / craft / colour) from src/data/navigation.json.
 import Icon from './Icon.astro';
-interface Props { inputId: string }
-const { inputId } = Astro.props;
+import { searchConfig } from '../lib/nav.js';
+interface Props { inputId: string; variant?: 'icon' | 'pill' }
+const { inputId, variant = 'icon' } = Astro.props;
 const resultsId = `predictive-search-results-${inputId}`;
+const suggestionsId = `SearchSuggestions-${inputId}`;
 ---
 <details-modal class="header__search">
   <details>
-    <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="Search" role="button">
+    <summary class:list={['header__icon header__icon--search header__icon--summary link focus-inset modal__toggle', { 'st-search-pill': variant === 'pill' }]} aria-haspopup="dialog" aria-label="Search" role="button">
       <span>
         <Icon name="search" class="modal__toggle-open" />
         <Icon name="close" class="modal__toggle-close" />
+        {variant === 'pill' && <span class="st-search-pill__text" aria-hidden="true">{searchConfig.pillLabel}</span>}
       </span>
     </summary>
     <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="Search">
@@ -19,18 +24,27 @@ const resultsId = `predictive-search-results-${inputId}`;
         <predictive-search class="search-modal__form" data-loading-text="Loading...">
           <form action="/search" method="get" role="search" class="search search-modal__form">
             <div class="field">
-              <input class="search__input field__input" id={inputId} type="search" name="q" value="" placeholder="Search" role="combobox" aria-expanded="false" aria-owns={resultsId} aria-controls={resultsId} aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" />
-              <label class="field__label" for={inputId}>Search</label>
+              <input class="search__input field__input" id={inputId} type="search" name="q" value="" placeholder={searchConfig.placeholder} aria-describedby={suggestionsId} autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" />
+              <label class="field__label" for={inputId}>{searchConfig.placeholder}</label>
               <button type="reset" class="reset__button field__button hidden" aria-label="Clear search term"><Icon name="close" /></button>
               <button class="search__button field__button" aria-label="Search"><Icon name="search" /></button>
             </div>
             <div class="predictive-search predictive-search--header" tabindex="-1" data-results-id={resultsId}></div>
-            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
           </form>
         </predictive-search>
         <button type="button" class="search-modal__close-button modal__close-button link link--text focus-inset" aria-label="Close">
           <Icon name="close" />
         </button>
+        <nav class="st-search-suggestions" id={suggestionsId} aria-label="Browse collections">
+          {searchConfig.suggestions.map((g) => (
+            <div class="st-search-suggestions__group">
+              <h2 class="st-search-suggestions__heading caption-with-letter-spacing">{g.label}</h2>
+              <ul class="list-unstyled st-search-suggestions__list" role="list">
+                {g.links.map((l) => <li><a href={l.href} class="st-chip link">{l.label}</a></li>)}
+              </ul>
+            </div>
+          ))}
+        </nav>
       </div>
     </div>
   </details>

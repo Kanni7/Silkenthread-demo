@@ -1,0 +1,385 @@
+/* =========================================================================
+   Redesign: navigation, search prominence, homepage category discovery.
+   Uses the palette roles from redesign.css (--st-text, --st-surface-warm, --st-cta, --st-accent).
+   ========================================================================= */
+
+/* Drawer and dropdown panels use the accent-2 scheme: align its text with the cocoa palette. */
+#menu-drawer.color-accent-2,
+.header__submenu.color-accent-2 {
+  --color-foreground: var(--st-text);
+}
+
+/* ---- Shared: pill shortcuts (Shop by occasion, Sale) ---- */
+.st-shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 4.4rem;
+  padding: 0 1.8rem;
+  border: 0.1rem solid rgba(var(--st-text), 0.3);
+  border-radius: 4rem;
+  color: rgb(var(--st-text));
+  font-size: 1.4rem;
+  letter-spacing: 0.06rem;
+  text-decoration: none;
+}
+.st-shortcut .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+}
+.st-shortcut:hover {
+  border-color: rgb(var(--st-accent));
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--st-accent));
+  text-underline-offset: 0.3rem;
+}
+.st-shortcut--sale {
+  background: rgb(var(--st-cta));
+  border-color: rgb(var(--st-cta));
+  color: rgb(var(--st-on-cta));
+}
+.st-shortcut--sale:hover {
+  background: rgb(var(--st-cta-hover));
+  border-color: rgb(var(--st-cta-hover));
+  text-decoration-color: currentColor;
+}
+
+/* ---- Desktop: Categories mega menu ---- */
+.header {
+  position: relative;
+}
+.st-mega-item,
+.st-mega-item header-menu,
+.st-mega {
+  position: static;
+}
+.st-mega__panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  /* stays clear of the bottom of the window (and the concept banner); scrolls if taller */
+  max-height: calc(100vh - 22rem - var(--concept-banner-height));
+  overflow-y: auto;
+  border-top: 0.1rem solid rgba(var(--st-text), 0.08);
+  border-bottom: 0.1rem solid rgba(var(--st-text), 0.08);
+  box-shadow: 0 1.6rem 2.4rem rgba(var(--st-text), 0.08);
+  text-align: left;
+}
+.st-mega__inner {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5rem 2.8rem;
+}
+.st-mega__groups {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 3.2rem;
+  margin: 0;
+}
+.st-mega__heading {
+  display: block;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-heading-family);
+  font-size: 1.7rem;
+  color: rgb(var(--st-text));
+  text-decoration: none;
+}
+.st-mega__heading .icon,
+.st-cat-tile__label .icon {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 0.8rem;
+  vertical-align: middle;
+  color: rgb(var(--st-teal));
+}
+.st-mega__group--wide .st-mega__links {
+  columns: 2;
+  column-gap: 3.2rem;
+}
+.st-mega__links li {
+  break-inside: avoid;
+}
+.st-mega__link {
+  display: block;
+  padding: 0.3rem 0;
+  font-size: 1.45rem;
+  color: rgba(var(--st-text), 0.85);
+  text-decoration: none;
+}
+.st-mega__link:hover,
+.st-mega__heading:hover,
+.st-mega__link[aria-current='page'],
+.st-mega__heading[aria-current='page'] {
+  color: rgb(var(--st-text));
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--st-accent));
+  text-underline-offset: 0.3rem;
+}
+/* Shortcuts sit at the top of the panel so they're visible without scrolling. */
+.st-mega__shortcuts {
+  order: -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 0.1rem solid rgba(var(--st-text), 0.08);
+}
+
+/* ---- Mobile drawer: Categories as compact accordions ---- */
+.st-drawer-groups {
+  margin: 0;
+  padding: 0 0 0.8rem;
+}
+.st-drawer-group__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.8rem;
+  padding: 0.8rem 3rem;
+  font-size: 1.8rem;
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+  list-style: none;
+}
+.st-drawer-group__summary::-webkit-details-marker {
+  display: none;
+}
+.st-drawer-group__summary .icon-caret {
+  width: 1.2rem;
+  height: 0.6rem;
+  flex-shrink: 0;
+  transition: transform var(--duration-short) ease;
+}
+.st-drawer-group[open] > .st-drawer-group__summary .icon-caret {
+  transform: rotate(180deg);
+}
+.st-drawer-group__links {
+  margin: 0;
+  padding: 0 3rem 1.2rem 4.2rem;
+}
+.st-drawer-group__links a {
+  display: block;
+  padding: 0.7rem 0;
+  font-size: 1.6rem;
+  color: rgba(var(--color-foreground), 0.85);
+  text-decoration: none;
+}
+.st-drawer-group__links a[aria-current='page'],
+.st-drawer-group__links a:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--st-accent));
+  text-underline-offset: 0.3rem;
+}
+.st-drawer-group__all {
+  font-weight: var(--font-body-weight-bold);
+}
+.st-drawer-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 3rem 2.4rem;
+}
+.st-drawer-secondary {
+  display: flex;
+  gap: 2.4rem;
+  margin: 0 0 0.8rem;
+  padding: 0;
+}
+.st-drawer-secondary a {
+  display: inline-block;
+  padding: 0.8rem 0;
+  font-size: 1.6rem;
+  color: rgb(var(--color-foreground));
+}
+
+/* ---- Search: field-like trigger on desktop, suggestions in the panel ---- */
+@media screen and (min-width: 990px) {
+  .header__icon.st-search-pill {
+    width: auto;
+    height: 4.4rem;
+    padding: 0 1.8rem 0 1.4rem;
+    border: 0.1rem solid rgba(var(--st-text), 0.3);
+    border-radius: 4rem;
+    color: rgb(var(--st-text));
+  }
+  .st-search-pill > span {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .st-search-pill .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .st-search-pill__text {
+    font-size: 1.4rem;
+    letter-spacing: 0.04rem;
+    white-space: nowrap;
+    color: rgba(var(--st-text), 0.8);
+  }
+  .header__icon.st-search-pill:hover {
+    border-color: rgb(var(--st-teal));
+  }
+}
+.header__icon.st-search-pill,
+.st-search-pill__text {
+  text-decoration: none;
+}
+@media screen and (max-width: 989px) {
+  .st-search-pill__text {
+    display: none;
+  }
+}
+/* Craft pins the modal to the header box (top/bottom: 0); let it grow to fit the suggestions. */
+.search-modal.modal__content {
+  bottom: auto;
+  height: auto;
+  max-height: calc(100dvh - 10rem - var(--concept-banner-height));
+  overflow-y: auto;
+}
+.search-modal__content {
+  flex-wrap: wrap;
+  height: auto;
+  padding-top: 1rem;
+}
+.search-modal__content .search-modal__close-button {
+  top: 1rem;
+}
+@media screen and (max-width: 749px) {
+  .st-search-suggestions__list li:nth-child(n + 5) {
+    display: none;
+  }
+}
+.st-search-suggestions {
+  flex-basis: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem 2.4rem;
+  max-width: 96rem;
+  margin: 0 auto;
+  padding: 1.6rem 0 2.4rem;
+}
+@media screen and (min-width: 750px) {
+  .st-search-suggestions {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.st-search-suggestions__heading {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  letter-spacing: 0.13rem;
+  text-transform: uppercase;
+  color: rgba(var(--st-text), 0.8);
+}
+.st-search-suggestions__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+}
+.st-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.6rem;
+  padding: 0 1.4rem;
+  border-radius: 4rem;
+  background: rgb(var(--st-surface-warm));
+  color: rgb(var(--st-text));
+  font-size: 1.35rem;
+  text-decoration: none;
+}
+.st-chip:hover {
+  box-shadow: inset 0 0 0 0.1rem rgb(var(--st-accent));
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--st-accent));
+}
+
+/* ---- Homepage: Shop by category ---- */
+.st-categories {
+  padding: 3.2rem 0 1.6rem;
+}
+@media screen and (min-width: 750px) {
+  .st-categories {
+    padding: 4.4rem 0 2.4rem;
+  }
+}
+.st-categories__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem 2.4rem;
+  margin-bottom: 2rem;
+}
+.st-categories__header .title {
+  margin: 0;
+}
+.st-categories__shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0;
+}
+.st-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 1.2rem;
+  margin: 0;
+}
+@media screen and (min-width: 990px) {
+  .st-categories__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.4rem;
+  }
+}
+.st-cat-tile {
+  display: flex;
+  flex-direction: column;
+  color: rgb(var(--st-text));
+  text-decoration: none;
+}
+.st-cat-tile__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--media-radius);
+  background: rgb(var(--st-surface-warm));
+}
+.st-cat-tile__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-long) ease;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .st-cat-tile:hover .st-cat-tile__media img {
+    transform: scale(1.03);
+  }
+}
+.st-cat-tile__label {
+  display: block;
+  margin-top: 1.2rem;
+  color: rgb(var(--st-text));
+}
+.st-cat-tile:hover .st-cat-tile__label {
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--st-accent));
+  text-underline-offset: 0.3rem;
+}
+.st-cat-tile__meta {
+  margin-top: 0.2rem;
+  color: rgba(var(--st-text), 0.8);
+}
+.st-cat-tile:focus-visible {
+  outline-offset: 0.4rem;
+}

@@ -26,7 +26,13 @@ class HeaderDrawer extends HTMLElement {
       document.body.classList.add('overflow-hidden-tablet');
       openDetails(this.main);
     });
-    this.querySelectorAll('#menu-drawer details').forEach((sub) => {
+    // Same-page links (e.g. "Shop by occasion" anchor) close the drawer so the target is visible.
+    this.querySelector('#menu-drawer').addEventListener('click', (e) => {
+      const a = e.target.closest('a[href]');
+      if (a && a.hash && a.pathname === location.pathname) this.close(false);
+    });
+    // Slide-in submenus are the top-level details only; nested details (category groups) are plain accordions.
+    this.querySelectorAll('#menu-drawer .menu-drawer__menu > li > details').forEach((sub) => {
       sub.querySelector('summary').addEventListener('click', (e) => {
         e.preventDefault();
         openDetails(sub);
@@ -40,13 +46,13 @@ class HeaderDrawer extends HTMLElement {
     });
     onKey('Escape', () => this.main.hasAttribute('open') && this.close());
   }
-  close() {
+  close(restoreFocus = true) {
     this.querySelectorAll('#menu-drawer details[open]').forEach(closeDetails);
     this.main.classList.remove('submenu-open');
     closeDetails(this.main);
     document.querySelector('.section-header')?.classList.remove('menu-open');
     document.body.classList.remove('overflow-hidden-tablet');
-    this.main.querySelector('summary').focus();
+    if (restoreFocus) this.main.querySelector('summary').focus();
   }
 }
 
@@ -59,6 +65,9 @@ class HeaderMenu extends HTMLElement {
       if (this.details.open) document.querySelectorAll('header-menu details[open]').forEach((d) => d !== this.details && d.removeAttribute('open'));
     });
     document.addEventListener('click', (e) => !this.contains(e.target) && this.details.removeAttribute('open'));
+    // Close when keyboard focus leaves the menu, or after choosing a link (incl. same-page anchors).
+    this.addEventListener('focusout', (e) => { if (this.details.open && e.relatedTarget && !this.contains(e.relatedTarget)) this.details.removeAttribute('open'); });
+    this.details.addEventListener('click', (e) => e.target.closest('a[href]') && this.details.removeAttribute('open'));
     onKey('Escape', () => { if (this.details.open) { this.details.removeAttribute('open'); this.summary.focus(); } });
   }
 }

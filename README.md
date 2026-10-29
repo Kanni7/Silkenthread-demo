@@ -110,3 +110,12 @@ re-skins the site only through Craft's CSS variables (no markup, data or image c
 - Product and collection cards: turquoise frames and panels removed; ivory information panel, cocoa
   text, terracotta hover underline, soft shadow on hover/focus.
 - Weaves/Prints/Embroideries band and the footer on warm ivory; hero CTAs terracotta; "View all" cocoa.
+- Navigation (`src/data/navigation.json`, resolved against the live menu in `src/lib/nav.js`): header
+  reduced to **Bestsellers** (`/collections/all?sort_by=best-selling`), **New Arrivals** (`/pages/whats-new`)
+  and a **Categories** mega menu (Iconic Weaves, Prints & Dyes, Embroideries & Trimmings, Search by Fabric,
+  each linking to its live hub page) with Shop by occasion / Sale shortcuts. Mobile drawer uses accordions.
+  About us / Contact moved to the drawer and the footer's Quick links.
+- Search: field-style trigger on desktop, clearer placeholder, quick links to weave/fabric/craft/colour
+  collections in the search panel. Queries still submit to `/search` (Shopify search on the live store).
+- Homepage: new "Shop by category" section after the hero (`src/components/CategoryTiles.astro`).
+- `src/styles/redesign-nav.css` holds the navigation/search/tiles styles.

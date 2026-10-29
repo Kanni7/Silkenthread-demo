@@ -1,8 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import Sections from '../components/Sections.astro';
+import CategoryTiles from '../components/CategoryTiles.astro';
 import home from '../data/home.json';
+import { homeTiles } from '../lib/nav.js';
+// Redesign: "Shop by category" goes right after the first section of type homeTiles.after (the hero).
+const at = home.sections.findIndex((s) => s.type === homeTiles.after) + 1;
 ---
 <Base title={home.title} isHome>
-  <Sections sections={home.sections} />
+  <Sections sections={home.sections.slice(0, at)} />
+  <CategoryTiles />
+  <Sections sections={home.sections.slice(at)} />
 </Base>

@@ -3,6 +3,7 @@
 import Icon from './Icon.astro';
 import Section from './Section.astro';
 import { menu, templates, localHref } from '../lib/data.js';
+import { secondary } from '../lib/nav.js'; // About us / Contact moved here from the header (redesign)
 const { preFooter, footer: f } = templates.groups;
 const ft = menu.footer;
 const year = new Date().getFullYear();
@@ -21,6 +22,9 @@ const year = new Date().getFullYear();
               <ul class="footer-block__details-content list-unstyled">
                 {b.links.map((l) => (
                   <li><a href={localHref(l.href)} class="link link--text list-menu__item list-menu__item--link">{l.label}</a></li>
+                ))}
+                {secondary.map((l) => (
+                  <li><a href={l.href} class="link link--text list-menu__item list-menu__item--link">{l.label}</a></li>
                 ))}
               </ul>
             ) : (

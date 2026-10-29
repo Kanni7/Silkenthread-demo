@@ -1,19 +1,24 @@
 ---
-// Craft header: mobile drawer (header-drawer), logo, inline dropdown menus, localization, search, account, cart.
-// Menu content comes from src/data/menu.json, so one edit updates every page.
+// Craft header: mobile drawer (header-drawer), logo, primary navigation, localization, search, account, cart.
+// Redesign: three entry points (Bestsellers, New Arrivals, Categories mega menu) from src/data/navigation.json;
+// category names/links are resolved from the live menu (menu.json) in src/lib/nav.js.
 import Icon from './Icon.astro';
 import Section from './Section.astro';
 import SearchModal from './SearchModal.astro';
 import Localization from './Localization.astro';
 import { menu, templates, imageUrl, imageSrcset, localHref } from '../lib/data.js';
+import { primary, secondary } from '../lib/nav.js';
 
 interface Props { isHome?: boolean }
 const { isHome = false } = Astro.props;
 const h = templates.groups.header;
 const path = Astro.url.pathname.replace(/\.html$/, '');
 const slug = (s) => s.toLowerCase().replace(/&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const isActive = (href) => href && localHref(href) === path;
-const items = menu.main.map((item, i) => ({ ...item, n: i + 1, slug: slug(item.label), href: item.href && localHref(item.href), childActive: (item.children || []).some((c) => isActive(c.href)) }));
+const isActive = (href) => href && localHref(href).split(/[?#]/)[0] === path;
+const items = primary.map((item, i) => ({
+  ...item, n: i + 1, slug: slug(item.label),
+  childActive: (item.groups || []).some((g) => isActive(g.href) || g.links.some((l) => isActive(l.href))),
+}));
 const logo = menu.logo;
 ---
 <Section id={h.id} class={h.class} style={h.style}>
@@ -31,7 +36,7 @@ const logo = menu.logo;
                   <ul class="menu-drawer__menu has-submenu list-menu" role="list">
                     {items.map((item) => (
                       <li>
-                        {item.children ? (
+                        {item.groups ? (
                           <details id={`Details-menu-drawer-menu-item-${item.n}`}>
                             <summary id={`HeaderDrawer-${item.slug}`} class="menu-drawer__menu-item list-menu__item link link--text focus-inset" role="button" aria-expanded="false" aria-controls={`link-${item.slug}`}>
                               {item.label}
@@ -44,13 +49,29 @@ const logo = menu.logo;
                                   <Icon name="arrow" />
                                   {item.label}
                                 </button>
-                                <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                                  {item.children.map((c) => (
+                                <ul class="st-drawer-groups list-unstyled" role="list">
+                                  {item.groups.map((g) => (
                                     <li>
-                                      <a id={`HeaderDrawer-${item.slug}-${slug(c.label)}`} href={localHref(c.href)} class:list={['menu-drawer__menu-item link link--text list-menu__item focus-inset', { 'menu-drawer__menu-item--active': isActive(c.href) }]} aria-current={isActive(c.href) ? 'page' : undefined}>{c.label}</a>
+                                      <details class="st-drawer-group">
+                                        <summary class="st-drawer-group__summary focus-inset">
+                                          <span>{g.label}</span>
+                                          <Icon name="caret" />
+                                        </summary>
+                                        <ul class="list-unstyled st-drawer-group__links" role="list">
+                                          <li><a href={g.href} class="link link--text st-drawer-group__all">All {g.label}</a></li>
+                                          {g.links.map((c) => (
+                                            <li><a href={c.href} class="link link--text" aria-current={isActive(c.href) ? 'page' : undefined}>{c.label}</a></li>
+                                          ))}
+                                        </ul>
+                                      </details>
                                     </li>
                                   ))}
                                 </ul>
+                                {item.shortcuts.length > 0 && (
+                                  <ul class="st-drawer-shortcuts list-unstyled" role="list">
+                                    {item.shortcuts.map((s) => <li><a href={s.href} class={`st-shortcut st-shortcut--${s.key} link`}>{s.label}<Icon name="arrow" /></a></li>)}
+                                  </ul>
+                                )}
                               </div>
                             </div>
                           </details>
@@ -62,6 +83,9 @@ const logo = menu.logo;
                   </ul>
                 </nav>
                 <div class="menu-drawer__utility-links">
+                  <ul class="st-drawer-secondary list-unstyled" role="list">
+                    {secondary.map((l) => <li><a href={l.href} class="link link--text" aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a></li>)}
+                  </ul>
                   <a href="/account/login" class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide">
                     <Icon name="account" />
                     Log in
@@ -83,7 +107,7 @@ const logo = menu.logo;
         </details>
       </header-drawer>
 
-      <SearchModal inputId="Search-In-Modal-1" />
+      <SearchModal inputId="Search-In-Modal-1" variant="pill" />
 
       {isHome ? (
         <h1 class="header__heading">
@@ -104,21 +128,35 @@ const logo = menu.logo;
       <nav class="header__inline-menu" aria-label="Main menu">
         <ul class="list-menu list-menu--inline" role="list">
           {items.map((item) => (
-            <li>
-              {item.children ? (
+            <li class:list={{ 'st-mega-item': item.groups }}>
+              {item.groups ? (
                 <header-menu>
-                  <details id={`Details-HeaderMenu-${item.n}`}>
-                    <summary id={`HeaderMenu-${item.slug}`} class="header__menu-item list-menu__item link focus-inset" role="button" aria-expanded="false" aria-controls={`HeaderMenu-MenuList-${item.n}`}>
+                  <details id={`Details-HeaderMenu-${item.n}`} class="st-mega">
+                    <summary id={`HeaderMenu-${item.slug}`} class="header__menu-item list-menu__item link focus-inset" role="button" aria-expanded="false" aria-controls={`MegaMenu-${item.slug}`}>
                       <span class:list={{ 'header__active-menu-item': item.childActive }}>{item.label}</span>
                       <Icon name="caret" />
                     </summary>
-                    <ul id={`HeaderMenu-MenuList-${item.n}`} class={h.dropdown} role="list" tabindex="-1">
-                      {item.children.map((c) => (
-                        <li>
-                          <a id={`HeaderMenu-${item.slug}-${slug(c.label)}`} href={localHref(c.href)} class:list={['header__menu-item list-menu__item link link--text focus-inset caption-large', { 'list-menu__item--active': isActive(c.href) }]} aria-current={isActive(c.href) ? 'page' : undefined}>{c.label}</a>
-                        </li>
-                      ))}
-                    </ul>
+                    <div id={`MegaMenu-${item.slug}`} class="st-mega__panel color-background-1 gradient" tabindex="-1">
+                      <div class="st-mega__inner">
+                        <ul class="st-mega__groups list-unstyled" role="list">
+                          {item.groups.map((g) => (
+                            <li class:list={['st-mega__group', { 'st-mega__group--wide': g.links.length > 12 }]}>
+                              <a href={g.href} class="st-mega__heading link link--text" aria-current={isActive(g.href) ? 'page' : undefined}>{g.label}<Icon name="arrow" /></a>
+                              <ul class="st-mega__links list-unstyled" role="list" aria-label={g.label}>
+                                {g.links.map((c) => (
+                                  <li><a href={c.href} class="st-mega__link link link--text" aria-current={isActive(c.href) ? 'page' : undefined}>{c.label}</a></li>
+                                ))}
+                              </ul>
+                            </li>
+                          ))}
+                        </ul>
+                        {item.shortcuts.length > 0 && (
+                          <div class="st-mega__shortcuts">
+                            {item.shortcuts.map((s) => <a href={s.href} class={`st-shortcut st-shortcut--${s.key} link`}>{s.label}<Icon name="arrow" /></a>)}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </details>
                 </header-menu>
               ) : (

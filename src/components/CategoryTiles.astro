@@ -1,0 +1,34 @@
+---
+// Homepage "Shop by category": four broad categories (live menu groups -> their hub pages), each with an
+// existing product photo, plus shortcuts to Shop by occasion (homepage section) and Sale.
+import Icon from './Icon.astro';
+import { productMap, imageUrl, imageSrcset } from '../lib/data.js';
+import { homeTiles } from '../lib/nav.js';
+const tiles = homeTiles.tiles.map((t) => ({ ...t, image: productMap.get(t.imageFromProduct)?.images[0] }));
+const sizes = '(min-width: 1600px) 370px, (min-width: 990px) calc((100vw - 13rem) / 4), calc((100vw - 4.5rem) / 2)';
+---
+<section class="st-categories color-background-1 gradient" aria-labelledby="ShopByCategoryHeading">
+  <div class="page-width">
+    <div class="st-categories__header">
+      <h2 id="ShopByCategoryHeading" class="title inline-richtext h2">{homeTiles.title}</h2>
+      {homeTiles.shortcuts.length > 0 && (
+        <ul class="st-categories__shortcuts list-unstyled" role="list">
+          {homeTiles.shortcuts.map((s) => <li><a href={s.href} class={`st-shortcut st-shortcut--${s.key} link`}>{s.label}<Icon name="arrow" /></a></li>)}
+        </ul>
+      )}
+    </div>
+    <ul class="st-categories__grid list-unstyled" role="list">
+      {tiles.map((t) => (
+        <li>
+          <a href={t.href} class="st-cat-tile link">
+            <span class="st-cat-tile__media media">
+              {t.image && <img src={imageUrl(t.image, 720)} srcset={imageSrcset(t.image, [360, 540, 720, 940])} sizes={sizes} alt="" width={t.image.width} height={t.image.height} loading="lazy" />}
+            </span>
+            <span class="st-cat-tile__label h4">{t.label}<Icon name="arrow" /></span>
+            <span class="st-cat-tile__meta caption">{t.links.length} collections</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

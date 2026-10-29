@@ -1,0 +1,51 @@
+{
+  "_about": "Redesign navigation. Category names and links are resolved from menu.json (the live menu) at build time; every href is an existing live route.",
+  "primary": [
+    {
+      "label": "Bestsellers",
+      "href": "/collections/all?sort_by=best-selling",
+      "_note": "No bestseller collection exists; this is Shopify's built-in all-products collection sorted by best-selling."
+    },
+    {
+      "label": "New Arrivals",
+      "href": "/pages/whats-new",
+      "_note": "The live 'What's New?' page."
+    },
+    {
+      "label": "Categories",
+      "groups": [
+        { "menu": "Iconic Weaves", "href": "/pages/weaves" },
+        { "menu": "Prints & Dyes", "href": "/pages/prints" },
+        { "menu": "Embroideries & Trimmings", "href": "/pages/embroideries" },
+        { "menu": "Search by Fabric", "href": "/pages/fabrics" }
+      ],
+      "shortcuts": ["occasion", "sale"]
+    }
+  ],
+  "shortcuts": {
+    "occasion": { "label": "Shop by occasion", "homeSection": "Shop by occasion" },
+    "sale": { "label": "Sale", "href": "/collections/sale" }
+  },
+  "secondary": ["About us", "Contact"],
+  "search": {
+    "placeholder": "Search by name, weave, fabric or colour",
+    "pillLabel": "Search sarees, weaves, fabrics",
+    "suggestions": [
+      { "label": "Weaves", "menu": ["Iconic Weaves"], "limit": 6 },
+      { "label": "Fabrics", "menu": ["Search by Fabric"], "limit": 6 },
+      { "label": "Crafts", "menu": ["Prints & Dyes", "Embroideries & Trimmings"], "limit": 6 },
+      { "label": "Colours", "homeSection": "Shop by colour", "limit": 6 }
+    ]
+  },
+  "homeTiles": {
+    "after": "slideshow",
+    "title": "Shop by category",
+    "shortcuts": ["occasion", "sale"],
+    "tiles": [
+      { "menu": "Iconic Weaves", "imageFromProduct": "pur2092026karan" },
+      { "menu": "Prints & Dyes", "imageFromProduct": "mad1692026madhav" },
+      { "menu": "Embroideries & Trimmings", "imageFromProduct": "kas1692026kushal" },
+      { "menu": "Search by Fabric", "imageFromProduct": "pur1992026irfan" }
+    ]
+  }
+}
