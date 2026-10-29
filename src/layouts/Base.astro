@@ -3,7 +3,6 @@ import '../styles/global.css';
 import AnnouncementBar from '../components/AnnouncementBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ConceptBanner from '../components/ConceptBanner.astro';
 import { FONT_URL, templates } from '../lib/data.js';
 
 interface Props { title: string; description?: string | null; isHome?: boolean }
@@ -30,7 +29,6 @@ const { title, description, isHome = false } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <ConceptBanner />
     <script>
       import '../scripts/slider.js';
       import '../scripts/forms.js';

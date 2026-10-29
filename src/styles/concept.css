@@ -1,31 +1,5 @@
-/* Replica-only UI: things the live theme doesn't have (disclaimer, mock-form notices).
+/* Replica-only UI: things the live theme doesn't have (mock-form notices).
    Uses the same tokens so it blends in. */
-
-:root {
-  --concept-banner-height: 3.2rem;
-}
-
-/* ---- Disclaimer banner (required on every page) ---- */
-.concept-banner {
-  position: fixed;
-  inset: auto 0 0 0;
-  z-index: 2147483647;
-  min-height: var(--concept-banner-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem 1.6rem;
-  background: rgb(var(--st-black));
-  color: rgb(var(--st-white));
-  font-family: var(--font-body-family);
-  font-size: 1.3rem;
-  line-height: 1.3;
-  letter-spacing: 0.04rem;
-  text-align: center;
-}
-body {
-  padding-bottom: var(--concept-banner-height);
-}
 
 /* ---- Notices for front-end mocks (forms, checkout) ---- */
 .concept-notice {

@@ -66,8 +66,8 @@
   left: 0;
   right: 0;
   z-index: 3;
-  /* stays clear of the bottom of the window (and the concept banner); scrolls if taller */
-  max-height: calc(100vh - 22rem - var(--concept-banner-height));
+  /* stays clear of the bottom of the window; scrolls if taller */
+  max-height: calc(100vh - 25rem);
   overflow-y: auto;
   border-top: 0.1rem solid rgba(var(--st-text), 0.08);
   border-bottom: 0.1rem solid rgba(var(--st-text), 0.08);
@@ -246,7 +246,7 @@
 .search-modal.modal__content {
   bottom: auto;
   height: auto;
-  max-height: calc(100dvh - 10rem - var(--concept-banner-height));
+  max-height: calc(100dvh - 13rem);
   overflow-y: auto;
 }
 .search-modal__content {
