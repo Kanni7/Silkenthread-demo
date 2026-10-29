@@ -1,0 +1,12 @@
+{
+  "name": "silkenthread-redesign-concept",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "recon": "node scripts/recon.mjs",
+    "capture": "node scripts/capture.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.2"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "capturedAt": "2026-10-29T09:07:50.540Z",
+  "productHandle": "pur2092026kiara",
+  "pages": [
+    [
+      "home",
+      "/"
+    ],
+    [
+      "collection-the-curated-kanjivarams",
+      "/collections/the-curated-kanjivarams"
+    ],
+    [
+      "collection-sale",
+      "/collections/sale"
+    ],
+    [
+      "product-pur2092026kiara",
+      "/products/pur2092026kiara"
+    ],
+    [
+      "page-about-silken-thread",
+      "/pages/about-silken-thread"
+    ],
+    [
+      "page-contact",
+      "/pages/contact"
+    ],
+    [
+      "page-whats-new",
+      "/pages/whats-new"
+    ],
+    [
+      "page-size-chart",
+      "/pages/size-chart"
+    ]
+  ],
+  "widths": {
+    "375": 812,
+    "768": 1024,
+    "1440": 900
+  },
+  "reducedMotion": true,
+  "blockedRequests": [
+    "https://analytics.ahrefs.com/analytics.js",
+    "https://bff-api.automizely.com/marketing/public/graphql",
+    "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.en.esm.js",
+    "https://cdn.shopify.com/storefront/web-components/chat/host-monorail-CKbWv8cV.js",
+    "https://error-analytics-sessions-production.shopifysvc.com/observeonly",
+    "https://livewishlist.scriptengine.net/api/apps-config",
+    "https://monorail-edge.shopifysvc.com/v1/produce",
+    "https://otlp-http-production.shopifysvc.com/v1/metrics",
+    "https://silkenthread.in/.well-known/shopify/monorail/unstable/produce_batch",
+    "https://silkenthread.in/cart.js",
+    "https://silkenthread.in/cdn/s/trekkie.storefront.387430da5919a2f9b410f0ffaf5b70216a61abfb.min.js",
+    "https://silkenthread.in/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.13.1.min.js",
+    "https://silkenthread.in/cdn/wpm/b264bf420w2e1681cap8d55857fm7d879f9cm.js",
+    "https://silkenthread.in/checkouts/internal/preloads.js",
+    "https://silkenthread.in/recommendations/products",
+    "https://www.automizely-analytics.com/analytics/collect",
+    "https://www.clarity.ms/tag/kinb63gxyf",
+    "https://www.googletagmanager.com/gtag/js"
+  ]
+}
