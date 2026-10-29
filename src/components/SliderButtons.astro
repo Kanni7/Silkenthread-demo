@@ -1,0 +1,24 @@
+---
+// Craft slider controls (prev / "1 / N" counter / next). The counter is updated by src/scripts/slider.js.
+// wrapIcons: the live collection-list buttons render an empty .svg-wrapper ("inline_asset_content: Asset not
+// found"), so their arrows are invisible. Reproduced on purpose for the baseline.
+import Icon from './Icon.astro';
+interface Props { class: string; controls?: string; total: number; counter?: boolean; wrapIcons?: boolean }
+const { class: cls, controls, total, counter = true, wrapIcons = false } = Astro.props;
+---
+<div class={cls}>
+  <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="Slide left" aria-controls={controls}>
+    {wrapIcons ? <span class="svg-wrapper"></span> : <Icon name="caret" />}
+  </button>
+  {counter && (
+    <div class="slider-counter caption">
+      <span class="slider-counter--current">1</span>
+      <span aria-hidden="true"> / </span>
+      <span class="visually-hidden">of</span>
+      <span class="slider-counter--total">{total}</span>
+    </div>
+  )}
+  <button type="button" class="slider-button slider-button--next" name="next" aria-label="Slide right" aria-controls={controls}>
+    {wrapIcons ? <span class="svg-wrapper"></span> : <Icon name="caret" />}
+  </button>
+</div>

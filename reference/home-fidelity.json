@@ -1,0 +1,23 @@
+[
+ {
+  "page": "home",
+  "width": 375,
+  "refHeight": 4962,
+  "replicaHeight": 5000,
+  "diffPercent": 5.99
+ },
+ {
+  "page": "home",
+  "width": 768,
+  "refHeight": 8994,
+  "replicaHeight": 9032,
+  "diffPercent": 1.7
+ },
+ {
+  "page": "home",
+  "width": 1440,
+  "refHeight": 6027,
+  "replicaHeight": 6066,
+  "diffPercent": 1.39
+ }
+]

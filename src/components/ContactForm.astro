@@ -1,0 +1,37 @@
+---
+// Craft contact form, as a front-end mock: submitting shows a notice and sends nothing (src/scripts/forms.js).
+import Section from './Section.astro';
+const { section: s } = Astro.props;
+const L = s.layout || {};
+---
+<Section id={s.id} tag={s.tag} style={s.style}>
+  <div class={s.classes.join(' ')}>
+    <div class={L.container?.class || 'contact page-width page-width--narrow'}>
+      <h2 class="visually-hidden">{s.title}</h2>
+      <form id="ContactForm" class={L.form?.class || 'isolate'} data-mock-form novalidate>
+        <div class="contact__fields">
+          <div class="field">
+            <input class="field__input" autocomplete="name" type="text" id="ContactForm-name" name="contact[Name]" value="" placeholder="Name" />
+            <label class="field__label" for="ContactForm-name">Name</label>
+          </div>
+          <div class="field field--with-error">
+            <input autocomplete="email" type="email" id="ContactForm-email" class="field__input" name="contact[email]" spellcheck="false" autocapitalize="off" value="" aria-required="true" placeholder="Email" required />
+            <label class="field__label" for="ContactForm-email">Email <span aria-hidden="true">*</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <input type="tel" id="ContactForm-phone" class="field__input" autocomplete="tel" name="contact[Phone number]" pattern="[0-9\-]*" value="" placeholder="Phone number" />
+          <label class="field__label" for="ContactForm-phone">Phone number</label>
+        </div>
+        <div class="field">
+          <textarea rows="10" id="ContactForm-body" class="text-area field__input" name="contact[Comment]" placeholder="Comment"></textarea>
+          <label class="form__label field__label" for="ContactForm-body">Comment</label>
+        </div>
+        <div class="contact__button">
+          <button type="submit" class="button">{s.submitLabel || 'Send'}</button>
+        </div>
+        <p class="concept-notice" role="status" hidden>Concept prototype: nothing was sent.</p>
+      </form>
+    </div>
+  </div>
+</Section>

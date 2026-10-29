@@ -1,0 +1,49 @@
+---
+// Craft slideshow section. Content and per-slide styling come from home.json (section.items / layout).
+import Icon from './Icon.astro';
+import Section from './Section.astro';
+import { imageUrl, imageSrcset, localHref } from '../lib/data.js';
+const { section: s } = Astro.props;
+const L = s.layout;
+const n = s.items.length;
+---
+<Section id={s.id} tag={s.tag} style={s.style}>
+  <slideshow-component class={L.component.class} role="region" aria-roledescription="Carousel" aria-label="Slideshow">
+    <div class={L.controls.class}>
+      <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="Previous slide" aria-controls={`Slider-${s.id}`}><Icon name="caret" /></button>
+      <div class="slider-counter slider-counter--counter caption">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">of</span>
+        <span class="slider-counter--total">{n}</span>
+      </div>
+      <button type="button" class="slider-button slider-button--next" name="next" aria-label="Next slide" aria-controls={`Slider-${s.id}`}><Icon name="caret" /></button>
+      {s.settings.autoplay && (
+        <button type="button" class="slideshow__autoplay slider-button no-js-hidden" aria-label="Pause slideshow">
+          <Icon name="pause" />
+          <Icon name="play" />
+        </button>
+      )}
+    </div>
+    <div class={L.slider.class} id={`Slider-${s.id}`} aria-live="off" aria-atomic="true" data-autoplay={String(s.settings.autoplay)} data-speed={s.settings.speed}>
+      {s.items.map((slide, i) => (
+        <div class="slideshow__slide grid__item grid--1-col slider__slide" id={`Slide-${s.id}-${i + 1}`} role="group" aria-roledescription="Slide" aria-label={`${i + 1} of ${n}`} aria-hidden={i > 0 ? 'true' : 'false'} tabindex={i > 0 ? '-1' : undefined}>
+          <div class={slide.mediaClass}>
+            {slide.image && <img src={imageUrl(slide.image, 1500)} srcset={imageSrcset(slide.image, [375, 750, 1100, 1500, 1780, 2000, 3000])} sizes="100vw" alt={slide.image.alt} width={slide.image.width} height={slide.image.height} loading={i > 0 ? 'lazy' : undefined} style={slide.image.style} />}
+          </div>
+          <div class={slide.textWrapperClass}>
+            <div class={slide.boxClasses.join(' ')}>
+              {slide.heading && <h2 class={slide.headingClass}>{slide.heading}</h2>}
+              {slide.text && <div class="banner__text rte"><p>{slide.text}</p></div>}
+              {slide.buttons.length > 0 && (
+                <div class="banner__buttons">
+                  {slide.buttons.map((b) => <a href={localHref(b.href)} class={b.classes} tabindex={i > 0 ? '-1' : undefined}>{b.label}</a>)}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </slideshow-component>
+</Section>

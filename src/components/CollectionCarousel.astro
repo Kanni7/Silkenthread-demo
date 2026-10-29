@@ -1,0 +1,62 @@
+---
+// Craft "collection list" section (grid on desktop, slider on tablet/mobile). Data: home.json / pages.json.
+import Icon from './Icon.astro';
+import Section from './Section.astro';
+import SliderButtons from './SliderButtons.astro';
+import { imageUrl, imageSrcset, localHref } from '../lib/data.js';
+const { section: s } = Astro.props;
+const L = s.layout;
+const sizes = ' (min-width: 1600px) 500px, (min-width: 750px) calc((100vw - 10rem) / 2), calc(100vw - 3rem) ';
+---
+<Section id={s.id} tag={s.tag} class="shopify-section section section-collection-list" style={s.style}>
+  <div class={s.classes.join(' ')}>
+    <div class={L.wrapper.class}>
+      {s.title && L.titleWrapper && (
+        <div class={L.titleWrapper.class}>
+          <h2 id={`SectionHeading-${s.id}`} class={L.title?.class}>{s.title}</h2>
+        </div>
+      )}
+      <slider-component class={L.slider.class}>
+        <ul class={L.list.class} id={`Slider-${s.id}`} role="list">
+          {s.items.map((item, i) => (
+            <li id={`Slide-${s.id}-${i + 1}`} class={L.item.class}>
+              <div class={L.cardWrapper.class}>
+                <div class={` ${L.card.class} `} style={L.card.style}>
+                  <div class={L.cardInner.class} style={L.cardInner.style}>
+                    {item.image && (
+                      <div class="card__media">
+                        <div class={L.cardMedia.class}>
+                          <img srcset={imageSrcset(item.image)} src={imageUrl(item.image, 1500)} sizes={sizes} alt={item.image.alt} height={item.image.height} width={item.image.width} loading="lazy" class="motion-reduce" style={item.image.style} />
+                        </div>
+                      </div>
+                    )}
+                    <div class="card__content">
+                      <div class="card__information">
+                        <h3 class="card__heading">
+                          <a href={localHref(item.href)} class="full-unstyled-link">{item.title}<span class="icon-wrap">{' '}<Icon name="arrow" /></span></a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <h3 class={L.heading?.class || 'card__heading'}>
+                        <a href={localHref(item.href)} class="full-unstyled-link">{item.title}<span class="icon-wrap">{' '}<Icon name="arrow" /></span></a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+        {L.sliderButtons && <SliderButtons class={L.sliderButtons.class} total={s.items.length} wrapIcons />}
+      </slider-component>
+      {L.viewAll && s.viewAll && (
+        <div class={L.viewAll.class}>
+          <a href={localHref(s.viewAll.href)} class="button" id={`ViewAllButton-${s.id}`}>{s.viewAll.label}</a>
+        </div>
+      )}
+    </div>
+  </div>
+</Section>

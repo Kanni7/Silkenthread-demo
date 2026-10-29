@@ -1,0 +1,47 @@
+---
+// Craft multicolumn section (image tiles: price bands, colours, weaves/prints/embroideries).
+import Section from './Section.astro';
+import SliderButtons from './SliderButtons.astro';
+import { imageUrl, imageSrcset, localHref } from '../lib/data.js';
+const { section: s } = Astro.props;
+const L = s.layout;
+const cols = (L.list.class.match(/grid--(\d)-col-desktop/) || [, 3])[1];
+const sizes = ` (min-width: 1600px) calc((1600px - 120px) * 1 / ${cols}), (min-width: 990px) calc((100vw - 120px) * 1 / ${cols}), (min-width: 750px) calc((100vw - 104px) * 1 / 2), calc((100vw - 32px) * 1 / 2) `;
+---
+<Section id={s.id} tag={s.tag} style={s.style}>
+  <div class={L.root.class}>
+    <div class={L.container.class} style={L.container.style}>
+      {s.title && L.titleWrapper && (
+        <div class={L.titleWrapper.class}>
+          <h2 class={L.title.class}>{s.title}</h2>
+        </div>
+      )}
+      <slider-component class={L.slider.class}>
+        <ul class={L.list.class} id={`Slider-${s.id}`} role="list">
+          {s.items.map((item, i) => {
+            const tile = (
+              <div class={L.imageWrapper.class}>
+                <div class={L.media.class} style={L.media.style}>
+                  {item.image && <img src={imageUrl(item.image, 1500)} alt={item.image.alt} srcset={imageSrcset(item.image, [275, 550, 710, 1420])} width={item.image.width} height={item.image.height} loading="lazy" sizes={sizes} class="multicolumn-card__image" style={item.image.style} />}
+                  <div class={L.info?.class || 'multicolumn-card__info'}>
+                    {item.title && <h3 class="inline-richtext">{item.title}</h3>}
+                    {item.text && <div class="rte" set:html={item.text} />}
+                  </div>
+                </div>
+              </div>
+            );
+            return (
+              <li id={`Slide-${s.id}-${i + 1}`} class={L.item.class}>
+                <div class={L.card.class}>
+                  {item.link?.href ? <a href={localHref(item.link.href)}>{tile}</a> : tile}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        {L.sliderButtons && <SliderButtons class={L.sliderButtons.class} total={s.items.length} />}
+      </slider-component>
+      {L.viewAll && <div class={L.viewAll.class}></div>}
+    </div>
+  </div>
+</Section>

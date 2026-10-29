@@ -1,0 +1,236 @@
+{
+ "groups": {
+  "announcement": {
+   "id": "sections--17223806058740__announcement-bar",
+   "tag": "div",
+   "class": "shopify-section shopify-section-group-header-group announcement-bar-section",
+   "style": null,
+   "utilityBar": "utility-bar color-accent-1 gradient utility-bar--bottom-border",
+   "speed": 4,
+   "autoplay": true
+  },
+  "header": {
+   "id": "sections--17223806058740__header",
+   "tag": "div",
+   "class": "shopify-section shopify-section-group-header-group section-header",
+   "style": "header-drawer {\n    justify-self: start;\n    margin-left: -1.2rem;\n  }@media screen and (min-width: 990px) {\n      header-drawer {\n        display: none;\n      }\n    }.menu-drawer-container {\n    display: flex;\n  }\n\n  .list-menu {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n  }\n\n  .list-menu--inline {\n    display: inline-flex;\n    flex-wrap: wrap;\n  }\n\n  summary.list-menu__item {\n    padding-right: 2.7rem;\n  }\n\n  .list-menu__item {\n    display: flex;\n    align-items: center;\n    line-height: calc(1 + 0.3 / var(--font-body-scale));\n  }\n\n  .list-menu__item--link {\n    text-decoration: none;\n    padding-bottom: 1rem;\n    padding-top: 1rem;\n    line-height: calc(1 + 0.8 / var(--font-body-scale));\n  }\n\n  @media screen and (min-width: 750px) {\n    .list-menu__item--link {\n      padding-bottom: 0.5rem;\n      padding-top: 0.5rem;\n    }\n  }\n.header {\n    padding: 0px 3rem 0px 3rem;\n  }\n\n  .section-header {\n    position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */\n    margin-bottom: 0px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-header {\n      margin-bottom: 0px;\n    }\n  }\n\n  @media screen and (min-width: 990px) {\n    .header {\n      padding-top: 0px;\n      padding-bottom: 0px;\n    }\n  }",
+   "wrapper": "header-wrapper color-background-2 gradient header-wrapper--border-bottom",
+   "header": "header header--top-center header--mobile-left page-width header--has-menu header--has-social header--has-account header--has-localizations",
+   "drawer": "gradient menu-drawer motion-reduce color-accent-2",
+   "drawerSubmenu": "menu-drawer__submenu has-submenu gradient motion-reduce",
+   "dropdown": "header__submenu list-menu list-menu--disclosure color-accent-2 gradient caption-large motion-reduce global-settings-popup",
+   "searchModal": "search-modal modal__content gradient",
+   "logoWidth": 290,
+   "logoHeight": 120.83333333333333,
+   "social": [
+    {
+     "href": "https://www.facebook.com/SilkenThread.in",
+     "label": "Facebook",
+     "icon": "facebook"
+    },
+    {
+     "href": "https://www.instagram.com/silkenthreadinsta/",
+     "label": "Instagram",
+     "icon": "instagram"
+    },
+    {
+     "href": "https://www.youtube.com/channel/UCVwMX_MleTGJL_m40Z_FpfQ",
+     "label": "YouTube",
+     "icon": "youtube"
+    }
+   ]
+  },
+  "preFooter": {
+   "id": "sections--17223806025972__custom_liquid_tk7NdT",
+   "tag": "section",
+   "class": "shopify-section shopify-section-group-footer-group section",
+   "style": ".section-sections--17223806025972__custom_liquid_tk7NdT-padding {\n    padding-top: calc(40px * 0.75);\n    padding-bottom: calc(20px  * 0.75);\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-sections--17223806025972__custom_liquid_tk7NdT-padding {\n      padding-top: 40px;\n      padding-bottom: 20px;\n    }\n  }",
+   "inner": "color-background-1 gradient",
+   "padding": "section-sections--17223806025972__custom_liquid_tk7NdT-padding"
+  },
+  "footer": {
+   "id": "sections--17223806025972__footer",
+   "tag": "div",
+   "class": "shopify-section shopify-section-group-footer-group",
+   "style": ".footer {\n    margin-top: 0px;\n  }\n\n  .section-sections--17223806025972__footer-padding {\n    padding-top: 12px;\n    padding-bottom: 0px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .footer {\n      margin-top: 0px;\n    }\n\n    .section-sections--17223806025972__footer-padding {\n      padding-top: 16px;\n      padding-bottom: 0px;\n    }\n  }",
+   "footer": "footer color-background-1 gradient section-sections--17223806025972__footer-padding",
+   "blocksWrapper": "footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet scroll-trigger animate--slide-in",
+   "block": "footer-block grid__item footer-block--menu scroll-trigger animate--slide-in",
+   "menuBlock": "footer-block grid__item footer-block--menu scroll-trigger animate--slide-in",
+   "newsletter": "footer-block--newsletter scroll-trigger animate--slide-in",
+   "bottom": "footer__content-bottom scroll-trigger animate--slide-in"
+  }
+ },
+ "collection": {
+  "banner": {
+   "id": "template--17223805534452__main-collection-banner",
+   "tag": "div",
+   "class": "shopify-section section",
+   "style": "@media screen and (max-width: 749px) {\n    .collection-hero--with-image .collection-hero__inner {\n      padding-bottom: calc(4px + 2rem);\n    }\n  }",
+   "hero": "collection-hero collection-hero--with-image color-background-2 gradient",
+   "heroInner": "collection-hero__inner page-width scroll-trigger animate--fade-in"
+  },
+  "grid": {
+   "id": "template--17223805534452__main-collection-product-grid",
+   "tag": "div",
+   "class": "shopify-section section",
+   "style": ".section-template--17223805534452__main-collection-product-grid-padding {\n    padding-top: 15px;\n    padding-bottom: 51px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805534452__main-collection-product-grid-padding {\n      padding-top: 20px;\n      padding-bottom: 68px;\n    }\n  }",
+   "padding": "section-template--17223805534452__main-collection-product-grid-padding gradient color-background-1",
+   "productGrid": "grid product-grid grid--2-col-tablet-down grid--5-col-desktop",
+   "item": "grid__item scroll-trigger animate--slide-in",
+   "card": "card card--card card--media color-accent-1 gradient",
+   "cardStyle": "--ratio-percent: 125.0%;",
+   "cardInnerStyle": "--ratio-percent: 125.0%;",
+   "imageSizes": "(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+  }
+ },
+ "product": {
+  "main": {
+   "id": "template--17223805763828__main",
+   "tag": "section",
+   "class": "shopify-section section",
+   "style": ".section-template--17223805763828__main-padding {\n      padding-top: 27px;\n      padding-bottom: 33px;\n    }\n\n    @media screen and (min-width: 750px) {\n      .section-template--17223805763828__main-padding {\n        padding-top: 36px;\n        padding-bottom: 44px;\n      }\n    }",
+   "sectionInner": "section-template--17223805763828__main-padding gradient color-accent-2",
+   "product": "product product--small product--left product--stacked product--mobile-show grid grid--1-col grid--2-col-tablet",
+   "mediaWrapper": "grid__item product__media-wrapper",
+   "mediaList": "product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile",
+   "mediaItem": "product__media-item grid__item slider__slide is-active product__media-item--single product__media-item--variant scroll-trigger animate--fade-in",
+   "mediaContainer": "product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height",
+   "mediaContainerStyle": "--ratio: 0.7665920954511558; --preview-ratio: 0.7665920954511558;",
+   "infoWrapper": "product__info-wrapper grid__item product__info-wrapper--extra-padding scroll-trigger animate--slide-in",
+   "imageSizes": "(min-width: 1600px) 675px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)"
+  },
+  "related": {
+   "id": "template--17223805763828__related-products",
+   "tag": "section",
+   "class": "shopify-section section",
+   "style": ".section-template--17223805763828__related-products-padding {\n    padding-top: 27px;\n    padding-bottom: 51px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805763828__related-products-padding {\n      padding-top: 36px;\n      padding-bottom: 68px;\n    }\n  }"
+  },
+  "whatsappIcon": {
+   "img": {
+    "src": "https://silkenthread.in/cdn/shop/files/986960_whatsapp_icon_0f6cbc2f-9445-4907-b5fc-6adb670be928.png?v=1727551240",
+    "key": "files/986960_whatsapp_icon_0f6cbc2f-9445-4907-b5fc-6adb670be928.png",
+    "alt": "",
+    "width": null,
+    "height": null
+   }
+  },
+  "specs": [
+   {
+    "label": "Fabric",
+    "attribute": "materials",
+    "href": null,
+    "icon": {
+     "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M6.31104 9.13574C6.31104 8.99767 6.42296 8.88574 6.56104 8.88574H13.7464C13.8844 8.88574 13.9964 8.99767 13.9964 9.13574C13.9964 9.27381 13.8844 9.38574 13.7464 9.38574H6.56104C6.42296 9.38574 6.31104 9.27381 6.31104 9.13574Z\"></path> <path d=\"M6.31104 14.0544C6.31104 13.9164 6.42296 13.8044 6.56104 13.8044H13.439C13.577 13.8044 13.689 13.9164 13.689 14.0544C13.689 14.1925 13.577 14.3044 13.439 14.3044H6.56104C6.42296 14.3044 6.31104 14.1925 6.31104 14.0544Z\"></path> <path d=\"M6.92587 11.5952C6.92587 11.4571 7.0378 11.3452 7.17587 11.3452H12.8241C12.9622 11.3452 13.0741 11.4571 13.0741 11.5952C13.0741 11.7333 12.9622 11.8452 12.8241 11.8452H7.17587C7.0378 11.8452 6.92587 11.7333 6.92587 11.5952Z\"></path> <path d=\"M5.19623 1.77832C5.19623 0.949892 5.8678 0.27832 6.69623 0.27832H13.3038C14.1322 0.27832 14.8038 0.949893 14.8038 1.77832V3.46728C14.8038 4.29571 14.1322 4.96728 13.3038 4.96728H6.69623C5.8678 4.96728 5.19623 4.29571 5.19623 3.46728V1.77832ZM6.69623 1.27832C6.42009 1.27832 6.19623 1.50218 6.19623 1.77832V3.46728C6.19623 3.74342 6.42009 3.96728 6.69623 3.96728H13.3038C13.5799 3.96728 13.8038 3.74342 13.8038 3.46728V1.77832C13.8038 1.50218 13.5799 1.27832 13.3038 1.27832H6.69623Z\"></path> <path d=\"M3.73691 2.50806V18.7232H16.2631V2.50806H14.4981V1.50806H16.2631C16.8154 1.50806 17.2631 1.95577 17.2631 2.50806V18.7232C17.2631 19.2755 16.8154 19.7232 16.2631 19.7232H3.73691C3.18462 19.7232 2.73691 19.2755 2.73691 18.7232V2.50806C2.73691 1.95577 3.18462 1.50806 3.73691 1.50806H5.75974V2.50806L3.73691 2.50806Z\"></path></svg>"
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   },
+   {
+    "label": "Dimensions",
+    "attribute": "dimensions",
+    "href": null,
+    "icon": {
+     "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M18.9836 5.32852L14.6715 1.01638L1.01638 14.6715L5.32852 18.9836L18.9836 5.32852ZM15.3902 0.297691C14.9933 -0.0992303 14.3497 -0.0992303 13.9528 0.297691L0.297691 13.9528C-0.0992301 14.3497 -0.0992305 14.9932 0.297691 15.3902L4.60983 19.7023C5.00675 20.0992 5.65029 20.0992 6.04721 19.7023L19.7023 6.04721C20.0992 5.65029 20.0992 5.00675 19.7023 4.60983L15.3902 0.297691Z\" fill-rule=\"evenodd\"></path> <path d=\"M11.7863 2.67056C11.9848 2.4721 12.3065 2.4721 12.505 2.67056L14.4237 4.58927C14.6222 4.78774 14.6222 5.1095 14.4237 5.30796C14.2252 5.50642 13.9035 5.50642 13.705 5.30796L11.7863 3.38925C11.5878 3.19079 11.5878 2.86902 11.7863 2.67056Z\"></path> <path d=\"M8.93891 5.36331C9.13737 5.16485 9.45914 5.16485 9.6576 5.36331L11.5763 7.28202C11.7748 7.48048 11.7748 7.80225 11.5763 8.00071C11.3779 8.19917 11.0561 8.19917 10.8576 8.00071L8.93891 6.082C8.74045 5.88354 8.74045 5.56177 8.93891 5.36331Z\"></path> <path d=\"M6.24307 8.20742C6.44153 8.00896 6.76329 8.00896 6.96175 8.20742L8.88047 10.1261C9.07893 10.3246 9.07893 10.6464 8.88047 10.8448C8.68201 11.0433 8.36024 11.0433 8.16178 10.8448L6.24307 8.92611C6.0446 8.72765 6.0446 8.40588 6.24307 8.20742Z\"></path> <path d=\"M3.37296 10.8776C3.57142 10.6791 3.89319 10.6791 4.09165 10.8776L6.01036 12.7963C6.20882 12.9948 6.20882 13.3165 6.01036 13.515C5.8119 13.7134 5.49013 13.7134 5.29167 13.515L3.37296 11.5963C3.1745 11.3978 3.1745 11.076 3.37296 10.8776Z\"></path></svg>"
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   },
+   {
+    "label": "Zari Specifications",
+    "attribute": "zari_type",
+    "href": null,
+    "icon": {
+     "img": {
+      "src": "https://silkenthread.in/cdn/shop/files/zari_icon_32564c83-d250-4e82-b7e3-290c5cba495a.png?v=1764352908",
+      "key": "files/zari_icon_32564c83-d250-4e82-b7e3-290c5cba495a.png",
+      "alt": "",
+      "width": null,
+      "height": null
+     }
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   },
+   {
+    "label": "Origin",
+    "attribute": "origin",
+    "href": null,
+    "icon": {
+     "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M9.91038 18.5904L14.9458 9.80988C17.1744 5.9237 14.4213 1.03316 10.004 1.03316C5.61856 1.03316 2.85676 5.85475 5.01217 9.74644L9.91038 18.5904ZM10.004 0C4.84496 0 1.59264 5.67261 4.13039 10.2547L9.34236 19.6651C9.58751 20.1078 10.2108 20.1126 10.4625 19.6737L15.82 10.3316C18.4445 5.75498 15.2016 0 10.004 0Z\" fill-rule=\"evenodd\"></path> <path d=\"M12.9997 6.79602C12.9997 8.5559 11.6011 9.98256 9.87597 9.98256C8.1508 9.98256 6.75228 8.5559 6.75228 6.79602C6.75228 5.03615 8.1508 3.60949 9.87597 3.60949C11.6011 3.60949 12.9997 5.03615 12.9997 6.79602ZM9.87597 8.9494C11.0418 8.9494 11.9869 7.9853 11.9869 6.79602C11.9869 5.60675 11.0418 4.64265 9.87597 4.64265C8.71015 4.64265 7.76506 5.60675 7.76506 6.79602C7.76506 7.9853 8.71015 8.9494 9.87597 8.9494Z\"></path></svg>"
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   },
+   {
+    "label": "Genre",
+    "attribute": "weaving_genre",
+    "href": null,
+    "icon": {
+     "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M18.47 1.53H1.53L1.53 18.47H18.47V1.53ZM1.53 0.5C0.961149 0.5 0.5 0.961148 0.5 1.53V18.47C0.5 19.0389 0.961148 19.5 1.53 19.5H18.47C19.0389 19.5 19.5 19.0389 19.5 18.47V1.53C19.5 0.961149 19.0389 0.5 18.47 0.5H1.53Z\" fill-rule=\"evenodd\"></path> <path d=\"M9.99998 15.2238C12.885 15.2238 15.2237 12.885 15.2237 10C15.2237 7.11505 12.885 4.7763 9.99998 4.7763C7.11499 4.7763 4.77624 7.11505 4.77624 10C4.77624 12.885 7.11499 15.2238 9.99998 15.2238ZM9.99998 16.2538C13.4538 16.2538 16.2537 13.4539 16.2537 10C16.2537 6.54619 13.4538 3.7463 9.99998 3.7463C6.54613 3.7463 3.74624 6.54619 3.74624 10C3.74624 13.4539 6.54613 16.2538 9.99998 16.2538Z\" fill-rule=\"evenodd\"></path></svg>"
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   },
+   {
+    "label": "Craft Summary",
+    "attribute": "craft",
+    "href": null,
+    "icon": {
+     "img": {
+      "src": "https://silkenthread.in/cdn/shop/files/handloom_icon_1bd6f7ae-baa1-4fd0-b5e7-2ec72eb6950b.png?v=1764351660",
+      "key": "files/handloom_icon_1bd6f7ae-baa1-4fd0-b5e7-2ec72eb6950b.png",
+      "alt": "",
+      "width": null,
+      "height": null
+     }
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   },
+   {
+    "label": "Friendly Return Policy",
+    "attribute": null,
+    "href": "/pages/refund-policy",
+    "icon": {
+     "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M11.571 1.05882C11.571 0.750194 11.8198 0.5 12.1266 0.5H13.4572C17.0692 0.5 20 3.45304 20 7.08924C20 10.7255 17.0692 13.6785 13.4572 13.6785L1.89992 13.7105L1.30855 13.1197L1.89992 12.5484L13.4572 12.5608C16.4541 12.5608 18.8889 10.1096 18.8889 7.08924C18.8889 4.06891 16.4541 1.61765 13.4572 1.61765H12.1266C11.8198 1.61765 11.571 1.36745 11.571 1.05882Z\"></path> <path d=\"M6.00311 7.00677C6.22317 6.7917 6.57489 6.79679 6.78871 7.01815C7.00252 7.2395 6.99746 7.59329 6.7774 7.80836L6.00311 7.00677ZM1.30855 13.1197L6.73968 18.5463C6.9565 18.7647 6.95627 19.1185 6.73917 19.3366C6.52207 19.5547 6.17031 19.5544 5.9535 19.3361L0.162462 13.5034C0.0572388 13.3974 -0.00128425 13.2533 2.13868e-05 13.1036C0.00132703 12.9538 0.0623521 12.8108 0.169407 12.7067C0.3269 12.5535 1.78474 11.1291 3.20439 9.74186L6.00311 7.00677L6.7774 7.80836L3.97862 10.5435C2.95441 11.5444 1.8705 12.5709 1.30855 13.1197Z\"></path></svg>"
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   },
+   {
+    "label": "Shipping Policy",
+    "attribute": null,
+    "href": "/pages/shipping-policy",
+    "icon": {
+     "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M9.69502 0.6786C9.91338 0.601796 10.1516 0.603123 10.3691 0.682353L18.2151 3.54058C18.61 3.68445 18.8728 4.05988 18.8728 4.48018V14.4287C18.8728 14.8074 18.6588 15.1537 18.32 15.3231L10.4731 19.2465C10.196 19.385 9.87022 19.3873 9.59117 19.2526L1.45405 15.3244C1.10843 15.1576 0.888794 14.8076 0.888794 14.4239V4.48434C0.888794 4.05997 1.15665 3.68181 1.55699 3.541L9.69502 0.6786ZM6.07999 3.01017L2.5346 4.25719L10.149 7.63545L13.5692 6.118L6.07999 3.01017ZM6.78606 2.76183L14.1997 5.83828L17.5367 4.35774L10.0268 1.62195L6.78606 2.76183ZM1.88879 14.4239L1.88879 5.06467L9.64898 8.50762V18.1701L1.88879 14.4239ZM17.8728 14.4287L10.649 18.0405V8.50762L17.8728 5.30263V14.4287Z\" fill-rule=\"evenodd\"></path></svg>"
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   },
+   {
+    "label": "Size chart",
+    "attribute": null,
+    "href": "https://silkenthread.in/pages/size-chart",
+    "icon": {
+     "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M5.38585 1.09329C5.07555 1.09329 4.81943 1.35288 4.81943 1.66737V3.1424V3.68905V3.79657L2.58822 17.5451C2.53138 17.8619 2.74218 18.1574 3.04189 18.2081L3.04477 18.2086L7.0226 18.9029L7.0238 18.9031C7.03985 18.9058 7.05426 18.9067 7.12196 18.9067C7.2249 18.9067 7.34688 18.8779 7.49367 18.8011C7.61722 18.7011 7.68686 18.5755 7.70572 18.4512L7.70722 18.4414L9.22185 9.54571C9.37633 8.63834 10.6618 8.63833 10.8163 9.54568L12.3206 18.379C12.3651 18.656 12.5975 18.8507 12.8719 18.8507C12.9396 18.8507 12.954 18.8497 12.97 18.8471L12.9712 18.8469L16.9432 18.1536C17.1105 18.1199 17.2405 18.0327 17.3138 17.9238C17.4016 17.7932 17.4374 17.6315 17.4146 17.4768L15.1762 3.68905L15.1388 3.33082L15.1191 3.1424V1.66737C15.1191 1.35288 14.8629 1.09329 14.5526 1.09329H5.38585ZM3.74074 1.66737C3.74074 0.749069 4.47981 0 5.38585 0H14.5526C15.4587 0 16.1977 0.749069 16.1977 1.66737V3.24777L18.4804 17.3081C18.5452 17.7354 18.4484 18.1779 18.205 18.5397C17.9471 18.9231 17.548 19.149 17.1425 19.2281L17.1322 19.2301L13.1514 19.9248L13.1486 19.9253C13.0375 19.9441 12.9437 19.944 12.8803 19.944L12.8719 19.944C12.0855 19.944 11.3898 19.3778 11.2564 18.5579L11.2559 18.5552L10.0191 11.2923L8.77103 18.6229C8.70148 19.0708 8.44825 19.4502 8.10262 19.7049L8.07511 19.7252L8.04531 19.7418C7.7641 19.8986 7.45399 20 7.12196 20L7.1135 20C7.05014 20 6.95633 20.0001 6.84527 19.9813L6.8424 19.9808L2.86456 19.2865L2.86275 19.2862C1.97085 19.1345 1.36484 18.268 1.52597 17.3544L3.74074 3.70726V1.66737Z\"></path> <path d=\"M15.1762 3.68905H4.81943V3.1424H15.1191L15.1762 3.68905Z\"></path></svg>"
+    },
+    "listClass": "icon-with-text icon-with-text--horizontal list-unstyled"
+   }
+  ],
+  "accordionIcons": [
+   {
+    "heading": "More about the saree:",
+    "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M9.56285 11.959C9.36021 11.959 9.19593 11.7947 9.19593 11.5921V11.4654C9.19266 10.9745 9.27959 10.5556 9.51194 10.162C9.73885 9.77751 10.0875 9.44653 10.5519 9.09905C10.9668 8.78804 11.2183 8.53255 11.3688 8.28844C11.5132 8.05415 11.577 7.80994 11.577 7.49433V7.48101C11.577 6.58737 10.9199 5.94963 10.0093 5.94963C9.14693 5.94963 8.48176 6.556 8.39691 7.55858C8.38999 7.64041 8.35581 7.71754 8.29986 7.77765L8.29366 7.78431C8.22548 7.85755 8.13034 7.89977 8.03028 7.90119L7.55903 7.90785C7.43278 7.90963 7.31449 7.84638 7.24586 7.7404C7.19061 7.65507 7.1738 7.55171 7.19715 7.45492C7.30916 5.93601 8.41577 4.74287 10.0217 4.74287C11.6246 4.74287 12.8131 5.91906 12.8131 7.46103V7.47435C12.8131 7.98614 12.6995 8.4388 12.4473 8.86135C12.199 9.27731 11.8283 9.64397 11.3455 10.0059L11.3431 10.0077C10.929 10.313 10.7058 10.5344 10.5791 10.746C10.4596 10.9455 10.4072 11.1677 10.4072 11.5174V11.5921C10.4072 11.7947 10.2429 11.959 10.0403 11.959H9.56285ZM10.7049 14.3815C10.7049 14.8554 10.3695 15.2613 9.86668 15.2613C9.36996 15.2613 9.02231 14.862 9.02231 14.3815C9.02231 13.9045 9.37305 13.5084 9.86668 13.5084C10.3665 13.5084 10.7049 13.911 10.7049 14.3815Z\"></path> <path d=\"M18.5 10C18.5 14.6944 14.6944 18.5 10 18.5C5.30558 18.5 1.5 14.6944 1.5 10C1.5 5.30558 5.30558 1.5 10 1.5C14.6944 1.5 18.5 5.30558 18.5 10ZM10 17.4967C14.1403 17.4967 17.4967 14.1403 17.4967 10C17.4967 5.85971 14.1403 2.50335 10 2.50335C5.85971 2.50335 2.50335 5.85971 2.50335 10C2.50335 14.1403 5.85971 17.4967 10 17.4967Z\"></path></svg>"
+   },
+   {
+    "heading": "Care information",
+    "svg": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\"><path d=\"M10 5.2393L8.5149 3.77392C6.79996 2.08174 4.01945 2.08174 2.30451 3.77392C0.589562 5.4661 0.589563 8.2097 2.30451 9.90188L10 17.4952L17.6955 9.90188C19.4104 8.2097 19.4104 5.4661 17.6955 3.77392C15.9805 2.08174 13.2 2.08174 11.4851 3.77392L10 5.2393ZM10.765 3.06343C12.8777 0.978857 16.3029 0.978856 18.4155 3.06343C20.5282 5.148 20.5282 8.52779 18.4155 10.6124L10.72 18.2057C10.3224 18.5981 9.67763 18.5981 9.27996 18.2057L1.58446 10.6124C-0.528154 8.52779 -0.528154 5.14801 1.58446 3.06343C3.69708 0.978859 7.12233 0.978858 9.23495 3.06343L10 3.81832L10.765 3.06343Z\" fill-rule=\"evenodd\"></path></svg>"
+   }
+  ],
+  "moreAboutByGenre": {
+   "Kanjeevaram": "<ul class=\"metafield-single_line_text_field-array\"><li class=\"metafield-single_line_text_field\">Kanjeevaram silk saree is a magnificent creation of the craftsmen living in a small town, Kanchi (Kanchipuram), situated near the Chennai city of South India.The motifs used in an Indian Kanchipuram sari are heavily based on the Pallava temples, palaces and paintings, and are made in fine silk. The sheer magnitude of textures, colors and designs is astounding. it is said that the actress Rekha once caused a traffic jam in the streets of Paris, the fashion capital of the world, when she stepped out wearing a gold kanjeevaram saree!</li></ul>"
+  }
+ },
+ "page": {
+  "main": {
+   "id": "template--17223805665524__main",
+   "tag": "section",
+   "class": "shopify-section section",
+   "style": ".section-template--17223805665524__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805665524__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+   "container": "page-width page-width--narrow section-template--17223805665524__main-padding"
+  }
+ }
+}

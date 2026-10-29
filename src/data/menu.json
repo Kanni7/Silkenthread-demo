@@ -15,6 +15,7 @@
   "alt": "Silkenthread.in",
   "width": 290,
   "height": 120.83333333333333,
+  "style": null,
   "text": "Silkenthread.in"
  },
  "localization": "INR ₹ | India",
@@ -265,6 +266,7 @@
   "blocks": [
    {
     "heading": "Quick links",
+    "headingHtml": "<strong>Quick links</strong>",
     "links": [
      {
       "label": "Terms of Service",
@@ -291,11 +293,13 @@
    },
    {
     "heading": "Contact",
+    "headingHtml": "<strong>Contact</strong>",
     "links": [],
     "html": "<p>You can contact us on<br>M: +91-9663748945<br>E: cs@silkenthread.in<br>            <br>          </p>"
    },
    {
     "heading": "Registered office",
+    "headingHtml": "<strong>Registered office</strong>",
     "links": [],
     "html": "<p>Silkenthread India Pvt. Ltd.</p><p>Pune Address: 39/24A, Erandawane, Pune-411004</p>"
    }

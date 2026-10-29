@@ -1,0 +1,8 @@
+---
+// Product card. Markup lives in src/lib/card.js so client-side filtering renders identical cards.
+import { cardHtml } from '../lib/card.js';
+import { summary } from '../lib/data.js';
+const { product, sectionId, sizes, cardClass, ratioStyle, lazy = true, itemClass, itemId } = Astro.props;
+const html = cardHtml(summary(product), { sectionId, sizes, cardClass, ratioStyle, lazy, itemClass, itemAttrs: itemId ? ` id="${itemId}"` : '' });
+---
+<Fragment set:html={html} />

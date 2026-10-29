@@ -6,8 +6,8 @@
    reference the --st-* palette and fonts, so one edit changes every page.
    ========================================================================= */
 
-/* Fonts: both are free on Google Fonts (same families the live theme serves from Shopify's font CDN). */
-@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Libre+Caslon+Text:wght@400&display=swap');
+/* Fonts: Asul + Libre Caslon Text, both free on Google Fonts (the live theme serves the same families from
+   Shopify's font CDN). Loaded with a <link> in src/layouts/Base.astro (FONT_URL). */
 
 :root {
   /* ---- Palette (r,g,b triples: Craft uses rgb(var(--x)) / rgba(var(--x), a)) ---- */

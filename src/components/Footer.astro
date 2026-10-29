@@ -1,0 +1,68 @@
+---
+// Footer group: pre-footer custom text + Craft footer (link/text blocks, newsletter mock, policies).
+import Icon from './Icon.astro';
+import Section from './Section.astro';
+import { menu, templates, localHref } from '../lib/data.js';
+const { preFooter, footer: f } = templates.groups;
+const ft = menu.footer;
+const year = new Date().getFullYear();
+---
+<Section id={preFooter.id} tag="section" class={preFooter.class} style={preFooter.style}>
+  <Fragment set:html={ft.preFooterHtml} />
+</Section>
+<Section id={f.id} class={f.class} style={f.style}>
+  <footer class={f.footer}>
+    <div class="footer__content-top page-width">
+      <div class={f.blocksWrapper}>
+        {ft.blocks.map((b) => (
+          <div class:list={['footer-block grid__item', { 'footer-block--menu': b.links.length && !b.html?.includes('<p') }, 'scroll-trigger animate--slide-in']}>
+            {b.headingHtml && <h2 class="footer-block__heading inline-richtext" set:html={b.headingHtml} />}
+            {b.links.length && !b.html?.includes('<p') ? (
+              <ul class="footer-block__details-content list-unstyled">
+                {b.links.map((l) => (
+                  <li><a href={localHref(l.href)} class="link link--text list-menu__item list-menu__item--link">{l.label}</a></li>
+                ))}
+              </ul>
+            ) : (
+              <div class="footer-block__details-content rte" set:html={b.html} />
+            )}
+          </div>
+        ))}
+      </div>
+      <div class="footer-block--newsletter scroll-trigger animate--slide-in">
+        <div class="footer-block__newsletter">
+          <h2 class="footer-block__heading inline-richtext">{ft.newsletter.heading}</h2>
+          <form id="ContactFooter" class="footer__newsletter newsletter-form" data-mock-form novalidate>
+            <div class="newsletter-form__field-wrapper">
+              <div class="field">
+                <input id={`NewsletterForm--${f.id}`} type="email" name="contact[email]" class="field__input" value="" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder={ft.newsletter.placeholder} required />
+                <label class="field__label" for={`NewsletterForm--${f.id}`}>{ft.newsletter.placeholder}</label>
+                <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="Subscribe">
+                  <Icon name="arrow" />
+                </button>
+              </div>
+            </div>
+            <p class="concept-notice" role="status" hidden>Concept prototype: nothing was sent.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class={f.bottom}>
+      <div class="footer__content-bottom-wrapper page-width">
+        <div class="footer__column footer__localization isolate"></div>
+        <div class="footer__column footer__column--info"></div>
+      </div>
+      <div class="footer__content-bottom-wrapper page-width footer__content-bottom-wrapper--center">
+        <div class="footer__copyright caption">
+          <small class="copyright__content">&copy; {year}, <a href="/" title="">Silkenthread.in</a></small>
+          <small class="copyright__content"><a target="_blank" rel="nofollow noopener" href="https://www.shopify.com">Powered by Shopify</a></small>
+          <ul class="policies list-unstyled">
+            {ft.policies.map((p) => (
+              <li><small class="copyright__content"><a href={localHref(p.href)}>{p.label}</a></small></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Section>

@@ -2,13 +2,15 @@
 import * as cheerio from 'cheerio';
 
 export const load = (html) => cheerio.load(html);
+export { cleanClass };
 export const txt = (s) => (s || '').replace(/\s+/g, ' ').trim();
 
 // Canonical image key for a Shopify file: "files/NAME.jpg" (same for cdn.shopify.com and /cdn/shop URLs).
+// Nested folders are kept, e.g. "files/preview_images/NAME.jpg" (video thumbnails).
 export function imageKey(url) {
   if (!url) return null;
   const u = new URL(url.startsWith('//') ? 'https:' + url : url, 'https://silkenthread.in');
-  const m = u.pathname.match(/\/(files|products|collections|articles)\/([^/]+)$/);
+  const m = u.pathname.match(/\/(?:cdn\/shop|s\/files\/\d+\/\d+\/\d+\/\d+)\/(files|products|collections|articles)\/(.+)$/);
   return m ? `${m[1]}/${decodeURIComponent(m[2])}` : null;
 }
 
@@ -25,8 +27,20 @@ export function image($, el) {
   if (!img || !img.length) return null;
   const src = img.attr('src') || img.attr('data-src') || (img.attr('srcset') || '').split(',').pop().trim().split(' ')[0];
   if (!src || !/\/cdn\/shop\/|cdn\.shopify\.com\/s\/files/.test(src)) return null;
-  return { src: baseImageUrl(src), key: imageKey(src), alt: img.attr('alt') ?? '', width: +img.attr('width') || null, height: +img.attr('height') || null };
+  return { src: baseImageUrl(src), key: imageKey(src), alt: img.attr('alt') ?? '', width: +img.attr('width') || null, height: +img.attr('height') || null, style: img.attr('style') || null };
 }
+
+// Structural elements whose classes/inline styles vary per section instance (Craft section settings).
+const ROLES = {
+  slideshow: { component: 'slideshow-component', controls: '.slideshow__controls', slider: '.slideshow' },
+  'collection-list': { wrapper: '.collection-list-wrapper', titleWrapper: '.title-wrapper-with-link, .title-wrapper', title: '.title, .collection-list-title', slider: 'slider-component', list: 'ul.collection-list', item: 'li.collection-list__item', cardWrapper: '.card-wrapper', card: '.card', cardInner: '.card__inner', cardMedia: '.card__inner .media', heading: '.card > .card__content .card__heading', sliderButtons: '.slider-buttons', viewAll: '.center' },
+  'featured-collection': { collection: '.collection', titleWrapper: '.collection__title', title: '.collection__title .title', slider: 'slider-component', list: 'ul.product-grid', item: 'li.grid__item', card: '.product-card-wrapper .card', cardInner: '.product-card-wrapper .card__inner', sliderButtons: '.slider-buttons', viewAll: '.center' },
+  multicolumn: { root: '.multicolumn', container: '.multicolumn > div', titleWrapper: '.title-wrapper-with-link', title: 'h2.title', slider: 'slider-component', list: 'ul.multicolumn-list', item: 'li.multicolumn-list__item', card: '.multicolumn-card', imageWrapper: '.multicolumn-card__image-wrapper', media: '.multicolumn-card__image-wrapper .media', info: '.multicolumn-card__info', sliderButtons: '.slider-buttons', viewAll: '.center' },
+  'main-page': { container: '.page-width', title: 'h1', rte: '.rte' },
+  'contact-form': { container: '.contact', title: 'h2', form: 'form' },
+};
+const cleanClass = (c) => (c || '').split(/\s+/).filter((x) => x && x !== 'scroll-trigger--offscreen').join(' ');
+const role = ($, s, sel) => { const e = s.find(sel).first(); return e.length ? { class: cleanClass(e.attr('class')), style: e.attr('style') || null, tag: e[0].name } : null; };
 
 const link = ($, a) => (a && a.length ? { label: txt(a.text()), href: a.attr('href') } : null);
 
@@ -37,7 +51,8 @@ export function parseSection($, sec) {
   const style = s.find('style').map((i, el) => $(el).html()).get().join('\n').trim();
   const wrapper = s.children().not('style,script,link').first();
   const out = {
-    id, title: txt(s.find('.title-wrapper .title, h2.title, .title-wrapper-with-link .title').first().text()) || null,
+    tag: sec.name,
+    id, title: txt(s.find('.title-wrapper .title, h2.title, .title-wrapper-with-link .title, .collection-list-title').first().text()) || null,
     classes: (wrapper.attr('class') || '').split(/\s+/).filter(Boolean),
     style: style || null,
   };
@@ -47,7 +62,7 @@ export function parseSection($, sec) {
   if (viewAll.length) out.viewAll = link($, viewAll);
 
   if (s.find('slideshow-component').length) {
-    const sc = s.find('slideshow-component').first();
+    const sc = s.find('[data-autoplay]').first(); // settings live on the inner .slideshow element
     out.type = 'slideshow';
     out.settings = { autoplay: sc.attr('data-autoplay') === 'true', speed: +sc.attr('data-speed') || null };
     out.items = s.find('.slideshow__slide').map((i, el) => {
@@ -58,6 +73,9 @@ export function parseSection($, sec) {
         buttons: sl.find('.banner__buttons a').map((j, a) => ({ ...link($, $(a)), classes: $(a).attr('class') })).get(),
         image: image($, sl.find('.slideshow__media, .banner__media').first()),
         boxClasses: (sl.find('.banner__box').attr('class') || '').split(/\s+/).filter(Boolean),
+        headingClass: cleanClass(sl.find('.banner__heading').attr('class')),
+        textWrapperClass: cleanClass(sl.find('.slideshow__text-wrapper').attr('class')),
+        mediaClass: cleanClass(sl.find('.slideshow__media').attr('class')),
       };
     }).get();
   } else if (s.find('.product-grid, .card-wrapper.product-card-wrapper, .card--product, [id^=CardLink-]').length && !s.find('.collection-list__item').length) {
@@ -107,6 +125,8 @@ export function parseSection($, sec) {
     out.images = s.find('img').map((i, el) => image($, $(el))).get().filter(Boolean);
     out.links = s.find('a[href]').map((i, a) => link($, $(a))).get();
   }
+  const roles = ROLES[out.type];
+  if (roles) out.layout = Object.fromEntries(Object.entries(roles).map(([k, sel]) => [k, role($, s, sel)]).filter(([, v]) => v));
   return out;
 }
 

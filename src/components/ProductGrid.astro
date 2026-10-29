@@ -1,0 +1,29 @@
+---
+// Craft featured-collection section: product cards in a slider (home, what's new).
+import Section from './Section.astro';
+import SliderButtons from './SliderButtons.astro';
+import ProductCard from './ProductCard.astro';
+import { productMap } from '../lib/data.js';
+const { section: s } = Astro.props;
+const L = s.layout;
+const products = s.productHandles.map((h) => productMap.get(h)).filter(Boolean);
+const sizes = '(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)';
+---
+<Section id={s.id} tag={s.tag} style={s.style}>
+  <div class={s.classes.join(' ')}>
+    <div class={L.collection.class}>
+      <div class={L.titleWrapper.class}>{s.title && <h2 class={L.title?.class || 'title inline-richtext h2'}>{s.title}</h2>}</div>
+      <slider-component class={L.slider.class}>
+        <ul id={`Slider-${s.id}`} class={L.list.class} role="list" aria-label="Slider">
+          {products.map((p, i) => (
+            <ProductCard product={p} sectionId={s.id} sizes={sizes} cardClass={L.card.class} ratioStyle={L.card.style} itemClass={L.item.class} itemId={`Slide-${s.id}-${i + 1}`} />
+          ))}
+        </ul>
+        {L.sliderButtons && <SliderButtons class={L.sliderButtons.class} controls={`Slider-${s.id}`} total={products.length} counter={false} />}
+      </slider-component>
+      {L.viewAll && s.viewAll && (
+        <div class={L.viewAll.class}><a href={s.viewAll.href} class="button">{s.viewAll.label}</a></div>
+      )}
+    </div>
+  </div>
+</Section>

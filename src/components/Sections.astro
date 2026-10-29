@@ -1,0 +1,16 @@
+---
+// Renders a list of parsed Shopify sections (home.json / pages.json) with the matching component.
+import HeroSlideshow from './HeroSlideshow.astro';
+import CollectionCarousel from './CollectionCarousel.astro';
+import Multicolumn from './Multicolumn.astro';
+import ProductGrid from './ProductGrid.astro';
+import MainPage from './MainPage.astro';
+import ContactForm from './ContactForm.astro';
+import Section from './Section.astro';
+const { sections = [] } = Astro.props;
+const COMPONENTS = { slideshow: HeroSlideshow, 'collection-list': CollectionCarousel, multicolumn: Multicolumn, 'featured-collection': ProductGrid, 'main-page': MainPage, 'contact-form': ContactForm };
+---
+{sections.map((s) => {
+  const C = COMPONENTS[s.type];
+  return C ? <C section={s} /> : <Section id={s.id} tag={s.tag} style={s.style}><Fragment set:html={s.html} /></Section>;
+})}

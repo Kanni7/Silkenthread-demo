@@ -1,0 +1,39 @@
+---
+import Icon from './Icon.astro';
+import Section from './Section.astro';
+import { menu, templates, localHref } from '../lib/data.js';
+const a = templates.groups.announcement;
+const slides = menu.announcements;
+---
+<Section id={a.id} class={a.class} style={a.style}>
+  <div class={a.utilityBar}>
+    <div class="page-width utility-bar__grid">
+      <slideshow-component class="announcement-bar" role="region" aria-roledescription="Carousel" aria-label="Announcement bar">
+        <div class="announcement-bar-slider slider-buttons">
+          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="Previous announcement" aria-controls={`Slider-${a.id}`}>
+            <Icon name="caret" />
+          </button>
+          <div class="grid grid--1-col slider slider--everywhere" id={`Slider-${a.id}`} aria-live="polite" aria-atomic="true" data-autoplay={String(a.autoplay)} data-speed={a.speed}>
+            {slides.map((s, i) => (
+              <div class="slideshow__slide slider__slide grid__item grid--1-col" id={`Slide-${a.id}-${i + 1}`} role="group" aria-roledescription="Announcement" aria-label={`${i + 1} of ${slides.length}`} tabindex="-1">
+                <div class="announcement-bar__announcement" role="region" aria-label="Announcement">
+                  {s.href ? (
+                    <a href={localHref(s.href)} class="announcement-bar__link link link--text focus-inset animate-arrow">
+                      <p class="announcement-bar__message h5"><span>{s.text}</span><Icon name="arrow" /></p>
+                    </a>
+                  ) : (
+                    <p class="announcement-bar__message h5"><span>{s.text}</span></p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <button type="button" class="slider-button slider-button--next" name="next" aria-label="Next announcement" aria-controls={`Slider-${a.id}`}>
+            <Icon name="caret" />
+          </button>
+        </div>
+      </slideshow-component>
+      <div class="localization-wrapper"></div>
+    </div>
+  </div>
+</Section>

@@ -191,7 +191,7 @@ const menuTree = (ul) => $h(ul).children('li').map((i, li) => {
 const desktopMenu = menuTree($h('.header__inline-menu > ul.list-menu').first());
 const footerBlocks = $h('.footer-block').map((i, b) => {
   const B = $h(b);
-  return { heading: txt(B.find('.footer-block__heading').text()) || null, links: B.find('a[href]').map((j, a) => ({ label: txt($h(a).text()), href: $h(a).attr('href') })).get(), html: B.find('.rte, .footer-block__details-content').first().html()?.trim() || null };
+  return { heading: txt(B.find('.footer-block__heading').text()) || null, headingHtml: B.find('.footer-block__heading').html()?.trim() || null, links: B.find('a[href]').map((j, a) => ({ label: txt($h(a).text()), href: $h(a).attr('href') })).get(), html: B.find('.rte, .footer-block__details-content').first().html()?.trim() || null };
 }).get();
 const preFooter = $h('[id$="__custom_liquid_tk7NdT"]');
 write('menu.json', {

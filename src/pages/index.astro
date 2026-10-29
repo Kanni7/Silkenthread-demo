@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import Sections from '../components/Sections.astro';
+import home from '../data/home.json';
+---
+<Base title={home.title} isHome>
+  <Sections sections={home.sections} />
+</Base>

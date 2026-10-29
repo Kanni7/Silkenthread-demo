@@ -23,6 +23,16 @@ for (const f of fs.readdirSync('reference/html')) {
   }
 }
 
+// Demo pages render product cards from products.json, whose photos can differ from the capture:
+// also fetch card + hover images for the homepage carousel products.
+const products = new Map(JSON.parse(fs.readFileSync('src/data/products.json', 'utf8')).map((p) => [p.handle, p]));
+const home = JSON.parse(fs.readFileSync('src/data/home.json', 'utf8'));
+for (const s of home.sections.filter((s) => s.productHandles)) {
+  for (const h of s.productHandles) for (const img of products.get(h)?.images.slice(0, 2) || []) {
+    if (img.key && !found.has(img.key)) found.set(img.key, new URL(img.src).searchParams.get('v') || '');
+  }
+}
+
 await loadRobots();
 const manifest = {};
 let bytes = 0;

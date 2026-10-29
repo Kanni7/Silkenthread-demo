@@ -76,13 +76,13 @@
    "app": false
   },
   {
-   "file": "component-collection-hero.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-collection-hero.css?v=125511329265726850081704720054",
+   "file": "section-image-banner.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-image-banner.css?v=157856879886144226731704720056",
    "app": false
   },
   {
-   "file": "template-collection.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/template-collection.css?v=58558206033505836701704720056",
+   "file": "section-collection-list.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-collection-list.css?v=182060234197658279051781041419",
    "app": false
   },
   {
@@ -91,18 +91,8 @@
    "app": false
   },
   {
-   "file": "component-facets.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-facets.css?v=58939960381279492111704720054",
-   "app": false
-  },
-  {
-   "file": "component-show-more.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-show-more.css?v=139536189637226996221704720055",
-   "app": false
-  },
-  {
-   "file": "component-visual-display.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-visual-display.css?v=68781107096012990521704720055",
+   "file": "template-collection.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/template-collection.css?v=58558206033505836701704720056",
    "app": false
   },
   {
@@ -116,8 +106,8 @@
    "app": false
   },
   {
-   "file": "component-pagination.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-pagination.css?v=136206814810731739951704720055",
+   "file": "section-multicolumn.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-multicolumn.css?v=73131927254955092661727692557",
    "app": false
   },
   {
@@ -136,28 +126,28 @@
    "app": false
   },
   {
-   "file": "section-image-banner.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-image-banner.css?v=157856879886144226731704720056",
+   "file": "component-collection-hero.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-collection-hero.css?v=125511329265726850081704720054",
    "app": false
   },
   {
-   "file": "section-collection-list.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-collection-list.css?v=182060234197658279051781041419",
+   "file": "component-facets.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-facets.css?v=58939960381279492111704720054",
    "app": false
   },
   {
-   "file": "section-multicolumn.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-multicolumn.css?v=73131927254955092661727692557",
+   "file": "component-show-more.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-show-more.css?v=139536189637226996221704720055",
    "app": false
   },
   {
-   "file": "section-main-page.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-main-page.css?v=848677459125201531704720056",
+   "file": "component-visual-display.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-visual-display.css?v=68781107096012990521704720055",
    "app": false
   },
   {
-   "file": "section-contact-form.css",
-   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-contact-form.css?v=124756058432495035521704720056",
+   "file": "component-pagination.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/component-pagination.css?v=136206814810731739951704720055",
    "app": false
   },
   {
@@ -188,6 +178,16 @@
   {
    "file": "section-related-products.css",
    "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-related-products.css?v=80324771040738084201704720056",
+   "app": false
+  },
+  {
+   "file": "section-main-page.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-main-page.css?v=848677459125201531704720056",
+   "app": false
+  },
+  {
+   "file": "section-contact-form.css",
+   "url": "https://silkenthread.in/cdn/shop/t/14/assets/section-contact-form.css?v=124756058432495035521704720056",
    "app": false
   }
  ],

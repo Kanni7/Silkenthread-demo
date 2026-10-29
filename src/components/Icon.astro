@@ -1,0 +1,8 @@
+---
+// Inline SVG icon extracted from the live theme (src/data/icons.json).
+import { icons } from '../lib/data.js';
+interface Props { name: string; class?: string }
+const { name, class: extra = '' } = Astro.props;
+const svg = (icons[name] || '').replace('<svg', `<svg class="${[extra, 'icon', `icon-${name}`].filter(Boolean).join(' ')}"`);
+---
+<Fragment set:html={svg} />

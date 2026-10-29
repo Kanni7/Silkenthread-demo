@@ -1,0 +1,12 @@
+---
+// Craft main-page section: page title + rich text.
+import Section from './Section.astro';
+const { section: s } = Astro.props;
+const L = s.layout || {};
+---
+<Section id={s.id} tag={s.tag} style={s.style}>
+  <div class={L.container?.class || 'page-width page-width--narrow'}>
+    <h1 class={L.title?.class || 'main-page-title page-title h0'}>{s.title}</h1>
+    {s.html && <div class={L.rte?.class || 'rte'} set:html={s.html} />}
+  </div>
+</Section>

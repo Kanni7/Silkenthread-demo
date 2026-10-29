@@ -1,0 +1,10 @@
+---
+// Shopify section wrapper: keeps the live section id/classes and its per-section <style> (padding etc.).
+interface Props { id: string; tag?: string; class?: string; style?: string | null }
+const { id, tag = 'div', class: cls = 'shopify-section section', style } = Astro.props;
+const Tag = tag;
+---
+<Tag id={`shopify-section-${id}`} class={cls}>
+  {style && <style is:inline set:html={style} />}
+  <slot />
+</Tag>

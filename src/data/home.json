@@ -2,6 +2,7 @@
  "title": "Finest Indian Fabrics & Weaves Saree | SilkenThread.in – Silkenthread.in",
  "sections": [
   {
+   "tag": "section",
    "id": "template--17223805567220__8e214b42-3567-4038-b08a-cb391fdc4c04",
    "title": null,
    "classes": [
@@ -11,8 +12,8 @@
    "style": "#Slide-template--17223805567220__8e214b42-3567-4038-b08a-cb391fdc4c04-1 .banner__media::after {\n          opacity: 0.0;\n        }\n      \n\n        #Slide-template--17223805567220__8e214b42-3567-4038-b08a-cb391fdc4c04-2 .banner__media::after {\n          opacity: 0.0;\n        }\n      \n\n        #Slide-template--17223805567220__8e214b42-3567-4038-b08a-cb391fdc4c04-3 .banner__media::after {\n          opacity: 0.0;\n        }\n      \n #shopify-section-template--17223805567220__8e214b42-3567-4038-b08a-cb391fdc4c04 h2 {}",
    "type": "slideshow",
    "settings": {
-    "autoplay": false,
-    "speed": null
+    "autoplay": true,
+    "speed": 5
    },
    "items": [
     {
@@ -30,7 +31,8 @@
       "key": "files/rn-image_picker_lib_temp_2506b49c-5441-449c-b718-30ad66c4df71.jpg",
       "alt": "",
       "width": null,
-      "height": 1280
+      "height": 1280,
+      "style": null
      },
      "boxClasses": [
       "slideshow__text",
@@ -41,7 +43,10 @@
       "gradient",
       "slideshow__text--center",
       "slideshow__text-mobile--center"
-     ]
+     ],
+     "headingClass": "banner__heading inline-richtext h1",
+     "textWrapperClass": "slideshow__text-wrapper banner__content banner__content--middle-center page-width banner--desktop-transparent scroll-trigger animate--slide-in",
+     "mediaClass": "slideshow__media banner__media media"
     },
     {
      "heading": "Regal Splendor",
@@ -58,7 +63,8 @@
       "key": "files/PXL_20260422_063341250.jpg",
       "alt": "Orange saree with gold patterns draped over a stand against a textured wall.",
       "width": null,
-      "height": 704
+      "height": 704,
+      "style": null
      },
      "boxClasses": [
       "slideshow__text",
@@ -69,7 +75,10 @@
       "gradient",
       "slideshow__text--center",
       "slideshow__text-mobile--right"
-     ]
+     ],
+     "headingClass": "banner__heading inline-richtext h0",
+     "textWrapperClass": "slideshow__text-wrapper banner__content banner__content--middle-center page-width banner--desktop-transparent",
+     "mediaClass": "slideshow__media banner__media media"
     },
     {
      "heading": "Something New",
@@ -86,7 +95,8 @@
       "key": "files/download_ce31da3a-832a-4384-9ffe-120078c9c4c7.jpg",
       "alt": "1",
       "width": null,
-      "height": 1600
+      "height": 1600,
+      "style": null
      },
      "boxClasses": [
       "slideshow__text",
@@ -97,11 +107,32 @@
       "gradient",
       "slideshow__text--center",
       "slideshow__text-mobile--center"
-     ]
+     ],
+     "headingClass": "banner__heading inline-richtext h1",
+     "textWrapperClass": "slideshow__text-wrapper banner__content banner__content--middle-center page-width banner--desktop-transparent",
+     "mediaClass": "slideshow__media banner__media media"
     }
-   ]
+   ],
+   "layout": {
+    "component": {
+     "class": "slider-mobile-gutter page-width",
+     "style": null,
+     "tag": "slideshow-component"
+    },
+    "controls": {
+     "class": "slideshow__controls slideshow__controls--top slider-buttons no-js-hidden",
+     "style": null,
+     "tag": "div"
+    },
+    "slider": {
+     "class": "slideshow banner banner--small grid grid--1-col slider slider--everywhere scroll-trigger animate--fade-in",
+     "style": null,
+     "tag": "div"
+    }
+   }
   },
   {
+   "tag": "section",
    "id": "template--17223805567220__collection_list_fh6Jm7",
    "title": null,
    "classes": [
@@ -116,10 +147,11 @@
      "href": "/collections/pattu-x-cotton-venkatagiris",
      "image": {
       "src": "https://silkenthread.in/cdn/shop/files/preview_images/6e725cf13d494172a7fc15e1a9108a08.thumbnail.0000000000.jpg?v=1792592285",
-      "key": null,
+      "key": "files/preview_images/6e725cf13d494172a7fc15e1a9108a08.thumbnail.0000000000.jpg",
       "alt": "",
       "width": 576,
-      "height": 1024
+      "height": 1024,
+      "style": null
      }
     },
     {
@@ -130,7 +162,8 @@
       "key": "files/download_6890b741-1b17-4bd9-9235-8fa3d57c1200.jpg",
       "alt": "",
       "width": 3120,
-      "height": 4160
+      "height": 4160,
+      "style": null
      }
     },
     {
@@ -141,7 +174,8 @@
       "key": "files/download_f63e087d-f2c3-45e3-bc81-d2828e9be7e2.jpg",
       "alt": "",
       "width": 1012,
-      "height": 1280
+      "height": 1280,
+      "style": null
      }
     },
     {
@@ -152,7 +186,8 @@
       "key": "files/download_8159eda1-420e-4042-bc8a-d982727046cf.jpg",
       "alt": "",
       "width": 1600,
-      "height": 1200
+      "height": 1200,
+      "style": null
      }
     },
     {
@@ -163,12 +198,66 @@
       "key": "files/download_7486aef7-e622-4e08-a18c-0ebd731f3ccf.jpg",
       "alt": "",
       "width": 3000,
-      "height": 4000
+      "height": 4000,
+      "style": null
      }
     }
-   ]
+   ],
+   "layout": {
+    "wrapper": {
+     "class": "collection-list-wrapper page-width isolate page-width-desktop no-heading no-mobile-link section-template--17223805567220__collection_list_fh6Jm7-padding",
+     "style": null,
+     "tag": "div"
+    },
+    "slider": {
+     "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+     "style": null,
+     "tag": "slider-component"
+    },
+    "list": {
+     "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down slider slider--tablet grid--peek collection-list--5-items",
+     "style": null,
+     "tag": "ul"
+    },
+    "item": {
+     "class": "collection-list__item grid__item slider__slide scroll-trigger animate--slide-in",
+     "style": "--animation-order: 1;",
+     "tag": "li"
+    },
+    "cardWrapper": {
+     "class": "card-wrapper animate-arrow collection-card-wrapper",
+     "style": null,
+     "tag": "div"
+    },
+    "card": {
+     "class": "card card--standard card--media",
+     "style": "--ratio-percent: 125.0%;",
+     "tag": "div"
+    },
+    "cardInner": {
+     "class": "card__inner color-accent-1 gradient ratio",
+     "style": "--ratio-percent: 125.0%;",
+     "tag": "div"
+    },
+    "cardMedia": {
+     "class": "media media--transparent media--hover-effect",
+     "style": null,
+     "tag": "div"
+    },
+    "heading": {
+     "class": "card__heading",
+     "style": null,
+     "tag": "h3"
+    },
+    "sliderButtons": {
+     "class": "slider-buttons",
+     "style": null,
+     "tag": "div"
+    }
+   }
   },
   {
+   "tag": "section",
    "id": "template--17223805567220__166180024032d53842",
    "title": null,
    "classes": [
@@ -207,9 +296,52 @@
     "cot2192026preeti",
     "cot2192026pankaj",
     "cot2192026pranav"
-   ]
+   ],
+   "layout": {
+    "collection": {
+     "class": "collection section-template--17223805567220__166180024032d53842-padding",
+     "style": null,
+     "tag": "div"
+    },
+    "titleWrapper": {
+     "class": "collection__title title-wrapper title-wrapper--no-top-margin page-width title-wrapper--self-padded-tablet-down collection__title--desktop-slider",
+     "style": null,
+     "tag": "div"
+    },
+    "slider": {
+     "class": "slider-mobile-gutter slider-component-desktop scroll-trigger animate--slide-in",
+     "style": null,
+     "tag": "slider-component"
+    },
+    "list": {
+     "class": "grid product-grid contains-card contains-card--product grid--5-col-desktop grid--2-col-tablet-down slider slider--desktop slider--tablet grid--peek",
+     "style": null,
+     "tag": "ul"
+    },
+    "item": {
+     "class": "grid__item slider__slide scroll-trigger animate--slide-in",
+     "style": "--animation-order: 1;",
+     "tag": "li"
+    },
+    "card": {
+     "class": "card card--card card--media color-accent-1 gradient",
+     "style": "--ratio-percent: 125.0%;",
+     "tag": "div"
+    },
+    "cardInner": {
+     "class": "card__inner ratio",
+     "style": "--ratio-percent: 125.0%;",
+     "tag": "div"
+    },
+    "sliderButtons": {
+     "class": "slider-buttons no-js-hidden",
+     "style": null,
+     "tag": "div"
+    }
+   }
   },
   {
+   "tag": "section",
    "id": "template--17223805567220__16637408496d439d7e",
    "title": null,
    "classes": [
@@ -233,7 +365,8 @@
       "key": "files/1000553126.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -248,7 +381,8 @@
       "key": "files/1000553128.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -263,7 +397,8 @@
       "key": "files/1000553130.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -278,12 +413,66 @@
       "key": "files/1000553132.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     }
-   ]
+   ],
+   "layout": {
+    "root": {
+     "class": "multicolumn color-background-1 gradient no-heading",
+     "style": null,
+     "tag": "div"
+    },
+    "container": {
+     "class": "page-width section-template--17223805567220__16637408496d439d7e-padding isolate scroll-trigger animate--slide-in",
+     "style": "--animation-order: 0;",
+     "tag": "div"
+    },
+    "slider": {
+     "class": "slider-mobile-gutter",
+     "style": null,
+     "tag": "slider-component"
+    },
+    "list": {
+     "class": "multicolumn-list contains-content-container grid grid--2-col-tablet-down grid--4-col-desktop",
+     "style": null,
+     "tag": "ul"
+    },
+    "item": {
+     "class": "multicolumn-list__item grid__item center scroll-trigger animate--slide-in",
+     "style": "--animation-order: 1;",
+     "tag": "li"
+    },
+    "card": {
+     "class": "multicolumn-card content-container",
+     "style": null,
+     "tag": "div"
+    },
+    "imageWrapper": {
+     "class": "multicolumn-card__image-wrapper multicolumn-card__image-wrapper--full-width",
+     "style": null,
+     "tag": "div"
+    },
+    "media": {
+     "class": "media media--transparent media--square",
+     "style": null,
+     "tag": "div"
+    },
+    "info": {
+     "class": "multicolumn-card__info",
+     "style": null,
+     "tag": "div"
+    },
+    "viewAll": {
+     "class": "multicolumn-list__item grid__item center scroll-trigger animate--slide-in",
+     "style": "--animation-order: 1;",
+     "tag": "li"
+    }
+   }
   },
   {
+   "tag": "section",
    "id": "template--17223805567220__multicolumn_GNNTqC",
    "title": "Shop by colour",
    "classes": [
@@ -306,7 +495,8 @@
       "key": "files/red_2.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -321,7 +511,8 @@
       "key": "files/green_2.png",
       "alt": "",
       "width": 3200,
-      "height": 4000
+      "height": 4000,
+      "style": null
      }
     },
     {
@@ -336,7 +527,8 @@
       "key": "files/yellow_2.png",
       "alt": "",
       "width": 3200,
-      "height": 4000
+      "height": 4000,
+      "style": null
      }
     },
     {
@@ -351,7 +543,8 @@
       "key": "files/blue_2.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -366,7 +559,8 @@
       "key": "files/purple2.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -381,7 +575,8 @@
       "key": "files/orange2.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -396,7 +591,8 @@
       "key": "files/1000551181.jpg",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -411,7 +607,8 @@
       "key": "files/white2.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -426,7 +623,8 @@
       "key": "files/black2.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -441,7 +639,8 @@
       "key": "files/1000552848.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -456,7 +655,8 @@
       "key": "files/1000552919.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     },
     {
@@ -471,14 +671,83 @@
       "key": "files/1000553005.png",
       "alt": "",
       "width": 3200,
-      "height": 3200
+      "height": 3200,
+      "style": null
      }
     }
-   ]
+   ],
+   "layout": {
+    "root": {
+     "class": "multicolumn color-background-1 gradient",
+     "style": null,
+     "tag": "div"
+    },
+    "container": {
+     "class": "page-width section-template--17223805567220__multicolumn_GNNTqC-padding isolate scroll-trigger animate--slide-in",
+     "style": "--animation-order: 5;",
+     "tag": "div"
+    },
+    "titleWrapper": {
+     "class": "title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin",
+     "style": null,
+     "tag": "div"
+    },
+    "title": {
+     "class": "title inline-richtext h2",
+     "style": null,
+     "tag": "h2"
+    },
+    "slider": {
+     "class": "slider-mobile-gutter",
+     "style": null,
+     "tag": "slider-component"
+    },
+    "list": {
+     "class": "multicolumn-list contains-content-container grid grid--2-col-tablet-down grid--6-col-desktop slider slider--mobile grid--peek",
+     "style": null,
+     "tag": "ul"
+    },
+    "item": {
+     "class": "multicolumn-list__item grid__item slider__slide scroll-trigger animate--slide-in",
+     "style": "--animation-order: 6;",
+     "tag": "li"
+    },
+    "card": {
+     "class": "multicolumn-card content-container",
+     "style": null,
+     "tag": "div"
+    },
+    "imageWrapper": {
+     "class": "multicolumn-card__image-wrapper multicolumn-card__image-wrapper--full-width",
+     "style": null,
+     "tag": "div"
+    },
+    "media": {
+     "class": "media media--transparent media--portrait",
+     "style": null,
+     "tag": "div"
+    },
+    "info": {
+     "class": "multicolumn-card__info",
+     "style": null,
+     "tag": "div"
+    },
+    "sliderButtons": {
+     "class": "slider-buttons no-js-hidden medium-hide",
+     "style": null,
+     "tag": "div"
+    },
+    "viewAll": {
+     "class": "center small-hide medium-hide",
+     "style": null,
+     "tag": "div"
+    }
+   }
   },
   {
+   "tag": "section",
    "id": "template--17223805567220__collection-list",
-   "title": null,
+   "title": "Shop by occasion",
    "classes": [
     "color-background-1",
     "gradient"
@@ -494,7 +763,8 @@
       "key": "collections/rn-image_picker_lib_temp_36b4758a-58c1-4131-9c68-cb9f21644422.png",
       "alt": "",
       "width": 700,
-      "height": 700
+      "height": 700,
+      "style": null
      }
     },
     {
@@ -505,7 +775,8 @@
       "key": "collections/rn-image_picker_lib_temp_e0a6a1ef-5651-4cd0-9cc1-84e6bfffbe6a.png",
       "alt": "",
       "width": 700,
-      "height": 700
+      "height": 700,
+      "style": null
      }
     },
     {
@@ -516,7 +787,8 @@
       "key": "collections/rn-image_picker_lib_temp_99245407-9de2-492e-9002-d0ff98fac4c3.png",
       "alt": "",
       "width": 700,
-      "height": 700
+      "height": 700,
+      "style": null
      }
     },
     {
@@ -527,7 +799,8 @@
       "key": "collections/rn-image_picker_lib_temp_bad252d7-d004-4040-ab74-de70306d645b.png",
       "alt": "",
       "width": 700,
-      "height": 700
+      "height": 700,
+      "style": null
      }
     },
     {
@@ -538,12 +811,76 @@
       "key": "collections/rn-image_picker_lib_temp_3c5c7c8e-142d-4a52-8237-8b7ccd6f10c4.png",
       "alt": "",
       "width": 700,
-      "height": 700
+      "height": 700,
+      "style": null
      }
     }
-   ]
+   ],
+   "layout": {
+    "wrapper": {
+     "class": "collection-list-wrapper page-width isolate page-width-desktop no-mobile-link section-template--17223805567220__collection-list-padding",
+     "style": null,
+     "tag": "div"
+    },
+    "titleWrapper": {
+     "class": "title-wrapper-with-link title-wrapper--self-padded-tablet-down title-wrapper--no-top-margin",
+     "style": null,
+     "tag": "div"
+    },
+    "title": {
+     "class": "collection-list-title inline-richtext h2 scroll-trigger animate--slide-in",
+     "style": null,
+     "tag": "h2"
+    },
+    "slider": {
+     "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+     "style": null,
+     "tag": "slider-component"
+    },
+    "list": {
+     "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--2-col-tablet-down slider slider--tablet grid--peek collection-list--5-items",
+     "style": null,
+     "tag": "ul"
+    },
+    "item": {
+     "class": "collection-list__item grid__item slider__slide scroll-trigger animate--slide-in",
+     "style": "--animation-order: 8;",
+     "tag": "li"
+    },
+    "cardWrapper": {
+     "class": "card-wrapper animate-arrow collection-card-wrapper",
+     "style": null,
+     "tag": "div"
+    },
+    "card": {
+     "class": "card card--standard card--media",
+     "style": "--ratio-percent: 100%;",
+     "tag": "div"
+    },
+    "cardInner": {
+     "class": "card__inner color-accent-1 gradient ratio",
+     "style": "--ratio-percent: 100%;",
+     "tag": "div"
+    },
+    "cardMedia": {
+     "class": "media media--transparent media--hover-effect",
+     "style": null,
+     "tag": "div"
+    },
+    "heading": {
+     "class": "card__heading",
+     "style": null,
+     "tag": "h3"
+    },
+    "sliderButtons": {
+     "class": "slider-buttons",
+     "style": null,
+     "tag": "div"
+    }
+   }
   },
   {
+   "tag": "section",
    "id": "template--17223805567220__multicolumn_MYWjiF",
    "title": null,
    "classes": [
@@ -567,7 +904,8 @@
       "key": "files/1000122626.png",
       "alt": "",
       "width": 3200,
-      "height": 5689
+      "height": 5689,
+      "style": "object-position:49.6633% 74.4886%;"
      }
     },
     {
@@ -582,7 +920,8 @@
       "key": "files/1000122635.png",
       "alt": "",
       "width": 3200,
-      "height": 5689
+      "height": 5689,
+      "style": "object-position:47.2715% 70.0195%;"
      }
     },
     {
@@ -597,12 +936,71 @@
       "key": "files/1000122692.png",
       "alt": "",
       "width": 3200,
-      "height": 5689
+      "height": 5689,
+      "style": null
      }
     }
-   ]
+   ],
+   "layout": {
+    "root": {
+     "class": "multicolumn color-accent-1 gradient no-heading",
+     "style": null,
+     "tag": "div"
+    },
+    "container": {
+     "class": "page-width section-template--17223805567220__multicolumn_MYWjiF-padding isolate scroll-trigger animate--slide-in",
+     "style": "--animation-order: 0;",
+     "tag": "div"
+    },
+    "slider": {
+     "class": "slider-mobile-gutter",
+     "style": null,
+     "tag": "slider-component"
+    },
+    "list": {
+     "class": "multicolumn-list contains-content-container grid grid--2-col-tablet-down grid--3-col-desktop slider slider--mobile grid--peek",
+     "style": null,
+     "tag": "ul"
+    },
+    "item": {
+     "class": "multicolumn-list__item grid__item slider__slide center scroll-trigger animate--slide-in",
+     "style": "--animation-order: 1;",
+     "tag": "li"
+    },
+    "card": {
+     "class": "multicolumn-card content-container",
+     "style": null,
+     "tag": "div"
+    },
+    "imageWrapper": {
+     "class": "multicolumn-card__image-wrapper multicolumn-card__image-wrapper--full-width",
+     "style": null,
+     "tag": "div"
+    },
+    "media": {
+     "class": "media media--transparent media--square",
+     "style": null,
+     "tag": "div"
+    },
+    "info": {
+     "class": "multicolumn-card__info",
+     "style": null,
+     "tag": "div"
+    },
+    "sliderButtons": {
+     "class": "slider-buttons no-js-hidden medium-hide",
+     "style": null,
+     "tag": "div"
+    },
+    "viewAll": {
+     "class": "multicolumn-list__item grid__item slider__slide center scroll-trigger animate--slide-in",
+     "style": "--animation-order: 1;",
+     "tag": "li"
+    }
+   }
   },
   {
+   "tag": "section",
    "id": "template--17223805567220__e800d010-9dfd-40ad-a93c-50a5c7eff100",
    "title": null,
    "classes": [
@@ -620,7 +1018,8 @@
       "key": "collections/IMG-20220828-WA3363.jpg",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -631,7 +1030,8 @@
       "key": "collections/rn-image_picker_lib_temp_cf7727bc-3ca6-4a5e-9ca3-3fa9d9f79c43.png",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -642,7 +1042,8 @@
       "key": "collections/rn-image_picker_lib_temp_1763cf86-1873-413d-b1b7-97439de7d04d.png",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -653,7 +1054,8 @@
       "key": "collections/rn-image_picker_lib_temp_dd182494-f5c7-4dcb-bb4e-0d1a68a2444a.png",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -664,7 +1066,8 @@
       "key": "collections/rn-image_picker_lib_temp_ad0efbaa-d912-417d-b3b6-b98b8ff2a7bf.png",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -675,7 +1078,8 @@
       "key": "collections/rn-image_picker_lib_temp_41c9c6e5-3177-4cdc-812f-a4a8646188b3.png",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     },
     {
@@ -686,7 +1090,8 @@
       "key": "collections/303247E5-8934-404F-BAA2-1CC74F59AB0D.jpg",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -697,7 +1102,8 @@
       "key": "collections/patolas_image.jpg",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     },
     {
@@ -708,7 +1114,8 @@
       "key": "collections/rn-image_picker_lib_temp_52530a81-a2a1-4996-b285-85e23f4ecc62.png",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -719,7 +1126,8 @@
       "key": "collections/rn-image_picker_lib_temp_248ac846-ebf4-436d-afcd-4b1f0893c201.png",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -730,7 +1138,8 @@
       "key": "collections/rn-image_picker_lib_temp_53416f5d-70e1-45ba-96b4-51aa719288d0.png",
       "alt": "",
       "width": 700,
-      "height": 700
+      "height": 700,
+      "style": null
      }
     },
     {
@@ -741,7 +1150,8 @@
       "key": "collections/1000133128.png",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     },
     {
@@ -752,7 +1162,8 @@
       "key": "collections/rn-image_picker_lib_temp_bcc3ae2b-f1cf-4dbc-be6c-64a45a591dd4.png",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     },
     {
@@ -763,7 +1174,8 @@
       "key": "collections/rn-image_picker_lib_temp_0a42b760-e2e3-45da-8313-b1783d39b98b.png",
       "alt": "",
       "width": 700,
-      "height": 700
+      "height": 700,
+      "style": null
      }
     },
     {
@@ -774,12 +1186,66 @@
       "key": "collections/rn-image_picker_lib_temp_12804557-2d6b-47e7-9e6d-f58cc0bb7bfa.png",
       "alt": "",
       "width": 1080,
-      "height": 1080
+      "height": 1080,
+      "style": null
      }
     }
-   ]
+   ],
+   "layout": {
+    "wrapper": {
+     "class": "collection-list-wrapper page-width isolate page-width-desktop no-heading no-mobile-link section-template--17223805567220__e800d010-9dfd-40ad-a93c-50a5c7eff100-padding",
+     "style": null,
+     "tag": "div"
+    },
+    "slider": {
+     "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+     "style": null,
+     "tag": "slider-component"
+    },
+    "list": {
+     "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--2-col-tablet-down slider slider--tablet grid--peek collection-list--15-items",
+     "style": null,
+     "tag": "ul"
+    },
+    "item": {
+     "class": "collection-list__item grid__item slider__slide scroll-trigger animate--slide-in",
+     "style": "--animation-order: 5;",
+     "tag": "li"
+    },
+    "cardWrapper": {
+     "class": "card-wrapper animate-arrow collection-card-wrapper",
+     "style": null,
+     "tag": "div"
+    },
+    "card": {
+     "class": "card card--standard card--media",
+     "style": "--ratio-percent: 100%;",
+     "tag": "div"
+    },
+    "cardInner": {
+     "class": "card__inner color-accent-1 gradient ratio",
+     "style": "--ratio-percent: 100%;",
+     "tag": "div"
+    },
+    "cardMedia": {
+     "class": "media media--transparent media--hover-effect",
+     "style": null,
+     "tag": "div"
+    },
+    "heading": {
+     "class": "card__heading",
+     "style": null,
+     "tag": "h3"
+    },
+    "sliderButtons": {
+     "class": "slider-buttons",
+     "style": null,
+     "tag": "div"
+    }
+   }
   },
   {
+   "tag": "section",
    "id": "template--17223805567220__collection_list_VCanwt",
    "title": null,
    "classes": [
@@ -801,7 +1267,8 @@
       "key": "collections/rn-image_picker_lib_temp_ff2cde8c-9826-4b5c-97f1-fd11962e12cd.png",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     },
     {
@@ -812,7 +1279,8 @@
       "key": "collections/rn-image_picker_lib_temp_38a9ac16-9594-45fa-bed0-98ec31dc5a3e.png",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     },
     {
@@ -823,7 +1291,8 @@
       "key": "collections/ajrakh.jpg",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -834,7 +1303,8 @@
       "key": "collections/rn-image_picker_lib_temp_28d6ed9e-9aac-4b99-91bf-fb73d93e6b54.png",
       "alt": "",
       "width": 2000,
-      "height": 2000
+      "height": 2000,
+      "style": null
      }
     },
     {
@@ -845,7 +1315,8 @@
       "key": "collections/rn-image_picker_lib_temp_b160e003-7f4d-4e5b-ac4f-8f62337c0296.png",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     },
     {
@@ -856,7 +1327,8 @@
       "key": "collections/rn-image_picker_lib_temp_e6516f59-9a70-4af8-a006-e974d6424db9.png",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     },
     {
@@ -867,7 +1339,8 @@
       "key": "collections/Madhubani_700_x_700_px.png",
       "alt": "",
       "width": 700,
-      "height": 700
+      "height": 700,
+      "style": null
      }
     },
     {
@@ -878,10 +1351,68 @@
       "key": "collections/rn-image_picker_lib_temp_7eca7c58-c992-4e1b-a7b0-7077099c69b3.png",
       "alt": "",
       "width": 1080,
-      "height": 1350
+      "height": 1350,
+      "style": null
      }
     }
-   ]
+   ],
+   "layout": {
+    "wrapper": {
+     "class": "collection-list-wrapper page-width isolate page-width-desktop no-heading section-template--17223805567220__collection_list_VCanwt-padding",
+     "style": null,
+     "tag": "div"
+    },
+    "slider": {
+     "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+     "style": null,
+     "tag": "slider-component"
+    },
+    "list": {
+     "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down slider slider--tablet grid--peek collection-list--8-items",
+     "style": null,
+     "tag": "ul"
+    },
+    "item": {
+     "class": "collection-list__item grid__item slider__slide scroll-trigger animate--slide-in",
+     "style": "--animation-order: 1;",
+     "tag": "li"
+    },
+    "cardWrapper": {
+     "class": "card-wrapper animate-arrow collection-card-wrapper",
+     "style": null,
+     "tag": "div"
+    },
+    "card": {
+     "class": "card card--standard card--media",
+     "style": "--ratio-percent: 100%;",
+     "tag": "div"
+    },
+    "cardInner": {
+     "class": "card__inner color-accent-1 gradient ratio",
+     "style": "--ratio-percent: 100%;",
+     "tag": "div"
+    },
+    "cardMedia": {
+     "class": "media media--transparent media--hover-effect",
+     "style": null,
+     "tag": "div"
+    },
+    "heading": {
+     "class": "card__heading",
+     "style": null,
+     "tag": "h3"
+    },
+    "sliderButtons": {
+     "class": "slider-buttons",
+     "style": null,
+     "tag": "div"
+    },
+    "viewAll": {
+     "class": "center collection-list-view-all small-hide medium-hide scroll-trigger animate--slide-in",
+     "style": "--animation-order: 0;",
+     "tag": "div"
+    }
+   }
   }
  ]
 }

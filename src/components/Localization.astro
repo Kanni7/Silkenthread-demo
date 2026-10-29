@@ -1,0 +1,30 @@
+---
+// Country/currency selector (mock): same markup as the live disclosure, but only lists India and submits nothing.
+import Icon from './Icon.astro';
+import { menu } from '../lib/data.js';
+interface Props { idPrefix: string; class?: string }
+const { idPrefix, class: cls = '' } = Astro.props;
+const [currency, country] = menu.localization.split('|').map((s) => s.trim());
+---
+<localization-form class={[cls, 'no-js-hidden'].filter(Boolean).join(' ')}>
+  <form id={`${idPrefix}Form`} class="localization-form" onsubmit="return false">
+    <div>
+      <h2 class="visually-hidden" id={`${idPrefix}Label`}>Country/region</h2>
+      <div class="disclosure">
+        <button type="button" class="disclosure__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls={`${idPrefix}List`} aria-describedby={`${idPrefix}Label`}>
+          <span>{menu.localization}</span>
+          <Icon name="caret" />
+        </button>
+        <div class="disclosure__list-wrapper" hidden>
+          <ul id={`${idPrefix}List`} role="list" class="disclosure__list list-unstyled">
+            <li class="disclosure__item" tabindex="-1">
+              <a class="link link--text disclosure__link caption-large focus-inset" href="#" aria-current="true" data-value="IN">
+                {country} <span class="localization-form__currency">{currency} |</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </form>
+</localization-form>

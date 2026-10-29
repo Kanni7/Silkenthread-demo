@@ -1,0 +1,37 @@
+---
+// Header search (Craft details-modal + predictive search). Results come from the local catalog (src/scripts/search.js).
+import Icon from './Icon.astro';
+interface Props { inputId: string }
+const { inputId } = Astro.props;
+const resultsId = `predictive-search-results-${inputId}`;
+---
+<details-modal class="header__search">
+  <details>
+    <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="Search" role="button">
+      <span>
+        <Icon name="search" class="modal__toggle-open" />
+        <Icon name="close" class="modal__toggle-close" />
+      </span>
+    </summary>
+    <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="modal-overlay"></div>
+      <div class="search-modal__content search-modal__content-top" tabindex="-1">
+        <predictive-search class="search-modal__form" data-loading-text="Loading...">
+          <form action="/search" method="get" role="search" class="search search-modal__form">
+            <div class="field">
+              <input class="search__input field__input" id={inputId} type="search" name="q" value="" placeholder="Search" role="combobox" aria-expanded="false" aria-owns={resultsId} aria-controls={resultsId} aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" />
+              <label class="field__label" for={inputId}>Search</label>
+              <button type="reset" class="reset__button field__button hidden" aria-label="Clear search term"><Icon name="close" /></button>
+              <button class="search__button field__button" aria-label="Search"><Icon name="search" /></button>
+            </div>
+            <div class="predictive-search predictive-search--header" tabindex="-1" data-results-id={resultsId}></div>
+            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+          </form>
+        </predictive-search>
+        <button type="button" class="search-modal__close-button modal__close-button link link--text focus-inset" aria-label="Close">
+          <Icon name="close" />
+        </button>
+      </div>
+    </div>
+  </details>
+</details-modal>
