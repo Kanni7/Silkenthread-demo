@@ -9,7 +9,7 @@ See [SOURCES.md](SOURCES.md) for attribution.
 | Phase | State |
 |---|---|
 | 1. Recon (inventory, screenshots, rendered HTML) | done |
-| 2. Data | – |
+| 2. Data (JSON endpoints, normalised data, images) | done |
 | 3. Styles | – |
 | 4. Components and pages (Astro) | – |
 | 5. Fidelity check → tag `v0-baseline` | – |
@@ -24,6 +24,9 @@ browser download is needed.
 npm install
 npm run recon     # robots.txt + sitemaps -> reference/inventory.json
 npm run capture   # screenshots + rendered HTML -> reference/  (optional: npm run capture -- home 1440)
+npm run data      # public Shopify JSON + saved HTML -> src/data/*.json
+npm run data:offline  # same, but only from .cache/ (never touches the network)
+npm run images    # images used on the captured pages, width=1000 -> public/images/
 ```
 
 `npm run dev` / `npm run build` arrive with the Astro site in Phase 4.
@@ -38,6 +41,18 @@ reference/inventory.json every product, collection, page and blog URL from the s
 reference/screenshots/   {page}-{375|768|1440}.png, menu-desktop-*.png, menu-mobile-drawer*.png
 reference/html/          rendered DOM per page ({page}.html at 1440, {page}-mobile.html at 375)
 reference/capture-log.json   product picked, widths, list of blocked third-party requests
+scripts/data.mjs         builds src/data/ ; scripts/lib/parse.mjs = Craft/Dawn section parsers
+scripts/images.mjs       downloads images referenced by reference/html/ -> public/images/
+src/data/products.json   5,767 products: variants, images, collections, derived/mocked filter attributes
+src/data/collections.json  158 collections + built-in "all", ordered product handles, default sort
+src/data/filters.json    facet definitions (labels, params, values) taken from the live filter sidebar
+src/data/menu.json       announcements, logo, main menu tree, footer blocks/newsletter/policies
+src/data/home.json       homepage sections in order (type, items, colour scheme classes, padding CSS)
+src/data/pages.json      about, contact, what's new, size chart, refund/shipping pages, 5 /policies/
+src/data/product-template.json  shared product-page bits (WhatsApp link, policy links, accordions)
+src/data/site.json       money format, products per page (24), sort options
+src/data/images.json     imageKey -> local /images/... path (anything not listed uses the Shopify CDN)
+public/images/           135 images used on the replicated pages (~97 MB)
 docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
 .cache/                  HTTP cache (git-ignored)
 ```
@@ -54,3 +69,18 @@ docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
   disallowed by robots.txt, so it was not fetched.
 - The header uses Craft's dropdown menus (not a multi-column mega-menu); each top-level dropdown is
   captured open at 1440 px.
+
+## Data notes and limitations
+
+- **Filter attributes are partly mocked.** The live filters use product metafields that the public
+  JSON doesn't expose. Each product's `attributes.*` is either derived (`"source": "text"`, `"tags"`,
+  `"variant-option/tags"`, `"product-page-html"`) or `"mocked": true`. Coverage across 5,767 products:
+  genre 86% derived, material 96%, colour family 97%, Silk Mark 58%, origin 53%, craft 36%,
+  dimensions 20%, zari type 5 products only; blouse and shipping speed are all mocked.
+  Only the captured product (`pur2092026kiara`) has real values from its page.
+- Collection product counts use the JSON membership list (`productHandles`), which matches the live
+  page ("178 products"); `productsCount` from `collections.json` is higher (it counts hidden products).
+- Default sort is known only for the two captured collections (`created-descending`); the JSON order
+  matches their first page exactly, so other collections use the JSON order.
+- 51 of the downloaded images are photos uploaded to Shopify as PNG (2–3 MB each at 1000 px).
+- The crawl was interrupted twice by connection resets (no 429/CAPTCHA) and resumed on request.

@@ -217,6 +217,15 @@ for (const [handle, file] of [['about-silken-thread', 'page-about-silken-thread'
   const $ = html(file);
   pages[handle] = { handle, url: `/pages/${handle}`, title: txt($('h1').first().text()) || txt($('title').text()), metaTitle: txt($('title').text()), metaDescription: $('meta[name=description]').attr('content') || null, sections: templateSections($) };
 }
+// Policy *pages* linked from the product template ("Friendly Return Policy", "Shipping Policy")
+for (const handle of ['refund-policy', 'shipping-policy']) {
+  let raw = null;
+  try { raw = (await politeFetch(`${ORIGIN}/pages/${handle}`)).body.toString('utf8'); }
+  catch (e) { if (!(e instanceof NotCached)) throw e; }
+  if (!raw) { pages[handle] = { handle, url: `/pages/${handle}`, title: null, sections: [], missing: true }; continue; }
+  const $ = load(raw);
+  pages[handle] = { handle, url: `/pages/${handle}`, title: txt($('h1').first().text()), metaTitle: txt($('title').text()), metaDescription: $('meta[name=description]').attr('content') || null, sections: templateSections($) };
+}
 for (const h of POLICIES) {
   if (!policyHtml[h]) { pages[`policy-${h}`] = { handle: h, url: `/policies/${h}`, policy: true, title: h.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()), html: null, missing: true }; continue; }
   const $ = load(policyHtml[h]);
