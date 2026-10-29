@@ -1,0 +1,234 @@
+[
+ {
+  "param": "filter.p.product_type",
+  "label": "Product type",
+  "type": "list",
+  "values": [
+   {
+    "value": "Saree",
+    "label": "Saree (178) Saree (178 products)"
+   },
+   {
+    "value": "Dupatta",
+    "label": "Dupatta (22) Dupatta (22 products)"
+   }
+  ],
+  "attribute": "productType"
+ },
+ {
+  "param": "filter.v.price.gte",
+  "label": "Price",
+  "type": "price",
+  "values": [],
+  "attribute": "price"
+ },
+ {
+  "param": "filter.p.m.custom.materials",
+  "label": "Materials",
+  "type": "list",
+  "values": [
+   {
+    "value": "Pure Silk",
+    "label": "Pure Silk (151) Pure Silk (151 products)"
+   },
+   {
+    "value": "Cotton",
+    "label": "Cotton (27) Cotton (27 products)"
+   }
+  ],
+  "attribute": "materials"
+ },
+ {
+  "param": "filter.v.m.custom.colourfamily",
+  "label": "Colour family",
+  "type": "list",
+  "values": [
+   {
+    "value": "Pink",
+    "label": "Pink (16) Pink (16 products)"
+   },
+   {
+    "value": "White",
+    "label": "White (9) White (9 products)"
+   },
+   {
+    "value": "Black",
+    "label": "Black (6) Black (6 products)"
+   },
+   {
+    "value": "Gold",
+    "label": "Gold (4) Gold (4 products)"
+   },
+   {
+    "value": "Red",
+    "label": "Red (16) Red (16 products)"
+   },
+   {
+    "value": "Green",
+    "label": "Green (40) Green (40 products)"
+   },
+   {
+    "value": "Blue",
+    "label": "Blue (32) Blue (32 products)"
+   },
+   {
+    "value": "Yellow",
+    "label": "Yellow (8) Yellow (8 products)"
+   },
+   {
+    "value": "Purple",
+    "label": "Purple (12) Purple (12 products)"
+   },
+   {
+    "value": "Orange",
+    "label": "Orange (17) Orange (17 products)"
+   },
+   {
+    "value": "Brown",
+    "label": "Brown (16) Brown (16 products)"
+   }
+  ],
+  "attribute": "colourfamily"
+ },
+ {
+  "param": "filter.p.m.custom.weaving_genre",
+  "label": "Category",
+  "type": "list",
+  "values": [
+   {
+    "value": "Kanjeevaram",
+    "label": "Kanjeevaram (178) Kanjeevaram (178 products)"
+   },
+   {
+    "value": "Narayanpeth",
+    "label": "Narayanpeth (83) Narayanpeth (83 products)"
+   },
+   {
+    "value": "Ikat",
+    "label": "Ikat (22) Ikat (22 products)"
+   }
+  ],
+  "attribute": "weaving_genre"
+ },
+ {
+  "param": "filter.v.t.shopify.fabric",
+  "label": "Fabric",
+  "type": "list",
+  "values": [
+   {
+    "value": "gid://shopify/TaxonomyValue/16997",
+    "label": "Silk (1) Silk (1 product)"
+   }
+  ],
+  "attribute": null,
+  "note": "Shopify taxonomy facet; values are opaque GIDs, merged into Materials in the replica"
+ },
+ {
+  "param": "filter.p.m.custom.handloom",
+  "label": "Craft",
+  "type": "list",
+  "values": [
+   {
+    "value": "Handloom",
+    "label": "Handloom (154) Handloom (154 products)"
+   },
+   {
+    "value": "Powerloom",
+    "label": "Powerloom (24) Powerloom (24 products)"
+   }
+  ],
+  "attribute": "craft"
+ },
+ {
+  "param": "filter.p.m.custom.silk_mark",
+  "label": "Silk mark",
+  "type": "list",
+  "values": [
+   {
+    "value": "1",
+    "label": "Yes (151) Yes (151 products)"
+   },
+   {
+    "value": "0",
+    "label": "No (27) No (27 products)"
+   }
+  ],
+  "attribute": "silk_mark"
+ },
+ {
+  "param": "filter.p.m.custom.blouse",
+  "label": "blouse",
+  "type": "list",
+  "values": [
+   {
+    "value": "Saree with a running blouse, i.e. blouse is attached to the saree, in same colour/style as the saree Body",
+    "label": "Saree with a running blouse, i.e. blouse is attached to the saree, in same colour/style as the saree Body (34) Saree with a running blouse, i.e. blouse is attached to the saree, in same colour/style as the saree Body (34 products)"
+   },
+   {
+    "value": "Saree with a running blouse, i.e. blouse is attached to the saree, in contrasting colour/style as the saree Body",
+    "label": "Saree with a running blouse, i.e. blouse is attached to the saree, in contrasting colour/style as the saree Body (144) Saree with a running blouse, i.e. blouse is attached to the saree, in contrasting colour/style as the saree Body (144 products)"
+   },
+   {
+    "value": "One Dupatta, 2.5m length",
+    "label": "One Dupatta, 2.5m length (22) One Dupatta, 2.5m length (22 products)"
+   }
+  ],
+  "attribute": "blouse"
+ },
+ {
+  "param": "filter.p.m.custom.origin",
+  "label": "Origin",
+  "type": "list",
+  "values": [
+   {
+    "value": "Kanchipuram",
+    "label": "Kanchipuram (178) Kanchipuram (178 products)"
+   },
+   {
+    "value": "Narayanpet",
+    "label": "Narayanpet (83) Narayanpet (83 products)"
+   },
+   {
+    "value": "Pochampally, Telangana",
+    "label": "Pochampally, Telangana (22) Pochampally, Telangana (22 products)"
+   }
+  ],
+  "attribute": "origin"
+ },
+ {
+  "param": "filter.v.m.custom.shipping_speed",
+  "label": "Shipping state",
+  "type": "list",
+  "values": [
+   {
+    "value": "Shipping within 4-10 days",
+    "label": "Shipping within 4-10 days (178) Shipping within 4-10 days (178 products)"
+   }
+  ],
+  "attribute": "shipping_speed"
+ },
+ {
+  "param": "filter.p.m.custom.zari_type",
+  "label": "Zari type",
+  "type": "list",
+  "values": [
+   {
+    "value": "1g zari",
+    "label": "1g zari (21) 1g zari (21 products)"
+   },
+   {
+    "value": "2g Zari",
+    "label": "2g Zari (23) 2g Zari (23 products)"
+   },
+   {
+    "value": "Tested Zari",
+    "label": "Tested Zari (107) Tested Zari (107 products)"
+   },
+   {
+    "value": "Gold thread",
+    "label": "Gold thread (27) Gold thread (27 products)"
+   }
+  ],
+  "attribute": "zari_type"
+ }
+]

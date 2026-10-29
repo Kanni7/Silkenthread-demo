@@ -1,0 +1,326 @@
+{
+ "about-silken-thread": {
+  "handle": "about-silken-thread",
+  "url": "/pages/about-silken-thread",
+  "title": "About Silken Thread",
+  "metaTitle": "About Silken Thread – Silkenthread.in",
+  "metaDescription": "Silken thread is an independent organisation working with more than a 100 manufacturers and weavers across India to make authentic Indian textile products available online.",
+  "sections": [
+   {
+    "id": "template--17223805665524__main",
+    "title": "About Silken Thread",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805665524__main-padding"
+    ],
+    "style": ".section-template--17223805665524__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805665524__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p>Founded in 2022, SilkenThread.in connects you with the finest handwoven fabrics from across India. We&nbsp;<br>source directly from over 3000 weavers, artisan communities, and self-help groups, ensuring fair wages and ethical practices. Our commitment to transparency allows you to trace the journey of your fabric, from loom to your hands. Discover the beauty and artistry of traditional Indian textiles. Support sustainable fashion. Experience the difference.&nbsp;</p>\n<p>We are not averse to selling blended silk and artificial silk products on this platform, but we believe in being transparent about fabrics used- not just as a safeguard against health scares, but also because we believe in obtaining a fair price to our customers and a fair pay for weavers. Our ultimate satisfaction lies in striking a balance between the two. Handloom, powerloom, handmade, blended or pure — we tell you exactly what you're buying.&nbsp;</p>\n<p>Wherever possible we partner with organisations like the Central Silk board to make sure that your handlooms are as authentic and pure as they can get- the QR coded silk tag in your shipment can help you to differentiate between pure natural silks and others.</p>\n<p>We do hope you love our collections- do reach out to us via email, our social links or through the chat widget on our website. We would love to hear from you!</p>"
+   }
+  ]
+ },
+ "contact": {
+  "handle": "contact",
+  "url": "/pages/contact",
+  "title": "Contact",
+  "metaTitle": "Contact – Silkenthread.in",
+  "metaDescription": "Contact us at cs@silkenthread.in We are also available at +91 9663748945 on whatsapp or on phone.    ",
+  "sections": [
+   {
+    "id": "template--17223805632756__main",
+    "title": "Contact",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805632756__main-padding"
+    ],
+    "style": ".section-template--17223805632756__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p>Contact us at cs@silkenthread.in We are also available at +91 9663748945 on whatsapp or on phone.&nbsp;&nbsp;</p>\n<p>&nbsp;</p>"
+   },
+   {
+    "id": "template--17223805632756__form",
+    "title": "Contact form",
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17223805632756__form-padding {\n    padding-top: 0px;\n    padding-bottom: 66px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__form-padding {\n      padding-top: 0px;\n      padding-bottom: 88px;\n    }\n  }",
+    "type": "contact-form",
+    "fields": [
+     {
+      "name": "contact[Name]",
+      "type": "text",
+      "label": "Name",
+      "required": false
+     },
+     {
+      "name": "contact[email]",
+      "type": "email",
+      "label": "Email *",
+      "required": true
+     },
+     {
+      "name": "contact[Phone number]",
+      "type": "tel",
+      "label": "Phone number",
+      "required": false
+     },
+     {
+      "name": "contact[Comment]",
+      "type": "textarea",
+      "label": "Comment",
+      "required": false
+     }
+    ],
+    "submitLabel": "Send"
+   }
+  ]
+ },
+ "whats-new": {
+  "handle": "whats-new",
+  "url": "/pages/whats-new",
+  "title": "What's New",
+  "metaTitle": "What's New – Silkenthread.in",
+  "metaDescription": "Try something new!",
+  "sections": [
+   {
+    "id": "template--20099245572340__main",
+    "title": "What's New",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--20099245572340__main-padding"
+    ],
+    "style": ".section-template--20099245572340__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--20099245572340__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p>Try something new!</p>"
+   },
+   {
+    "id": "template--20099245572340__collection_list_yqB4kT",
+    "title": null,
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--20099245572340__collection_list_yqB4kT-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--20099245572340__collection_list_yqB4kT-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "collection-list",
+    "items": [
+     {
+      "title": "Chanderi",
+      "href": "/collections/chanderi",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_dd182494-f5c7-4dcb-bb4e-0d1a68a2444a.png?v=1741434630",
+       "key": "collections/rn-image_picker_lib_temp_dd182494-f5c7-4dcb-bb4e-0d1a68a2444a.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000
+      }
+     },
+     {
+      "title": "Patteda Anchu",
+      "href": "/collections/patteda-anchu",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_0a42b760-e2e3-45da-8313-b1783d39b98b.png?v=1791954521",
+       "key": "collections/rn-image_picker_lib_temp_0a42b760-e2e3-45da-8313-b1783d39b98b.png",
+       "alt": "",
+       "width": 700,
+       "height": 700
+      }
+     },
+     {
+      "title": "Odisha Weaves | Where Tradition weaves a rich tapestry",
+      "href": "/collections/odisha-weaves",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_20136c24-86b3-4fe9-8dc9-f6981c0c7d0b.png?v=1741811103",
+       "key": "collections/rn-image_picker_lib_temp_20136c24-86b3-4fe9-8dc9-f6981c0c7d0b.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350
+      }
+     },
+     {
+      "title": "Paithanis",
+      "href": "/collections/the-perfect-paithanis",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/303247E5-8934-404F-BAA2-1CC74F59AB0D.jpg?v=1741436109",
+       "key": "collections/303247E5-8934-404F-BAA2-1CC74F59AB0D.jpg",
+       "alt": "",
+       "width": 2000,
+       "height": 2000
+      }
+     },
+     {
+      "title": "Unique uppadas",
+      "href": "/collections/unique-uppadas",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_bcc3ae2b-f1cf-4dbc-be6c-64a45a591dd4.png?v=1741810961",
+       "key": "collections/rn-image_picker_lib_temp_bcc3ae2b-f1cf-4dbc-be6c-64a45a591dd4.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350
+      }
+     },
+     {
+      "title": "Mangalagiri",
+      "href": "/collections/mangalgiri",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_7d1c651b-42fd-4ae4-b141-1d245173bd07.png?v=1741801366",
+       "key": "collections/rn-image_picker_lib_temp_7d1c651b-42fd-4ae4-b141-1d245173bd07.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350
+      }
+     },
+     {
+      "title": "Telia Rumal",
+      "href": "/collections/telia-rumal",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_12804557-2d6b-47e7-9e6d-f58cc0bb7bfa.png?v=1756153972",
+       "key": "collections/rn-image_picker_lib_temp_12804557-2d6b-47e7-9e6d-f58cc0bb7bfa.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080
+      }
+     },
+     {
+      "title": "Tussar silk",
+      "href": "/collections/tussar-silk",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_95eb6358-438c-4b1e-8aad-2f52d793194c.png?v=1756154235",
+       "key": "collections/rn-image_picker_lib_temp_95eb6358-438c-4b1e-8aad-2f52d793194c.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080
+      }
+     },
+     {
+      "title": "Parsi",
+      "href": "/collections/parsi",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/Copy_of_Copy_of_blue.png?v=1756153208",
+       "key": "collections/Copy_of_Copy_of_blue.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080
+      }
+     },
+     {
+      "title": "Baluchari & Swarnachari",
+      "href": "/collections/baluchari-swarnachari",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/Copy_of_blue.png?v=1756152756",
+       "key": "collections/Copy_of_blue.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080
+      }
+     }
+    ]
+   },
+   {
+    "id": "template--20099245572340__featured_collection_KcGtxp",
+    "title": "Weaves:",
+    "classes": [
+     "color-background-1",
+     "isolate",
+     "gradient"
+    ],
+    "style": ".section-template--20099245572340__featured_collection_KcGtxp-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--20099245572340__featured_collection_KcGtxp-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "featured-collection",
+    "settings": {
+     "carousel": true
+    },
+    "productHandles": [
+     "cot2192026pritesh",
+     "gad1892026geeta",
+     "ilk1692026iqbal",
+     "kas1692026kushal",
+     "mad1692026murari",
+     "upp1492026unnat",
+     "cot2192026bipin",
+     "vis2192026ipsit",
+     "pur2092026kabir",
+     "pur2092026gokul",
+     "pur1992026irfan",
+     "cot2192026poonam",
+     "cot2192026puneet",
+     "cot2192026poornima",
+     "cot2192026prem",
+     "cot2192026priyanka",
+     "cot2192026parvati",
+     "cot2192026praveen",
+     "cot2192026padma",
+     "cot2192026pavan",
+     "cot2192026pallavi",
+     "cot2192026prakash",
+     "cot2192026preeti",
+     "cot2192026pankaj",
+     "cot2192026pranav"
+    ]
+   }
+  ]
+ },
+ "size-chart": {
+  "handle": "size-chart",
+  "url": "/pages/size-chart",
+  "title": "Size Chart",
+  "metaTitle": "Size Chart – Silkenthread.in",
+  "metaDescription": "For Kurtis: CHEST HIP WAIST SHOULDER SLEEVE LENGTH BICEPS ARMHOLE XS 36 40 34 14.5 23.8 12 6.5 S 38 42 36 15 24 13 7 M 40 44 38 15.5 24.3 14 7.5 L 42 46 40 16 24.5 15 8 XL 44 48 42 16.5 24.8 16 8.5 Length of the kurti would be indicated on the product page For trousers:  HIP WAIST OUTSEAM LENGTH INSEAM THIGH XS 44 24 3",
+  "sections": [
+   {
+    "id": "template--17223805665524__main",
+    "title": "Size Chart",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805665524__main-padding"
+    ],
+    "style": ".section-template--17223805665524__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805665524__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }\n<!--\ntd {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}\n-->\n<!--\ntd {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}\n-->\n<!--\ntd {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}\n-->",
+    "type": "main-page",
+    "html": "<p><strong>For Kurtis:</strong></p>\n<style type=\"text/css\"><!--\ntd {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}\n--></style>\n<style type=\"text/css\"><!--\ntd {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}\n--></style>\n<table data-sheets-baot=\"1\" data-sheets-root=\"1\" border=\"1\" dir=\"ltr\" cellpadding=\"0\" cellspacing=\"0\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<colgroup> <col width=\"100\"> <col width=\"100\"> <col width=\"100\"> <col width=\"118\"> <col width=\"100\"> <col width=\"100\"> <col width=\"100\"> <col width=\"100\"> <col width=\"100\"> </colgroup>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\">\n<div><strong>CHEST</strong></div>\n</td>\n<td style=\"text-align: center;\">\n<div><strong>HIP</strong></div>\n</td>\n<td style=\"text-align: center;\">\n<div><strong>WAIST</strong></div>\n</td>\n<td style=\"text-align: center;\">\n<div><strong>SHOULDER</strong></div>\n</td>\n<td style=\"text-align: center;\">\n<div><strong>SLEEVE LENGTH</strong></div>\n</td>\n<td style=\"text-align: center;\">\n<div><strong>BICEPS</strong></div>\n</td>\n<td style=\"text-align: center;\">\n<div><strong>ARMHOLE</strong></div>\n</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td>\n<div>XS</div>\n</td>\n<td>\n<div>36</div>\n</td>\n<td>\n<div>40</div>\n</td>\n<td>\n<div>34</div>\n</td>\n<td>\n<div>14.5</div>\n</td>\n<td>\n<div>23.8</div>\n</td>\n<td>\n<div>12</div>\n</td>\n<td>\n<div>6.5</div>\n</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td>\n<div>S</div>\n</td>\n<td>\n<div>38</div>\n</td>\n<td>\n<div>42</div>\n</td>\n<td>\n<div>36</div>\n</td>\n<td>\n<div>15</div>\n</td>\n<td>\n<div>24</div>\n</td>\n<td>\n<div>13</div>\n</td>\n<td>\n<div>7</div>\n</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td>\n<div>M</div>\n</td>\n<td>\n<div>40</div>\n</td>\n<td>\n<div>44</div>\n</td>\n<td>\n<div>38</div>\n</td>\n<td>\n<div>15.5</div>\n</td>\n<td>\n<div>24.3</div>\n</td>\n<td>\n<div>14</div>\n</td>\n<td>\n<div>7.5</div>\n</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td>\n<div>L</div>\n</td>\n<td>\n<div>42</div>\n</td>\n<td>\n<div>46</div>\n</td>\n<td>\n<div>40</div>\n</td>\n<td>\n<div>16</div>\n</td>\n<td>\n<div>24.5</div>\n</td>\n<td>\n<div>15</div>\n</td>\n<td>\n<div>8</div>\n</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td>\n<div>XL</div>\n</td>\n<td>\n<div>44</div>\n</td>\n<td>\n<div>48</div>\n</td>\n<td>\n<div>42</div>\n</td>\n<td>\n<div>16.5</div>\n</td>\n<td>\n<div>24.8</div>\n</td>\n<td>\n<div>16</div>\n</td>\n<td>\n<div>8.5</div>\n</td>\n</tr>\n</tbody>\n</table>\n<p><br>Length of the kurti would be indicated on the product page</p>\n<p><strong>For trousers:&nbsp;</strong></p>\n<style type=\"text/css\"><!--\ntd {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}\n--></style>\n<table xmlns=\"http://www.w3.org/1999/xhtml\" cellspacing=\"0\" cellpadding=\"0\" dir=\"ltr\" border=\"1\" data-sheets-root=\"1\" data-sheets-baot=\"1\">\n<colgroup> <col width=\"100\"> <col width=\"100\"> <col width=\"100\"> <col width=\"118\"> <col width=\"100\"> <col width=\"100\"> </colgroup>\n<tbody>\n<tr>\n<td></td>\n<td><strong>HIP</strong></td>\n<td><strong>WAIST</strong></td>\n<td><strong>OUTSEAM LENGTH</strong></td>\n<td><strong>INSEAM</strong></td>\n<td><strong>THIGH</strong></td>\n</tr>\n<tr>\n<td>XS</td>\n<td>44</td>\n<td>24</td>\n<td>33.2</td>\n<td>20</td>\n<td>34.8</td>\n</tr>\n<tr>\n<td>S</td>\n<td>46</td>\n<td>26</td>\n<td>33.5</td>\n<td>20</td>\n<td>36</td>\n</tr>\n<tr>\n<td>M</td>\n<td>48</td>\n<td>28</td>\n<td>33.9</td>\n<td>20</td>\n<td>37.3</td>\n</tr>\n<tr>\n<td>L</td>\n<td>50</td>\n<td>30</td>\n<td>34.2</td>\n<td>20</td>\n<td>38.5</td>\n</tr>\n<tr>\n<td>XL</td>\n<td>52</td>\n<td>32</td>\n<td>34.6</td>\n<td>20</td>\n<td>39.8</td>\n</tr>\n</tbody>\n</table>"
+   }
+  ]
+ },
+ "policy-terms-of-service": {
+  "handle": "terms-of-service",
+  "url": "/policies/terms-of-service",
+  "policy": true,
+  "title": "Terms of service",
+  "html": null,
+  "missing": true
+ },
+ "policy-refund-policy": {
+  "handle": "refund-policy",
+  "url": "/policies/refund-policy",
+  "policy": true,
+  "title": "Refund policy",
+  "html": null,
+  "missing": true
+ },
+ "policy-shipping-policy": {
+  "handle": "shipping-policy",
+  "url": "/policies/shipping-policy",
+  "policy": true,
+  "title": "Shipping policy",
+  "html": null,
+  "missing": true
+ },
+ "policy-privacy-policy": {
+  "handle": "privacy-policy",
+  "url": "/policies/privacy-policy",
+  "policy": true,
+  "title": "Privacy policy",
+  "html": null,
+  "missing": true
+ },
+ "policy-contact-information": {
+  "handle": "contact-information",
+  "url": "/policies/contact-information",
+  "policy": true,
+  "title": "Contact information",
+  "html": null,
+  "missing": true
+ }
+}

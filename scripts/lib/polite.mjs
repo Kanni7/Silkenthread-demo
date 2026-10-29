@@ -11,6 +11,8 @@ const CACHE_DIR = path.resolve('.cache/http');
 fs.mkdirSync(CACHE_DIR, { recursive: true });
 
 export class StopCrawl extends Error {}
+export class NotCached extends Error {}
+const OFFLINE = process.env.OFFLINE === '1' || process.argv.includes('--offline'); // build from .cache only, never touch the network
 
 let minGapMs = 1000;
 let lastAt = 0;
@@ -94,6 +96,7 @@ const looksBlocked = (status, text, finalUrl = '') => {
 export function politeFetch(url, { skipRobots = false, headers = {} } = {}) {
   const hit = cached(url);
   if (hit) return Promise.resolve({ ...hit, fromCache: true });
+  if (OFFLINE) return Promise.reject(new NotCached(`offline: not cached: ${url}`));
   if (!skipRobots && !allowed(url)) return Promise.reject(new Error(`robots.txt disallows ${url}`));
   const run = async () => {
     if (stopped) throw stopped;
@@ -102,7 +105,13 @@ export function politeFetch(url, { skipRobots = false, headers = {} } = {}) {
     const wait = lastAt + minGapMs - Date.now();
     if (wait > 0) await new Promise((r) => setTimeout(r, wait));
     lastAt = Date.now();
-    const res = await fetch(url, { headers: { 'user-agent': UA, ...headers }, redirect: 'follow' });
+    let res;
+    try {
+      res = await fetch(url, { headers: { 'user-agent': UA, ...headers }, redirect: 'follow' });
+    } catch (e) {
+      // Connection resets/timeouts may be a soft block: stop rather than retry.
+      throw (stopped = new StopCrawl(`Network error at ${url} (${e.cause?.code || e.message}). Stopping as instructed.`));
+    }
     const body = Buffer.from(await res.arrayBuffer());
     const hdrs = Object.fromEntries(res.headers.entries());
     const isText = /text|json|xml|javascript/.test(hdrs['content-type'] || '');

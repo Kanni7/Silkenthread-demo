@@ -4,9 +4,13 @@
   "type": "module",
   "scripts": {
     "recon": "node scripts/recon.mjs",
-    "capture": "node scripts/capture.mjs"
+    "capture": "node scripts/capture.mjs",
+    "data": "node scripts/data.mjs",
+    "images": "node scripts/images.mjs",
+    "data:offline": "node scripts/data.mjs --offline"
   },
   "devDependencies": {
+    "cheerio": "^1.0.0",
     "playwright": "^1.48.2"
   }
 }

@@ -1,0 +1,331 @@
+{
+ "announcements": [
+  {
+   "text": "Welcome to Silkenthread.in! Use Code FIRST to get 10% OFF on your first purchase.",
+   "href": "/collections/all"
+  },
+  {
+   "text": "We only sell through silkenthread.in and the social links mentioned in the sidebar. Please be wary of fake websites selling sub par products.",
+   "href": "https://instagram.com/silkenthreadinsta"
+  }
+ ],
+ "logo": {
+  "src": "https://silkenthread.in/cdn/shop/files/Copy_of_Silkenthread.in_2592_x_1080_px.png?v=1756876863",
+  "key": "files/Copy_of_Silkenthread.in_2592_x_1080_px.png",
+  "alt": "Silkenthread.in",
+  "width": 290,
+  "height": 120.83333333333333,
+  "text": "Silkenthread.in"
+ },
+ "localization": "INR ₹ | India",
+ "main": [
+  {
+   "label": "Iconic Weaves",
+   "href": null,
+   "children": [
+    {
+     "label": "Banarasi",
+     "href": "/collections/dil-hai-benarasee"
+    },
+    {
+     "label": "Chanderi",
+     "href": "/collections/chanderi"
+    },
+    {
+     "label": "Ilkal",
+     "href": "/collections/ilkal"
+    },
+    {
+     "label": "Jamdanis",
+     "href": "/collections/dhakai-jamdani"
+    },
+    {
+     "label": "Gadwals",
+     "href": "/collections/the-royal-gadwals"
+    },
+    {
+     "label": "Kanjeevarams",
+     "href": "/collections/the-curated-kanjivarams"
+    },
+    {
+     "label": "Maheshwari",
+     "href": "/collections/maheshwari"
+    },
+    {
+     "label": "Mangalagiri",
+     "href": "/collections/mangalgiri"
+    },
+    {
+     "label": "Narayanpet",
+     "href": "/collections/narayan-peth-saree"
+    },
+    {
+     "label": "Odisha Weaves",
+     "href": "/collections/odisha-weaves"
+    },
+    {
+     "label": "Patola",
+     "href": "/collections/patolas"
+    },
+    {
+     "label": "Paithanis",
+     "href": "/collections/the-perfect-paithanis"
+    },
+    {
+     "label": "Pochampally Ikat",
+     "href": "/collections/the-ikat-collection"
+    },
+    {
+     "label": "Uppadas",
+     "href": "/collections/unique-uppadas"
+    },
+    {
+     "label": "Venkatagiri",
+     "href": "/collections/venkatagiri"
+    },
+    {
+     "label": "Telia Rumal",
+     "href": "/collections/telia-rumal"
+    },
+    {
+     "label": "Baluchari & Swarnachari",
+     "href": "/collections/baluchari-swarnachari"
+    },
+    {
+     "label": "Patteda Anchu",
+     "href": "/collections/patteda-anchu"
+    },
+    {
+     "label": "Dolabedi",
+     "href": "/collections/dolabedi"
+    }
+   ]
+  },
+  {
+   "label": "Prints & Dyes",
+   "href": null,
+   "children": [
+    {
+     "label": "Ajrakh",
+     "href": "/collections/ajrakh"
+    },
+    {
+     "label": "Block prints",
+     "href": "/collections/bagru"
+    },
+    {
+     "label": "Kalamkari",
+     "href": "/collections/kalamkari"
+    },
+    {
+     "label": "Batik",
+     "href": "/collections/batik"
+    },
+    {
+     "label": "Shibori",
+     "href": "/collections/shibori"
+    },
+    {
+     "label": "Bandhej Bandhni",
+     "href": "/collections/bandhej-bandhani"
+    },
+    {
+     "label": "Lehariya",
+     "href": "/collections/leheriya"
+    },
+    {
+     "label": "Digital prints",
+     "href": "/collections/digital-prints"
+    },
+    {
+     "label": "Screen prints",
+     "href": "/collections/screen-prints"
+    },
+    {
+     "label": "Madhubani",
+     "href": "/collections/madhubani"
+    }
+   ]
+  },
+  {
+   "label": "Embroideries & Trimmings",
+   "href": null,
+   "children": [
+    {
+     "label": "Chikankari",
+     "href": "/collections/chic-chikankari"
+    },
+    {
+     "label": "Gota patti",
+     "href": "/collections/gota-embroidery"
+    },
+    {
+     "label": "Kasuti",
+     "href": "/collections/kasuti"
+    },
+    {
+     "label": "Kantha",
+     "href": "/collections/kantha-sarees"
+    },
+    {
+     "label": "Kutchi",
+     "href": "/collections/kutchi"
+    },
+    {
+     "label": "Parsi",
+     "href": "/collections/parsi"
+    },
+    {
+     "label": "Phulkari",
+     "href": "/collections/phulkari"
+    },
+    {
+     "label": "Zardosi",
+     "href": "/collections/zardosi"
+    },
+    {
+     "label": "Applique",
+     "href": "/collections/applique"
+    },
+    {
+     "label": "Crochet",
+     "href": "/collections/crochet"
+    }
+   ]
+  },
+  {
+   "label": "Search by Fabric",
+   "href": null,
+   "children": [
+    {
+     "label": "Pure Silk",
+     "href": "/collections/fabric-collections"
+    },
+    {
+     "label": "Tussar Silk",
+     "href": "/collections/tussar-silk"
+    },
+    {
+     "label": "Cotton",
+     "href": "/collections/cotton-collections"
+    },
+    {
+     "label": "Blended silk",
+     "href": "/collections/blended-silks"
+    },
+    {
+     "label": "Modal",
+     "href": "/collections/modal-fabrics"
+    },
+    {
+     "label": "Organza / Kora Silk",
+     "href": "/collections/organza"
+    },
+    {
+     "label": "Linen",
+     "href": "/collections/linen-collection"
+    },
+    {
+     "label": "Chiffon- georgette",
+     "href": "/collections/chiffon-georgette"
+    },
+    {
+     "label": "Gheecha/ matka silk",
+     "href": "/collections/gheecha-silk"
+    },
+    {
+     "label": "Kota Doria",
+     "href": "/collections/kota-doria"
+    },
+    {
+     "label": "Modal",
+     "href": "/collections/modal-fabrics"
+    }
+   ]
+  },
+  {
+   "label": "Sale!",
+   "href": "/collections/sale"
+  },
+  {
+   "label": "About us",
+   "href": "/pages/about-silken-thread"
+  },
+  {
+   "label": "Contact",
+   "href": "/pages/contact"
+  },
+  {
+   "label": "What's New?",
+   "href": "/pages/whats-new"
+  }
+ ],
+ "footer": {
+  "preFooterHtml": "<div class=\"color-background-1 gradient\">\n  <div class=\"section-sections--17223806025972__custom_liquid_tk7NdT-padding\">\n    SilkenThread.in connects you with the rich heritage of Indian weaving. We partner with over 3000 weavers, ensuring fair wages and ethical practices. Discover the beauty of handcrafted textiles. Shop our collection of luxurious fabrics today. Support sustainable fashion. Experience the artistry of India.\n  </div>\n</div>",
+  "blocks": [
+   {
+    "heading": "Quick links",
+    "links": [
+     {
+      "label": "Terms of Service",
+      "href": "/policies/terms-of-service"
+     },
+     {
+      "label": "Refund policy",
+      "href": "/policies/refund-policy"
+     },
+     {
+      "label": "Shipping Policy",
+      "href": "/policies/shipping-policy"
+     },
+     {
+      "label": "Privacy Policy",
+      "href": "/policies/privacy-policy"
+     },
+     {
+      "label": "Vendor outreach",
+      "href": "/pages/are-you-a-weaver-or-a-manufacturer-of-sarees"
+     }
+    ],
+    "html": "<li>\n                            <a href=\"/policies/terms-of-service\" class=\"link link--text list-menu__item list-menu__item--link\">\n                              Terms of Service\n                            </a>\n                          </li><li>\n                            <a href=\"/policies/refund-policy\" class=\"link link--text list-menu__item list-menu__item--link\">\n                              Refund policy\n                            </a>\n                          </li><li>\n                            <a href=\"/policies/shipping-policy\" class=\"link link--text list-menu__item list-menu__item--link\">\n                              Shipping Policy\n                            </a>\n                          </li><li>\n                            <a href=\"/policies/privacy-policy\" class=\"link link--text list-menu__item list-menu__item--link\">\n                              Privacy Policy\n                            </a>\n                          </li><li>\n                            <a href=\"/pages/are-you-a-weaver-or-a-manufacturer-of-sarees\" class=\"link link--text list-menu__item list-menu__item--link\">\n                              Vendor outreach\n                            </a>\n                          </li>"
+   },
+   {
+    "heading": "Contact",
+    "links": [],
+    "html": "<p>You can contact us on<br>M: +91-9663748945<br>E: cs@silkenthread.in<br>            <br>          </p>"
+   },
+   {
+    "heading": "Registered office",
+    "links": [],
+    "html": "<p>Silkenthread India Pvt. Ltd.</p><p>Pune Address: 39/24A, Erandawane, Pune-411004</p>"
+   }
+  ],
+  "newsletter": {
+   "heading": "Sign up for Insider news!",
+   "placeholder": "Email"
+  },
+  "policies": [
+   {
+    "label": "Refund policy",
+    "href": "/policies/refund-policy"
+   },
+   {
+    "label": "Privacy policy",
+    "href": "/policies/privacy-policy"
+   },
+   {
+    "label": "Terms of service",
+    "href": "/policies/terms-of-service"
+   },
+   {
+    "label": "Shipping policy",
+    "href": "/policies/shipping-policy"
+   },
+   {
+    "label": "Contact information",
+    "href": "/policies/contact-information"
+   }
+  ],
+  "copyright": "© 2026, Silkenthread.in"
+ }
+}

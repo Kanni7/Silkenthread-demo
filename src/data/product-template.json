@@ -1,0 +1,40 @@
+{
+ "source": "/products/pur2092026kiara",
+ "shippingNote": "Inclusive of all taxes and shipping",
+ "whatsapp": {
+  "label": "If you need more details, message us on whatsapp",
+  "href": "https://api.whatsapp.com/send/?phone=9663748945&type=phone_number&text=I%27m%20interested%20in%20the%20product"
+ },
+ "policyLinks": [
+  {
+   "label": "shipping",
+   "href": "/policies/shipping-policy"
+  },
+  {
+   "label": "Friendly Return Policy",
+   "href": "/pages/refund-policy"
+  },
+  {
+   "label": "Shipping Policy",
+   "href": "/pages/shipping-policy"
+  },
+  {
+   "label": "Size chart",
+   "href": "https://silkenthread.in/pages/size-chart"
+  }
+ ],
+ "collapsibles": [
+  {
+   "heading": "More about the saree:",
+   "html": "<ul class=\"metafield-single_line_text_field-array\"><li class=\"metafield-single_line_text_field\">Kanjeevaram silk saree is a magnificent creation of the craftsmen living in a small town, Kanchi (Kanchipuram), situated near the Chennai city of South India.The motifs used in an Indian Kanchipuram sari are heavily based on the Pallava temples, palaces and paintings, and are made in fine silk. The sheer magnitude of textures, colors and designs is astounding. it is said that the actress Rekha once caused a traffic jam in the streets of Paris, the fashion capital of the world, when she stepped out wearing a gold kanjeevaram saree!</li></ul>"
+  },
+  {
+   "heading": "Care information",
+   "html": "<p>Dry clean only. To protect the delicate threads of the sari, please avoid any pressure on the tips- avoid brush cleaning, or wringing. Iron on medium heat or spread a towel on top of the saree during ironing. Steam iron is recommended. It is ideal to dry clean stained silk sarees immediately. Unfold and change the fold of the silk sarees from time to time. This will help avoid tears and damage along the creases. Store your silk sarees by wrapping them in soft muslin clothes or fabric saree </p>"
+  }
+ ],
+ "buttons": {
+  "addToCart": "Add to cart",
+  "buyNow": "Buy it now"
+ }
+}
