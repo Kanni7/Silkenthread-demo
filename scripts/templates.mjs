@@ -40,6 +40,8 @@ const groups = {
     ...section($h, '__header'), wrapper: cls($h, '.header-wrapper'), header: cls($h, 'header.header'), drawer: cls($h, '#menu-drawer'),
     drawerSubmenu: cls($h, '.menu-drawer__submenu'), dropdown: cls($h, '.header__submenu'), searchModal: cls($h, '.search-modal'),
     logoWidth: +$h('.header__heading-logo').attr('width') || null, logoHeight: +$h('.header__heading-logo').attr('height') || null,
+    // Hidden <symbol> sprite referenced by <use href="#icon-search"> (search icon).
+    sprite: $h.html($h('[id$="__header"] > svg.hidden').first()).replace(/\s+/g, ' ') || null,
     social: $h('#menu-drawer .list-social a').map((i, a) => ({ href: $h(a).attr('href'), label: txt($h(a).find('.visually-hidden').text()), icon: (($h(a).find('svg').attr('class') || '').match(/icon-([\w-]+)/) || [])[1] })).get(),
   },
   preFooter: { ...section($h, '__custom_liquid_tk7NdT'), inner: cls($h, '[id$="__custom_liquid_tk7NdT"] > div'), padding: cls($h, '[id$="__custom_liquid_tk7NdT"] [class*="-padding"]') },
