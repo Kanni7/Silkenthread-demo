@@ -10,7 +10,7 @@ See [SOURCES.md](SOURCES.md) for attribution.
 |---|---|
 | 1. Recon (inventory, screenshots, rendered HTML) | done |
 | 2. Data (JSON endpoints, normalised data, images) | done |
-| 3. Styles | – |
+| 3. Styles (theme CSS, design tokens, fonts) | done |
 | 4. Components and pages (Astro) | – |
 | 5. Fidelity check → tag `v0-baseline` | – |
 | 6. Redesign (`redesign` branch) | – |
@@ -27,6 +27,7 @@ npm run capture   # screenshots + rendered HTML -> reference/  (optional: npm ru
 npm run data      # public Shopify JSON + saved HTML -> src/data/*.json
 npm run data:offline  # same, but only from .cache/ (never touches the network)
 npm run images    # images used on the captured pages, width=1000 -> public/images/
+npm run styles    # cached theme CSS -> src/styles/original/, tokens -> src/styles/tokens.css (offline)
 ```
 
 `npm run dev` / `npm run build` arrive with the Astro site in Phase 4.
@@ -52,6 +53,10 @@ src/data/pages.json      about, contact, what's new, size chart, refund/shipping
 src/data/product-template.json  shared product-page bits (WhatsApp link, policy links, accordions)
 src/data/site.json       money format, products per page (24), sort options
 src/data/images.json     imageKey -> local /images/... path (anything not listed uses the Shopify CDN)
+scripts/styles.mjs       copies theme CSS from .cache/, extracts tokens (computed styles at 375/768/1440)
+src/styles/original/     36 Craft stylesheets + theme-inline.css (verbatim) + 2 app stylesheets (reference only)
+src/styles/tokens.css    design tokens: --st-* palette/fonts/type scale + Craft settings and colour schemes
+reference/styles-report.json  raw computed-style data (colour/size/radius frequencies, element metrics)
 public/images/           135 images used on the replicated pages (~97 MB)
 docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
 .cache/                  HTTP cache (git-ignored)
@@ -83,4 +88,13 @@ docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
 - Default sort is known only for the two captured collections (`created-descending`); the JSON order
   matches their first page exactly, so other collections use the JSON order.
 - 51 of the downloaded images are photos uploaded to Shopify as PNG (2–3 MB each at 1000 px).
+## Style notes
+
+- **Fonts:** body Asul (400/700), headings Libre Caslon Text (400): the same families the live theme
+  uses. The replica loads them from Google Fonts instead of Shopify's font CDN; glyphs should match,
+  minor hinting differences are possible (checked in Phase 5).
+- **Faithful bugs kept:** several live colour-scheme settings are empty (`--color-button-text: ,,;`,
+  `--color-link: ,,;`) and `--media-padding: px;` is invalid. They are kept as-is and commented in
+  `tokens.css` so the baseline renders like the live site.
+- Breakpoints: 750 px (tablet) and 990 px (desktop), as in Dawn/Craft.
 - The crawl was interrupted twice by connection resets (no 429/CAPTCHA) and resumed on request.

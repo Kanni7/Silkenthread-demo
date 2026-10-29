@@ -1,0 +1,677 @@
+/* Inline <head> styles from https://silkenthread.in/ (theme.liquid): fonts, colour schemes, :root settings. Verbatim. */
+/* --- inline <style> #1 --- */
+@font-face {
+  font-family: Asul;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//silkenthread.in/cdn/fonts/asul/asul_n4.814c5323104eaec8052c156ea81d27e4cc2ecc89.woff2") format("woff2"),
+       url("//silkenthread.in/cdn/fonts/asul/asul_n4.fad4580d0c2a0762bf2eec95df0ca1bba03e7345.woff") format("woff");
+}
+
+      @font-face {
+  font-family: Asul;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//silkenthread.in/cdn/fonts/asul/asul_n7.1ce81e866ff8ed9910cd2de5c7e0903f60f91e77.woff2") format("woff2"),
+       url("//silkenthread.in/cdn/fonts/asul/asul_n7.a51de712305c01e28e5f167ab71969983e78b55b.woff") format("woff");
+}
+
+      
+      
+      @font-face {
+  font-family: "Libre Caslon Text";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//silkenthread.in/cdn/fonts/libre_caslon_text/librecaslontext_n4.69e40b5499cae01f08d854557f813a31bc80e248.woff2") format("woff2"),
+       url("//silkenthread.in/cdn/fonts/libre_caslon_text/librecaslontext_n4.64955492c60f32c2546fc5710223f1274518807f.woff") format("woff");
+}
+
+
+      
+        :root,
+        .color-background-1 {
+          --color-background: 255,255,255;
+        
+          --gradient-background: #ffffff;
+        
+
+        
+
+        --color-foreground: 18,18,18;
+        --color-background-contrast: 191,191,191;
+        --color-shadow: 7,8,8;
+        --color-button: 0,173,181;
+        --color-button-text: ,,;
+        --color-secondary-button: 255,255,255;
+        --color-secondary-button-text: ,,;
+        --color-link: ,,;
+        --color-badge-foreground: 18,18,18;
+        --color-badge-background: 255,255,255;
+        --color-badge-border: 18,18,18;
+        --payment-terms-background-color: rgb(255 255 255);
+      }
+      
+        
+        .color-background-2 {
+          --color-background: 255,255,255;
+        
+          --gradient-background: #ffffff;
+        
+
+        
+
+        --color-foreground: 0,173,181;
+        --color-background-contrast: 191,191,191;
+        --color-shadow: 7,8,8;
+        --color-button: 7,8,8;
+        --color-button-text: 255,255,255;
+        --color-secondary-button: 255,255,255;
+        --color-secondary-button-text: 7,8,8;
+        --color-link: 7,8,8;
+        --color-badge-foreground: 0,173,181;
+        --color-badge-background: 255,255,255;
+        --color-badge-border: 0,173,181;
+        --payment-terms-background-color: rgb(255 255 255);
+      }
+      
+        
+        .color-inverse {
+          --color-background: 7,8,8;
+        
+          --gradient-background: #070808;
+        
+
+        
+
+        --color-foreground: 255,255,255;
+        --color-background-contrast: 127,143,143;
+        --color-shadow: 7,8,8;
+        --color-button: 255,255,255;
+        --color-button-text: 7,8,8;
+        --color-secondary-button: 7,8,8;
+        --color-secondary-button-text: 255,255,255;
+        --color-link: 255,255,255;
+        --color-badge-foreground: 255,255,255;
+        --color-badge-background: 7,8,8;
+        --color-badge-border: 255,255,255;
+        --payment-terms-background-color: rgb(7 8 8);
+      }
+      
+        
+        .color-accent-1 {
+          --color-background: 0,173,181;
+        
+          --gradient-background: #00adb5;
+        
+
+        
+
+        --color-foreground: 18,18,18;
+        --color-background-contrast: 0,51,54;
+        --color-shadow: 7,8,8;
+        --color-button: 239,236,236;
+        --color-button-text: 44,51,47;
+        --color-secondary-button: 0,173,181;
+        --color-secondary-button-text: 239,236,236;
+        --color-link: 239,236,236;
+        --color-badge-foreground: 18,18,18;
+        --color-badge-background: 0,173,181;
+        --color-badge-border: 18,18,18;
+        --payment-terms-background-color: rgb(0 173 181);
+      }
+      
+        
+        .color-accent-2 {
+          --color-background: 255,255,255;
+        
+          --gradient-background: #ffffff;
+        
+
+        
+
+        --color-foreground: 18,18,18;
+        --color-background-contrast: 191,191,191;
+        --color-shadow: 44,51,47;
+        --color-button: 44,51,47;
+        --color-button-text: 0,173,181;
+        --color-secondary-button: 255,255,255;
+        --color-secondary-button-text: 0,173,181;
+        --color-link: 0,173,181;
+        --color-badge-foreground: 18,18,18;
+        --color-badge-background: 255,255,255;
+        --color-badge-border: 18,18,18;
+        --payment-terms-background-color: rgb(255 255 255);
+      }
+      
+        
+        .color-scheme-bd59bf34-4db9-4043-bc26-d99ab2b2fddf {
+          --color-background: 255,255,255;
+        
+          --gradient-background: #ffffff;
+        
+
+        
+
+        --color-foreground: 239,236,236;
+        --color-background-contrast: 191,191,191;
+        --color-shadow: 7,8,8;
+        --color-button: 0,173,181;
+        --color-button-text: ,,;
+        --color-secondary-button: 255,255,255;
+        --color-secondary-button-text: ,,;
+        --color-link: ,,;
+        --color-badge-foreground: 239,236,236;
+        --color-badge-background: 255,255,255;
+        --color-badge-border: 239,236,236;
+        --payment-terms-background-color: rgb(255 255 255);
+      }
+      
+
+      body, .color-background-1, .color-background-2, .color-inverse, .color-accent-1, .color-accent-2, .color-scheme-bd59bf34-4db9-4043-bc26-d99ab2b2fddf {
+        color: rgba(var(--color-foreground), 0.75);
+        background-color: rgb(var(--color-background));
+      }
+
+      :root {
+        --font-body-family: Asul, serif;
+        --font-body-style: normal;
+        --font-body-weight: 400;
+        --font-body-weight-bold: 700;
+
+        --font-heading-family: "Libre Caslon Text", serif;
+        --font-heading-style: normal;
+        --font-heading-weight: 400;
+
+        --font-body-scale: 1.2;
+        --font-heading-scale: 0.875;
+
+        --media-padding: px;
+        --media-border-opacity: 0.1;
+        --media-border-width: 0px;
+        --media-radius: 6px;
+        --media-shadow-opacity: 0.0;
+        --media-shadow-horizontal-offset: 0px;
+        --media-shadow-vertical-offset: 4px;
+        --media-shadow-blur-radius: 5px;
+        --media-shadow-visible: 0;
+
+        --page-width: 160rem;
+        --page-width-margin: 0rem;
+
+        --product-card-image-padding: 0.2rem;
+        --product-card-corner-radius: 0.6rem;
+        --product-card-text-alignment: center;
+        --product-card-border-width: 0.1rem;
+        --product-card-border-opacity: 0.1;
+        --product-card-shadow-opacity: 0.0;
+        --product-card-shadow-visible: 0;
+        --product-card-shadow-horizontal-offset: 0.0rem;
+        --product-card-shadow-vertical-offset: 0.4rem;
+        --product-card-shadow-blur-radius: 0.5rem;
+
+        --collection-card-image-padding: 0.4rem;
+        --collection-card-corner-radius: 0.0rem;
+        --collection-card-text-alignment: center;
+        --collection-card-border-width: 0.0rem;
+        --collection-card-border-opacity: 0.0;
+        --collection-card-shadow-opacity: 0.1;
+        --collection-card-shadow-visible: 1;
+        --collection-card-shadow-horizontal-offset: 0.0rem;
+        --collection-card-shadow-vertical-offset: 0.0rem;
+        --collection-card-shadow-blur-radius: 0.0rem;
+
+        --blog-card-image-padding: 0.0rem;
+        --blog-card-corner-radius: 0.0rem;
+        --blog-card-text-alignment: left;
+        --blog-card-border-width: 0.0rem;
+        --blog-card-border-opacity: 0.0;
+        --blog-card-shadow-opacity: 0.1;
+        --blog-card-shadow-visible: 1;
+        --blog-card-shadow-horizontal-offset: 0.0rem;
+        --blog-card-shadow-vertical-offset: 0.0rem;
+        --blog-card-shadow-blur-radius: 0.0rem;
+
+        --badge-corner-radius: 0.6rem;
+
+        --popup-border-width: 1px;
+        --popup-border-opacity: 1.0;
+        --popup-corner-radius: 6px;
+        --popup-shadow-opacity: 1.0;
+        --popup-shadow-horizontal-offset: 0px;
+        --popup-shadow-vertical-offset: -2px;
+        --popup-shadow-blur-radius: 5px;
+
+        --drawer-border-width: 0px;
+        --drawer-border-opacity: 1.0;
+        --drawer-shadow-opacity: 1.0;
+        --drawer-shadow-horizontal-offset: 0px;
+        --drawer-shadow-vertical-offset: -40px;
+        --drawer-shadow-blur-radius: 5px;
+
+        --spacing-sections-desktop: 0px;
+        --spacing-sections-mobile: 0px;
+
+        --grid-desktop-vertical-spacing: 4px;
+        --grid-desktop-horizontal-spacing: 4px;
+        --grid-mobile-vertical-spacing: 2px;
+        --grid-mobile-horizontal-spacing: 2px;
+
+        --text-boxes-border-opacity: 0.0;
+        --text-boxes-border-width: 0px;
+        --text-boxes-radius: 6px;
+        --text-boxes-shadow-opacity: 0.2;
+        --text-boxes-shadow-visible: 1;
+        --text-boxes-shadow-horizontal-offset: 0px;
+        --text-boxes-shadow-vertical-offset: 4px;
+        --text-boxes-shadow-blur-radius: 5px;
+
+        --buttons-radius: 6px;
+        --buttons-radius-outset: 7px;
+        --buttons-border-width: 1px;
+        --buttons-border-opacity: 1.0;
+        --buttons-shadow-opacity: 0.0;
+        --buttons-shadow-visible: 0;
+        --buttons-shadow-horizontal-offset: 0px;
+        --buttons-shadow-vertical-offset: 4px;
+        --buttons-shadow-blur-radius: 5px;
+        --buttons-border-offset: 0.3px;
+
+        --inputs-radius: 6px;
+        --inputs-border-width: 1px;
+        --inputs-border-opacity: 0.55;
+        --inputs-shadow-opacity: 0.0;
+        --inputs-shadow-horizontal-offset: 0px;
+        --inputs-margin-offset: 0px;
+        --inputs-shadow-vertical-offset: -12px;
+        --inputs-shadow-blur-radius: 5px;
+        --inputs-radius-outset: 7px;
+
+        --variant-pills-radius: 40px;
+        --variant-pills-border-width: 1px;
+        --variant-pills-border-opacity: 0.55;
+        --variant-pills-shadow-opacity: 0.0;
+        --variant-pills-shadow-horizontal-offset: 0px;
+        --variant-pills-shadow-vertical-offset: 4px;
+        --variant-pills-shadow-blur-radius: 5px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-size: calc(var(--font-body-scale) * 62.5%);
+        height: 100%;
+      }
+
+      body {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 100%;
+        min-height: 100%;
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 0.06rem;
+        line-height: calc(1 + 0.8 / var(--font-body-scale));
+        font-family: var(--font-body-family);
+        font-style: var(--font-body-style);
+        font-weight: var(--font-body-weight);
+      }
+
+      @media screen and (min-width: 750px) {
+        body {
+          font-size: 1.6rem;
+        }
+      }
+
+/* --- inline <style> #2 --- */
+/* Shadow DOM content does not prevent theme-wide :empty rules from matching the host. */
+  shopify-chat:defined:empty {
+    display: grid;
+  }
+
+  :root {
+    --shopify-chat-bg-color: #FFFFFF;
+    --shopify-chat-text-color: #000000;
+    --shopify-chat-accent-bg-color: #000000;
+    --shopify-chat-accent-text-color: #FFFFFF;
+    --shopify-chat-activator-offset: 20px;
+
+    
+
+    --shopify-chat-activator-font-size: 16px;
+    --shopify-chat-border-radius: 16px;
+  }
+
+/* --- inline <style> #3 --- */
+.helpy-social-bar svg {
+            width: 100% !important;
+          }
+        .helpy-social-bar {
+            box-shadow :#9e9e9e 0px 0px 4px 2px;
+            top: 50%;transform: translateY(-50%);left:0 !important;
+            width:45px;
+            background:#ffffff;
+            padding:3px;
+            border-radius :5px;
+            position: fixed;  
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index : 99999999;
+            ;
+        }
+        .helpy-social-icon {
+            transition: 0.5s All;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            animation: slideInFromLeft 1s;
+            border:2px solid #bdbdbd;
+            border-radius: 100% !important;
+            margin-bottom : 0px;
+            width:39px;height:39px;
+        }
+        .helpy-social-icon:last-child {
+            margin-bottom: unset;
+            margin-right: unset;
+          }
+     
+        .helpy-social-icon:hover {
+            transform: scale(1.5);        
+        }
+        .helpy-social-icon .helpy-flickr circle {
+      fill:  !important;
+      }
+        .helpy-social-icon svg rect,.helpy-social-icon svg circle{
+        fill :  !important;
+    }
+        .helpy-social-icon svg:not(.dakaas-ignore) path{
+      fill:;
+      }
+     
+    .helpy-social-icon svg rect{
+     rx:100%;
+     ry:100%;
+    }
+     .yummly rect{ 
+ rx:1000 !important;
+     ry:1000 !important;
+}
+        .kooltip{
+            --tip-color : #276996 !important;
+        }
+
+/* --- inline <style> #4 --- */
+.carthike-mobile-messenger-active {overflow: hidden;height: 100%;width: 100%;position: fixed;}
+
+/* --- inline <style> #5 --- */
+:root { --carthike-button-background-color:
+        #22cd5b;
+         --carthike-button-text-color:
+        #ffffff; 
+        --carthike-button-icon-color:
+        #ffffff };
+        --carthike-share-button-background-color:
+        #22cd5b };
+        --carthike-share-button-text-color:
+        #ffffff };
+        --carthike-share-button-icon-color:
+        #ffffff };
+      
+    
+  #carthike-chat-wrapper{
+    max-width: 128px;
+  }
+  #carthike-chat-button-container.right{
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 999;
+  }
+  #carthike-chat-button-container.left{
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 999;
+  }
+
+  
+  #carthike-chat-button-container .whatsappbutton{  
+    
+    border-radius: 6px;
+    background-color: var(--carthike-button-background-color);
+    color: var(--carthike-button-text-color);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border:0
+  }
+  #carthike-chat-button-container .whatsappbutton svg {
+    fill: var(--carthike-button-icon-color);
+    stroke:none;
+  }
+
+  #carthike-chat-button-container .whatsappbutton svg{  
+  width:24px;
+  margin-left:-0.25rem;
+  margin-right:0.5rem;
+  height:24px;
+  }
+  #carthike-chat-button-container .whatsappbutton.buttonWithIcon {
+    border-radius: 50%;
+  
+    padding: 12px 12px;
+  }
+  #carthike-chat-button-container .whatsappbutton.buttonWithIcon svg {
+    margin: 0;
+  }
+  
+  
+  
+    
+    #carthike-container .carthike-messenger-frame {
+        z-index: 2147483000!important;
+        position: fixed!important;
+        bottom: 20px;
+        right: 20px;
+        height: calc(100% - 20px - 20px);
+        width: 370px;
+        max-height: 590px!important;
+        -webkit-box-shadow: 0 5px 40px rgba(0,0,0,.16)!important;
+        box-shadow: 0 5px 40px rgba(0,0,0,.16)!important;
+        border-radius: 8px!important;
+        overflow: hidden!important;
+        opacity: 1!important;
+    }
+    #carthike-chat-button-container .whatsappbutton, #carthike-welcome-message-container .welcome-message-button{
+        display:inline-flex;
+    }
+    @media screen and (max-width: 767px){
+      #carthike-chat-button-container .whatsappbutton{
+        display:inline-flex !important;
+      }
+      #carthike-chat-button-container.right{
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        z-index: 1000000;
+      }
+      #carthike-chat-button-container.left{
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        z-index: 1000000;
+      }
+      #carthike-chat-button-container .whatsappbutton svg{  
+        width:24px;
+        margin-left:-0.25rem;
+        margin-right:0.5rem;
+        height:24px;
+        }
+        #carthike-chat-button-container .whatsappbutton{
+          font-size: 14px;
+        }
+
+    }
+
+/* --- inline <style> #6 --- */
+:root { 
+        --carthike-share-button-background-color:
+        #22cd5b;
+        --carthike-share-button-text-color:
+        #ffffff;
+        --carthike-share-button-icon-color:
+        #ffffff };
+      
+    
+  #carthike-share-wrapper{
+    max-width: 128px;
+  }
+  #carthike-share-button-container{
+    max-width: 128px;
+  }
+  #carthike-share-button-container.right{
+    position: fixed;
+    bottom: 50%;
+    right: 0;
+    z-index: 1000000;
+  }
+  #carthike-share-button-container.left{
+    position: fixed;
+    bottom: 50%;
+    left: 0px;
+    z-index: 1000000;
+    
+  }
+
+  
+  #carthike-share-button-container .whatsappsharebutton{  
+    background-color: var(--carthike-share-button-background-color);
+    color: var(--carthike-share-button-text-color);
+    display:flex;
+    cursor: pointer;
+    flex-direction:column-reverse;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border:0
+  }
+  #carthike-share-button-container.right .whatsappsharebutton {
+    border-radius: unset !important;
+  border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+  }
+  #carthike-share-button-container.left .whatsappsharebutton {
+    border-radius: unset !important;
+    border-top-right-radius: 6px !important;
+      border-bottom-right-radius: 6px !important;
+    }
+
+  #carthike-share-button-container .whatsappsharebutton span{
+    writing-mode: tb;
+    transform: rotate(-180deg);
+    text-transform: capitalize;
+  }
+  
+
+  #carthike-share-button-container .whatsappsharebutton svg {
+    fill: var(--carthike-share-button-icon-color);
+  }
+
+  #carthike-share-button-container .whatsappsharebutton svg{  
+   width:16px;
+  margin-left:-0.25rem;
+  margin-top:0.5rem;
+  height:16px;
+  }
+  #carthike-share-button-container .whatsappsharebutton.buttonWithIcon {
+    border-radius: 50%;
+  
+    padding: 12px 12px;
+  }
+  #carthike-share-button-container .whatsappsharebutton.buttonWithIcon svg {
+    margin: 0;
+  }
+
+/* --- inline <style> #7 --- */
+#carthike-welcome-message-container{
+    display: flex;
+    opacity:0;
+    -webkit-transition: all 800ms ease-in-out;
+  }
+  #carthike-welcome-message-container .welcome-message-button{
+    box-shadow:0px 0px 5px 0px #d3d3d3;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display:flex;
+    border-radius: 0.375rem;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    position:relative;
+    color: #374151;
+    cursor:pointer;
+    
+    
+  }
+  #carthike-welcome-message-container .welcome-close-button-wrapper{
+    top: -8px;
+    right: -5px;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border-radius: 9999px;
+    border: 1px solid #9fa6b2;
+    background-color: #ffffff;
+  }
+  #carthike-welcome-message-container .welcome-close-button-wrapper svg{
+    stroke: currentColor;
+    color: #9fa6b2;
+    position:absolute;
+    width: 16px;
+    left: -1px;
+    height: 16px;
+  }
+  #carthike-welcome-message-container.right{
+    position: fixed;
+    bottom:40px;
+    right: 16px;
+    z-index: 1000000;
+  }
+  #carthike-welcome-message-container.left{
+    position: fixed;
+    bottom: 64px;
+    left: 16px;
+    z-index: 1000000;
+  }
+  #carthike-welcome-message-container.animate-card{
+    opacity:1;
+    bottom: calc(16px + 48px);
+  }
+  @media screen and (max-width: 767px){
+    #carthike-welcome-message-container.animate-card{
+      opacity:1;
+      bottom: calc(16px + 48px);
+    } 
+  }

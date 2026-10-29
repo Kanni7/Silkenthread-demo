@@ -1,0 +1,298 @@
+/* Source: https://cdn.shopify.com/extensions/01a18246-002d-7d69-a4fd-cfe88f016356/social-bar-2-109/assets/social-media.css
+   First seen on: collection-sale.html. Verbatim copy, (c) Shopify / app vendor. Reference only. */
+.helpy-social-bar,
+.helpy-social-icon,
+.helpy-social-bar .helpy-social-icon svg,
+.helpy-social-icon img {
+  box-sizing: border-box !important;
+}
+
+.helpy-social-icon img {
+  border-radius: 7px;
+  padding: 5px;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.helpy-social-bar svg {
+  transition: 0.5s All;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer;
+  padding: 5px;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(+100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(+100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .helpy-social-icon svg {
+    padding: 3px;
+  }
+}
+
+:root {
+  --tip-color: rgba(0, 0, 0, 0.8);
+  --left-arrow: 0;
+  --right-arrow: 0;
+}
+
+.kooltip {
+  /* transition: 0.2s all; */
+  position: absolute;
+  background-color: var(--tip-color);
+  border-radius: 4px;
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 16px;
+  line-height: 19px;
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 999999999999999;
+}
+
+.kooltip.multiline {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.kooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: calc(50% - 4px);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--tip-color);
+}
+
+.kooltip--left-aligned::after {
+  left: var(--left-arrow);
+}
+
+.kooltip--right-aligned::after {
+  left: var(--right-arrow);
+}
+
+.kooltip--top-aligned::after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 0;
+  border-bottom: 8px solid var(--tip-color);
+  top: -8px;
+  bottom: initial;
+}
+
+.kooltip {
+  --tip-color: #00c2f3;
+}
+
+@keyframes breathe-y {
+  0% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.1);
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+}
+@keyframes breathe-x {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes breathe-y-zero {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(0) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes breathe-x-zero {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(0) scale(1.1);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes dancing-y {
+  from {
+    transform: translateY(-50%) scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    transform: translateY(-50%) scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(-50%) scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%,
+  60%,
+  80% {
+    transform: translateY(-50%) scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: translateY(-50%) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes dancing-x {
+  from {
+    transform: translateX(-50%) scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    transform: translateX(-50%) scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-50%) scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%,
+  60%,
+  80% {
+    transform: translateX(-50%) scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: translateX(-50%) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes dancing-y-zero {
+  from {
+    transform: translateY(0) scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    transform: translateY(0) scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(0) scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%,
+  60%,
+  80% {
+    transform: translateY(0) scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: translateY(0) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes dancing-x-zero {
+  from {
+    transform: translateX(0) scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    transform: translateX(0) scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(0) scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%,
+  60%,
+  80% {
+    transform: translateX(0) scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: translateX(0) scale3d(1, 1, 1);
+  }
+}
