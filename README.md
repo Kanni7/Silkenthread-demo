@@ -119,3 +119,6 @@ re-skins the site only through Craft's CSS variables (no markup, data or image c
   collections in the search panel. Queries still submit to `/search` (Shopify search on the live store).
 - Homepage: new "Shop by category" section after the hero (`src/components/CategoryTiles.astro`).
 - `src/styles/redesign-nav.css` holds the navigation/search/tiles styles.
+- Price bands (`src/components/PriceBands.astro`): the four laurel price images are now ivory cards with
+  block-print corners and flourishes, live text labels from the price collections' titles, and a
+  turquoise hover/focus state. Configured by `priceBands` in `navigation.json`.

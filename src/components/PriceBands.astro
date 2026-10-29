@@ -1,0 +1,60 @@
+---
+// Homepage price bands (replaces the four laurel images of the live multicolumn section).
+// Ivory cards with block-print corners and flourishes; labels are the price collections' own titles.
+import Section from './Section.astro';
+import { collectionMap, localHref } from '../lib/data.js';
+const { section: s, heading = 'Shop by price' } = Astro.props;
+const L = s.layout;
+const label = (title) => title.replace(/^([<>])\s*/, '$1 ').replace(/(\d)\s*-\s*(\d)/, '$1–$2');
+const bands = s.items.map((i) => {
+  const handle = i.link.href.split('/collections/')[1];
+  return { href: localHref(i.link.href), label: label(collectionMap.get(handle)?.title || handle) };
+});
+---
+<Section id={s.id} tag={s.tag} style={s.style}>
+  <div class="multicolumn st-price-bands gradient">
+    <div class={L.container.class} style={L.container.style}>
+      <h2 class="visually-hidden">{heading}</h2>
+      <svg class="hidden" aria-hidden="true">
+        <defs>
+          <g id="st-flower">
+            <path d="M0-1C3.2-2.8 3.2-6.6 0-9.6C-3.2-6.6-3.2-2.8 0-1Z" />
+            <path d="M0-1C3.2-2.8 3.2-6.6 0-9.6C-3.2-6.6-3.2-2.8 0-1Z" transform="rotate(90)" />
+            <path d="M0-1C3.2-2.8 3.2-6.6 0-9.6C-3.2-6.6-3.2-2.8 0-1Z" transform="rotate(180)" />
+            <path d="M0-1C3.2-2.8 3.2-6.6 0-9.6C-3.2-6.6-3.2-2.8 0-1Z" transform="rotate(270)" />
+          </g>
+        </defs>
+        <symbol id="st-corner" viewBox="0 0 100 100">
+          <g fill="none" stroke="currentColor">
+            <path d="M100 0L0 100" stroke-width="2" opacity="0.6" />
+            <path d="M92 0L0 92" stroke-width="1" opacity="0.6" />
+            <path d="M86 0L0 86" stroke-width="3.2" opacity="0.3" />
+            <path d="M0 22H56M0 44H34M22 0V56M44 0V34" stroke-width="0.8" opacity="0.25" />
+          </g>
+          <g fill="currentColor" opacity="0.9">
+            <use href="#st-flower" transform="translate(15 15) scale(1.2)" />
+            <use href="#st-flower" transform="translate(41 15) scale(1.2)" />
+            <use href="#st-flower" transform="translate(15 41) scale(1.2)" />
+          </g>
+        </symbol>
+        <symbol id="st-flourish" viewBox="0 0 200 40">
+          <path d="M0 20H74M126 20H200" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.75" />
+          <use href="#st-flower" transform="translate(100 20) scale(1.9)" fill="currentColor" />
+        </symbol>
+      </svg>
+      <ul class="st-price-bands__grid list-unstyled" role="list">
+        {bands.map((b) => (
+          <li>
+            <a href={b.href} class="st-price-card">
+              <svg class="st-price-card__corner st-price-card__corner--tl" aria-hidden="true" focusable="false"><use href="#st-corner" /></svg>
+              <svg class="st-price-card__corner st-price-card__corner--br" aria-hidden="true" focusable="false"><use href="#st-corner" /></svg>
+              <svg class="st-price-card__flourish" aria-hidden="true" focusable="false"><use href="#st-flourish" /></svg>
+              <span class="st-price-card__label"><span class="visually-hidden">Price: </span>{b.label}<span class="visually-hidden"> rupees</span></span>
+              <svg class="st-price-card__flourish" aria-hidden="true" focusable="false"><use href="#st-flourish" /></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</Section>

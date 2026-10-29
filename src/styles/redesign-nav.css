@@ -383,3 +383,101 @@
 .st-cat-tile:focus-visible {
   outline-offset: 0.4rem;
 }
+
+/* ---- Homepage: price bands (ivory cards, block-print corners; turquoise on hover/focus) ---- */
+.st-price-bands {
+  --color-background: var(--st-surface-warm);
+  --gradient-background: rgb(var(--st-surface-warm));
+  padding: 2rem 0;
+}
+.st-price-bands .page-width {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media screen and (min-width: 750px) {
+  .st-price-bands {
+    padding: 3.2rem 0;
+  }
+  .st-price-bands .page-width {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+.st-price-bands__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 0;
+}
+@media screen and (min-width: 750px) {
+  .st-price-bands__grid {
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 990px) {
+  .st-price-bands__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3.2rem;
+  }
+}
+.st-price-card {
+  position: relative;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 43 / 34;
+  overflow: hidden;
+  border: 0.15rem solid rgba(var(--st-terracotta), 0.55);
+  border-radius: 1.6rem;
+  background: rgba(var(--st-white), 0.55);
+  box-shadow: 0 0.4rem 1.2rem rgba(var(--st-text), 0.06);
+  color: rgb(var(--st-text));
+  text-decoration: none;
+  transition: border-color var(--duration-default) ease, background-color var(--duration-default) ease, box-shadow var(--duration-default) ease;
+}
+.st-price-card__corner,
+.st-price-card__flourish {
+  color: rgb(var(--st-terracotta));
+  transition: color var(--duration-default) ease;
+}
+.st-price-card__corner {
+  position: absolute;
+  width: 28cqi;
+  height: 28cqi;
+}
+.st-price-card__corner--tl {
+  top: 0;
+  left: 0;
+}
+.st-price-card__corner--br {
+  right: 0;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+.st-price-card__flourish {
+  width: 44cqi;
+  height: 8.8cqi;
+}
+.st-price-card__label {
+  margin: 2.5cqi 0;
+  font-family: var(--font-heading-family);
+  font-size: 12.5cqi;
+  line-height: 1.1;
+  letter-spacing: 0;
+  white-space: nowrap;
+  color: rgb(var(--st-text));
+}
+.st-price-card:hover,
+.st-price-card:focus-visible {
+  border-color: rgb(var(--st-teal));
+  background: linear-gradient(rgba(var(--st-teal), 0.09), rgba(var(--st-teal), 0.09)), rgb(var(--st-white));
+  box-shadow: inset 0 0 0 0.1rem rgb(var(--st-teal)), 0 0.6rem 1.6rem rgba(var(--st-teal), 0.18);
+}
+.st-price-card:hover .st-price-card__corner,
+.st-price-card:hover .st-price-card__flourish,
+.st-price-card:focus-visible .st-price-card__corner,
+.st-price-card:focus-visible .st-price-card__flourish {
+  color: rgb(var(--st-teal));
+}

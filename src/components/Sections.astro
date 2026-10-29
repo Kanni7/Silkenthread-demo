@@ -7,10 +7,13 @@ import ProductGrid from './ProductGrid.astro';
 import MainPage from './MainPage.astro';
 import ContactForm from './ContactForm.astro';
 import Section from './Section.astro';
+import PriceBands from './PriceBands.astro';
+import { priceBands } from '../lib/nav.js';
 const { sections = [] } = Astro.props;
 const COMPONENTS = { slideshow: HeroSlideshow, 'collection-list': CollectionCarousel, multicolumn: Multicolumn, 'featured-collection': ProductGrid, 'main-page': MainPage, 'contact-form': ContactForm };
 ---
 {sections.map((s) => {
+  if (priceBands && s.id.endsWith(priceBands.section)) return <PriceBands section={s} heading={priceBands.heading} />; // redesign
   const C = COMPONENTS[s.type];
   return C ? <C section={s} /> : <Section id={s.id} tag={s.tag} style={s.style}><Fragment set:html={s.html} /></Section>;
 })}

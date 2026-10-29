@@ -57,3 +57,5 @@ export const homeTiles = {
     return { ...g, imageFromProduct: t.imageFromProduct };
   }),
 };
+
+export const priceBands = nav.priceBands;
