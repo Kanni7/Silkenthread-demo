@@ -1,0 +1,120 @@
+/* =========================================================================
+   Redesign: warmer palette + quieter product/collection cards.
+   Loaded last; overrides the baseline (tokens.css + original theme CSS) through
+   Craft's own variables, so no markup, data or imagery changes.
+   ========================================================================= */
+
+:root {
+  /* ---- Palette ---- */
+  --st-teal: 0,174,181;              /* #00AEB5 primary brand: logo, nav, selected links, key icons */
+  --st-terracotta: 199,107,74;       /* #C76B4A accent: non-text highlights (underlines, hover accents) */
+  --st-terracotta-deep: 168,85,58;   /* #A8553A deeper step of the accent for filled CTAs/badges: white text
+                                        is 5.2:1 here vs 3.7:1 on #C76B4A (WCAG AA needs 4.5:1) */
+  --st-ivory: 245,232,216;           /* #F5E8D8 warm neutral surfaces */
+  --st-cocoa: 61,41,37;              /* #3D2925 text */
+
+  /* ---- Semantic roles (edit these to re-skin) ---- */
+  --st-text: var(--st-cocoa);
+  --st-surface-warm: var(--st-ivory);
+  --st-cta: var(--st-terracotta-deep);
+  --st-cta-hover: var(--st-cocoa);
+  --st-on-cta: var(--st-white);
+  --st-accent: var(--st-terracotta);
+
+  /* ---- Cards: drop the turquoise frame (it was the image padding showing the teal card) ---- */
+  --product-card-image-padding: 0rem;
+  --collection-card-image-padding: 0rem;
+  --product-card-border-width: 0rem;
+}
+
+/* ---- Text: cocoa instead of near-black on the default scheme ---- */
+:root,
+.color-background-1 {
+  --color-foreground: var(--st-text);
+  --color-shadow: var(--st-text);
+  --color-badge-foreground: var(--st-text);
+  --color-badge-border: var(--st-text);
+  /* Secondary actions ("View all"): cocoa fill, ivory label (13:1). Also fills the live theme's empty
+     button-text setting. */
+  --color-button: var(--st-text);
+  --color-button-text: var(--st-surface-warm);
+}
+
+/* Announcement bar keeps the brand turquoise; text in cocoa (5.1:1). */
+.utility-bar.color-accent-1 {
+  --color-foreground: var(--st-text);
+  --color-background: var(--st-teal);
+  --gradient-background: rgb(var(--st-teal)); /* baseline scheme hard-codes #00adb5 */
+}
+
+/* ---- Product cards: ivory information panel, cocoa text, photo first ---- */
+.product-card-wrapper .card.color-accent-1 {
+  --color-background: var(--st-surface-warm);
+  --gradient-background: rgb(var(--st-surface-warm));
+  --color-foreground: var(--st-text);
+  --color-shadow: var(--st-text);
+}
+.product-card-wrapper .card {
+  transition: transform var(--duration-default) ease;
+}
+.product-card-wrapper:hover .card,
+.product-card-wrapper:focus-within .card {
+  --shadow-opacity: 0.12;
+  --shadow-vertical-offset: 0.6rem;
+  --shadow-blur-radius: 1.6rem;
+}
+.product-card-wrapper .card__heading a {
+  text-decoration-color: rgb(var(--st-accent));
+}
+.card__badge .badge.color-accent-2 {
+  --color-badge-background: var(--st-cta);
+  --color-badge-foreground: var(--st-on-cta);
+  --color-badge-border: var(--st-cta);
+}
+
+/* ---- Collection cards: no turquoise frame, cocoa titles, turquoise arrow as the brand accent ---- */
+.collection-card-wrapper {
+  --color-foreground: var(--st-text);
+}
+.collection-card-wrapper .card__inner.color-accent-1 {
+  --color-background: var(--st-surface-warm);
+  --gradient-background: rgb(var(--st-surface-warm));
+  --color-foreground: var(--st-text);
+}
+.collection-card-wrapper .icon-wrap {
+  color: rgb(var(--st-teal));
+}
+.collection-card-wrapper:hover .card__heading a {
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--st-accent));
+  text-underline-offset: 0.3rem;
+}
+
+/* ---- Large turquoise block (Weaves / Prints / Embroideries) becomes warm ivory ---- */
+.multicolumn.color-accent-1 {
+  --color-background: var(--st-surface-warm);
+  --gradient-background: rgb(var(--st-surface-warm));
+  --color-foreground: var(--st-text);
+}
+
+/* ---- Footer group on warm ivory ---- */
+.shopify-section-group-footer-group .color-background-1 {
+  --color-background: var(--st-surface-warm);
+  --gradient-background: rgb(var(--st-surface-warm));
+}
+
+/* ---- Primary CTAs (hero slides) in terracotta ---- */
+.banner__buttons .button {
+  --color-button: var(--st-cta);
+  --color-button-text: var(--st-on-cta);
+  --alpha-button-background: 1;
+}
+.banner__buttons .button:hover {
+  --color-button: var(--st-cta-hover);
+}
+
+/* ---- Focus: solid cocoa ring, visible on white, ivory and turquoise (>= 5:1) ---- */
+*:focus-visible,
+.card__heading a:focus-visible:after {
+  outline-color: rgb(var(--st-text));
+}

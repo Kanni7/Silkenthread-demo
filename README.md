@@ -98,3 +98,15 @@ docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
   `tokens.css` so the baseline renders like the live site.
 - Breakpoints: 750 px (tablet) and 990 px (desktop), as in Dawn/Craft.
 - The crawl was interrupted twice by connection resets (no 429/CAPTCHA) and resumed on request.
+
+## Redesign (branch `redesign`)
+
+`main` is the faithful baseline; the `redesign` branch adds `src/styles/redesign.css`, loaded last. It
+re-skins the site only through Craft's CSS variables (no markup, data or image changes):
+
+- Palette tokens: turquoise `#00AEB5` (brand), terracotta `#C76B4A` (non-text accents) with a deeper
+  step `#A8553A` for filled CTAs/badges (white text 5.2:1), warm ivory `#F5E8D8`, cocoa `#3D2925` (text).
+  Semantic roles (`--st-text`, `--st-surface-warm`, `--st-cta`, `--st-accent`) are the knobs to edit.
+- Product and collection cards: turquoise frames and panels removed; ivory information panel, cocoa
+  text, terracotta hover underline, soft shadow on hover/focus.
+- Weaves/Prints/Embroideries band and the footer on warm ivory; hero CTAs terracotta; "View all" cocoa.
