@@ -4,4 +4,4 @@ dist/
 .astro/
 *.log
 .env
-public/images/catalog/
+.vercel
