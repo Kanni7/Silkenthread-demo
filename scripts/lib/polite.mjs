@@ -13,8 +13,17 @@ fs.mkdirSync(CACHE_DIR, { recursive: true });
 export class StopCrawl extends Error {}
 export class NotCached extends Error {}
 const OFFLINE = process.env.OFFLINE === '1' || process.argv.includes('--offline'); // build from .cache only, never touch the network
+// --refresh[=ISO date]: re-fetch JSON endpoints (catalogue data) whose cached copy is older than the given
+// time (default: now), so an interrupted refresh can resume with the same date without re-fetching.
+const refreshArg = process.argv.find((a) => a.startsWith('--refresh'));
+const REFRESH_SINCE = refreshArg ? (refreshArg.includes('=') ? Date.parse(refreshArg.split('=')[1]) : Date.now()) : null;
+const isJson = (url) => { const u = new URL(url); return /\.json$/.test(u.pathname); };
+const useCache = (url) => {
+  if (REFRESH_SINCE === null || !isJson(url) || !fs.existsSync(metaPath(url))) return true;
+  return Date.parse(JSON.parse(fs.readFileSync(metaPath(url), 'utf8')).fetchedAt) >= REFRESH_SINCE;
+};
 
-let minGapMs = 1000;
+let minGapMs = Number(process.env.GAP_MS) || 1000;
 let lastAt = 0;
 let chain = Promise.resolve();
 let rules = null; // robots rules for our group
@@ -94,13 +103,13 @@ const looksBlocked = (status, text, finalUrl = '') => {
 
 // Serialised + throttled fetch. Returns {status, headers, body(Buffer), fromCache}.
 export function politeFetch(url, { skipRobots = false, headers = {} } = {}) {
-  const hit = cached(url);
+  const hit = useCache(url) && cached(url);
   if (hit) return Promise.resolve({ ...hit, fromCache: true });
   if (OFFLINE) return Promise.reject(new NotCached(`offline: not cached: ${url}`));
   if (!skipRobots && !allowed(url)) return Promise.reject(new Error(`robots.txt disallows ${url}`));
   const run = async () => {
     if (stopped) throw stopped;
-    const again = cached(url);
+    const again = useCache(url) && cached(url);
     if (again) return { ...again, fromCache: true };
     const wait = lastAt + minGapMs - Date.now();
     if (wait > 0) await new Promise((r) => setTimeout(r, wait));

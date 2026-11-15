@@ -1,0 +1,24 @@
+---
+// Collection page (Craft collection template): banner + product grid with filters, sort and pagination.
+// One page per collection, including Shopify's built-in /collections/all.
+import Base from '../../layouts/Base.astro';
+import CollectionBanner from '../../components/CollectionBanner.astro';
+import CollectionProducts from '../../components/CollectionProducts.astro';
+import EmptyGrid from '../../components/EmptyGrid.astro';
+import { collections, productMap, productIndex, summary } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return collections.map((c) => ({ params: { handle: c.handle }, props: { c } }));
+}
+const { c } = Astro.props;
+const products = c.productHandles.map((h) => productMap.get(h)).filter(Boolean);
+const list = products.map(summary);
+const ids = products.map((p) => productIndex.get(p.handle));
+const description = c.descriptionHtml ? c.descriptionHtml.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160) : null;
+---
+<Base title={`${c.title} – Silkenthread.in`} description={description}>
+  <CollectionBanner collection={c} />
+  {list.length
+    ? <CollectionProducts list={list} ids={ids} base={`/collections/${c.handle}`} defaultSort={c.defaultSort || 'manual'} />
+    : <EmptyGrid message="Sorry, there are no products in this collection." />}
+</Base>

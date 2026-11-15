@@ -1,0 +1,25 @@
+---
+// Craft main-collection-banner: title, description, collection image.
+import Section from './Section.astro';
+import { templates, imageUrl, imageSrcset, localizeHtml } from '../lib/data.js';
+interface Props { collection: any; title?: string }
+const { collection: c, title } = Astro.props;
+const B = templates.collection.banner;
+const img = c?.image;
+const heroClass = img ? B.hero : B.hero.replace('collection-hero--with-image ', '');
+---
+<Section id={B.id} tag={B.tag} class={B.class} style={B.style}>
+  <div class={heroClass}>
+    <div class={B.heroInner}>
+      <div class="collection-hero__text-wrapper">
+        <h1 class="collection-hero__title"><span class="visually-hidden">Collection: </span>{title || c.title}</h1>
+        {c?.descriptionHtml && <div class="collection-hero__description rte" set:html={localizeHtml(c.descriptionHtml)} />}
+      </div>
+      {img && (
+        <div class="collection-hero__image-container media gradient">
+          <img srcset={imageSrcset(img, [165, 360, 535, 750, 1070, 1500])} src={imageUrl(img, 750)} sizes="(min-width: 1600px) 750px, (min-width: 750px) 50vw, 100vw" alt={img.alt || ''} width={img.width || 1000} height={img.height || 1000} />
+        </div>
+      )}
+    </div>
+  </div>
+</Section>

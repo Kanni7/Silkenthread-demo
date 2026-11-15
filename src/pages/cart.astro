@@ -1,0 +1,93 @@
+---
+// Cart (/cart): front-end mock. Items come from this browser's localStorage (src/scripts/cart-store.js);
+// no order can be placed here, checkout points to the product on the live store.
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+---
+<Base title="Your cart – Silkenthread.in">
+  <Section id="main-cart-items" class="shopify-section section">
+    <cart-items class="page-width st-cart" data-cart>
+      <div class="title-wrapper-with-link">
+        <h1 class="title title--primary">Your cart</h1>
+        <a href="/collections/all" class="underlined-link">Continue shopping</a>
+      </div>
+      <div class="cart__warnings" data-cart-empty hidden>
+        <h2 class="cart__empty-text">Your cart is empty</h2>
+        <a href="/collections/all" class="button">Continue shopping</a>
+      </div>
+      <div class="cart__items" data-cart-items hidden>
+        <table class="cart-items">
+          <caption class="visually-hidden">Your cart</caption>
+          <thead>
+            <tr>
+              <th class="caption-with-letter-spacing" colspan="2" scope="col">Product</th>
+              <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">Total</th>
+              <th class="cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing" colspan="1" scope="col">Quantity</th>
+              <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody data-cart-rows></tbody>
+        </table>
+        <div class="st-cart__footer">
+          <h2 class="totals__total">Estimated total <span class="totals__total-value" data-cart-total></span></h2>
+          <small class="tax-note caption-large rte">Inclusive of all taxes and <a href="/policies/shipping-policy">shipping</a></small>
+          <button type="button" class="cart__checkout-button button" data-cart-checkout>Check out</button>
+          <p class="concept-notice" data-cart-notice hidden>This is a design concept: orders can't be placed here. Each item links to its page on the live store, silkenthread.in, where you can buy it.</p>
+        </div>
+      </div>
+    </cart-items>
+  </Section>
+</Base>
+<script>
+  import { readCart, writeCart } from '../scripts/cart-store.js';
+  import { decode } from '../lib/catalog-codec.js';
+  import { imgSrc, formatMoney } from '../lib/card.js';
+
+  const root = document.querySelector('[data-cart]') as HTMLElement;
+  const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] as string);
+  const catalog = fetch('/data/catalog.json').then((r) => r.json()).then(decode);
+
+  async function render() {
+    const items = readCart();
+    const all = await catalog;
+    const byHandle = new Map(all.map((s: any) => [s.h, s]));
+    const rows = items.map((i: any) => ({ ...i, s: byHandle.get(i.h) })).filter((i: any) => i.s);
+    root.querySelector<HTMLElement>('[data-cart-empty]')!.hidden = rows.length > 0;
+    root.querySelector<HTMLElement>('[data-cart-items]')!.hidden = rows.length === 0;
+    root.querySelector('[data-cart-rows]')!.innerHTML = rows.map((r: any, n: number) => `
+      <tr class="cart-item" id="CartItem-${n + 1}">
+        <td class="cart-item__media">${r.s.i ? `<a href="/products/${r.s.h}" class="cart-item__link" tabindex="-1" aria-hidden="true"></a><img class="cart-item__image" src="${imgSrc(r.s.i, 300)}" alt="" loading="lazy" width="150" height="${Math.round(150 * r.s.i.h / r.s.i.w)}">` : ''}</td>
+        <td class="cart-item__details"><a href="/products/${r.s.h}" class="cart-item__name h4 break">${esc(r.s.t)}</a><div class="product-option">${formatMoney(r.s.p)}</div>
+          <p class="caption"><a href="https://silkenthread.in/products/${r.s.h}" target="_blank" rel="noopener" class="link underlined-link">Buy on silkenthread.in</a></p></td>
+        <td class="cart-item__totals right medium-hide large-up-hide"><span class="price price--end">${formatMoney(r.s.p * r.q)}</span></td>
+        <td class="cart-item__quantity"><div class="cart-item__quantity-wrapper">
+          <quantity-input class="quantity cart-quantity">
+            <button class="quantity__button" name="minus" type="button" data-qty="-1" data-v="${r.v}"><span class="visually-hidden">Decrease quantity for ${esc(r.s.t)}</span>−</button>
+            <input class="quantity__input" type="number" value="${r.q}" min="0" aria-label="Quantity for ${esc(r.s.t)}" data-v="${r.v}">
+            <button class="quantity__button" name="plus" type="button" data-qty="1" data-v="${r.v}"><span class="visually-hidden">Increase quantity for ${esc(r.s.t)}</span>+</button>
+          </quantity-input>
+          <button type="button" class="button button--tertiary st-cart__remove" data-remove="${r.v}" aria-label="Remove ${esc(r.s.t)}">Remove</button></div></td>
+        <td class="cart-item__totals right small-hide"><span class="price price--end">${formatMoney(r.s.p * r.q)}</span></td>
+      </tr>`).join('');
+    root.querySelector('[data-cart-total]')!.textContent = formatMoney(rows.reduce((t: number, r: any) => t + r.s.p * r.q, 0));
+  }
+
+  const setQty = (v: number, q: number) => {
+    const items = readCart().map((i: any) => (i.v === v ? { ...i, q } : i)).filter((i: any) => i.q > 0);
+    writeCart(items);
+    render();
+  };
+  root.addEventListener('click', (e) => {
+    const t = e.target as HTMLElement;
+    const btn = t.closest<HTMLElement>('[data-qty]');
+    if (btn) { const v = +btn.dataset.v!; const cur = readCart().find((i: any) => i.v === v); if (cur) setQty(v, cur.q + +btn.dataset.qty!); }
+    const rm = t.closest<HTMLElement>('[data-remove]');
+    if (rm) setQty(+rm.dataset.remove!, 0);
+    if (t.closest('[data-cart-checkout]')) root.querySelector<HTMLElement>('[data-cart-notice]')!.hidden = false;
+  });
+  root.addEventListener('change', (e) => {
+    const t = e.target as HTMLInputElement;
+    if (t.matches('.quantity__input')) setQty(+t.dataset.v!, Math.max(0, parseInt(t.value, 10) || 0));
+  });
+  render();
+</script>

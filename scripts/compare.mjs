@@ -7,7 +7,16 @@ import { chromium } from 'playwright';
 import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 
-const PAGES = { home: '/' };
+const PAGES = {
+  home: '/',
+  'collection-the-curated-kanjivarams': '/collections/the-curated-kanjivarams',
+  'collection-sale': '/collections/sale',
+  'product-pur2092026kiara': '/products/pur2092026kiara',
+  'page-about-silken-thread': '/pages/about-silken-thread',
+  'page-contact': '/pages/contact',
+  'page-size-chart': '/pages/size-chart',
+  'page-whats-new': '/pages/whats-new',
+};
 const WIDTHS = { 375: 812, 768: 1024, 1440: 900 };
 const [, , onlyPage, onlyWidth] = process.argv;
 const results = [];

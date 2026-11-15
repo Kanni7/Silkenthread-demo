@@ -1,0 +1,156 @@
+---
+// Craft main-product section: stacked gallery (slider on mobile), title, price, variant pills, add to cart /
+// buy it now (front-end mock, see src/scripts/product.js), WhatsApp link, description, spec lists,
+// accordions and share. Classes and section styles come from the captured live product page (templates.json).
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import { templates, imageUrl, imageSrcset, localizeHtml } from '../lib/data.js';
+import { priceHtml } from '../lib/card.js';
+import pt from '../data/product-template.json';
+
+interface Props { product: any; summary: any }
+const { product: p, summary: s } = Astro.props;
+const M = templates.product.main;
+const T = templates.product;
+const sid = M.id;
+const images = p.images.length ? p.images : [];
+const single = images.length <= 1;
+const mediaItemClass = single ? M.mediaItem : M.mediaItem.replace(' product__media-item--single', '').replace(' is-active', '');
+const first = p.variants.find((v) => v.available) || p.variants[0];
+const multi = p.variants.length > 1;
+const a = p.attributes;
+
+// Spec rows ("Fabric: Pure Silk") only for values read from the product's own text, never derived guesses.
+const specValue = (spec) => {
+  const attr = spec.attribute && a[spec.attribute];
+  if (!attr || attr.mocked) return null;
+  return Array.isArray(attr.value) ? attr.value.join(', ') : attr.value === true ? 'Yes' : String(attr.value);
+};
+const specRows = T.specs.map((spec) => ({ ...spec, value: spec.attribute ? specValue(spec) : null, href: spec.href?.replace(/^https?:\/\/(www\.)?silkenthread\.in/, '') }))
+  .map((spec, i) => ({ ...spec, group: Math.floor(i / 3) }))
+  .filter((spec) => spec.href || spec.value);
+const groups = [...new Set(specRows.map((r) => r.group))].map((g) => specRows.filter((r) => r.group === g));
+const blouse = a.blouse && !a.blouse.mocked ? a.blouse.value : null;
+const genre = a.weaving_genre && !a.weaving_genre.mocked ? a.weaving_genre.value : null;
+const accordions = [
+  ...(genre && T.moreAboutByGenre[genre] ? [{ id: 'collapsible_tab_V3RhpL', heading: pt.collapsibles[0].heading, html: T.moreAboutByGenre[genre], svg: T.accordionIcons[0]?.svg }] : []),
+  { id: 'collapsible-tab-2', heading: pt.collapsibles[1].heading, html: pt.collapsibles[1].html, svg: T.accordionIcons[1]?.svg },
+];
+const shareUrl = `https://silkenthread.in/products/${p.handle}`;
+const variantsJson = JSON.stringify(p.variants.map((v) => ({ id: v.id, title: v.title, options: v.options, price: v.price, compareAtPrice: v.compareAtPrice, available: v.available, imageKey: v.imageKey })));
+const iconHtml = (icon) => icon?.svg || (icon?.img ? `<img src="${imageUrl(icon.img, 100)}" role="presentation" height="auto" width="auto" loading="lazy">` : '');
+---
+<Section id={M.id} tag={M.tag} class={M.class} style={M.style}>
+  <section id={`MainProduct-${sid}`} class={M.sectionInner} data-section={sid}>
+    <div class="page-width">
+      <div class={M.product}>
+        <div class={M.mediaWrapper}>
+          <media-gallery id={`MediaGallery-${sid}`} role="region" class="product__column-sticky" aria-label="Gallery Viewer">
+            <div id={`GalleryStatus-${sid}`} class="visually-hidden" role="status"></div>
+            <slider-component id={`GalleryViewer-${sid}`} class="slider-mobile-gutter">
+              <a class="skip-to-content-link button visually-hidden quick-add-hidden" href={`#ProductInfo-${sid}`}>Skip to product information</a>
+              <ul id={`Slider-Gallery-${sid}`} class={M.mediaList} role="list">
+                {images.map((img, i) => (
+                  <li id={`Slide-${sid}-${i + 1}`} class:list={[mediaItemClass, { 'is-active': i === 0 && !single }]} data-media-key={img.key}>
+                    <div class={M.mediaContainer} style={`--ratio: ${(img.width || 1) / (img.height || 1)}; --preview-ratio: ${(img.width || 1) / (img.height || 1)};`}>
+                      <div class="product__media media media--transparent">
+                        <img srcset={imageSrcset(img, [246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946])} src={imageUrl(img, 1946)} sizes={M.imageSizes} alt={img.alt || p.title} width={img.width} height={img.height} loading={i === 0 ? undefined : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} />
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              {!single && (
+                <div class="slider-buttons quick-add-hidden small-hide">
+                  <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="Slide left"><Icon name="caret" /></button>
+                  <div class="slider-counter caption"><span class="slider-counter--current">1</span><span aria-hidden="true"> / </span><span class="visually-hidden">of</span><span class="slider-counter--total">{images.length}</span></div>
+                  <button type="button" class="slider-button slider-button--next" name="next" aria-label="Slide right"><Icon name="caret" /></button>
+                </div>
+              )}
+            </slider-component>
+          </media-gallery>
+        </div>
+        <div class={M.infoWrapper}>
+          <product-info id={`ProductInfo-${sid}`} class="product__info-container product__column-sticky" data-variants={variantsJson} data-handle={p.handle}>
+            <div class="product__title"><h1>{p.title}</h1></div>
+            <div id={`price-${sid}`} role="status" data-price set:html={priceHtml(s, { extraClass: 'price--large price--show-badge', badges: true })} />
+            <div class="product__tax caption rte">{pt.shippingNote.replace(/\s*shipping$/, '')} <a href="/policies/shipping-policy">shipping</a></div>
+            {a.shipping_speed && <p>{a.shipping_speed.value}</p>}
+            {multi && (
+              <variant-selects id={`variant-selects-${sid}`} data-section={sid}>
+                {p.options.map((o, oi) => (
+                  <fieldset class="js product-form__input product-form__input--pill">
+                    <legend class="form__label">{o.name}</legend>
+                    {o.values.map((v, vi) => {
+                      const avail = p.variants.some((x) => x.options[oi] === v && x.available);
+                      return (
+                        <Fragment>
+                          <input type="radio" id={`${sid}-${oi}-${vi}`} name={`${o.name}-${oi + 1}`} value={v} form={`product-form-${sid}`} checked={first.options[oi] === v} class:list={{ disabled: !avail }} />
+                          <label for={`${sid}-${oi}-${vi}`}>{v}{!avail && <span class="visually-hidden label-unavailable">Sold out</span>}</label>
+                        </Fragment>
+                      );
+                    })}
+                  </fieldset>
+                ))}
+              </variant-selects>
+            )}
+            <div>
+              <product-form class="product-form" data-section-id={sid}>
+                <div class="product-form__error-message-wrapper" role="alert" hidden><Icon name="error" /><span class="product-form__error-message"></span></div>
+                <form method="post" action="/cart" id={`product-form-${sid}`} class="form" novalidate data-type="add-to-cart-form">
+                  <input type="hidden" name="id" value={first.id} class="product-variant-id" />
+                  <div class="product-form__buttons">
+                    <button id={`ProductSubmitButton-${sid}`} type="submit" name="add" class="product-form__submit button button--full-width button--secondary" disabled={!first.available}>
+                      <span>{first.available ? pt.buttons.addToCart : 'Sold out'}</span>
+                    </button>
+                    <div class="shopify-payment-button" hidden={!first.available}>
+                      <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded" data-buy-now>{pt.buttons.buyNow}</button>
+                    </div>
+                  </div>
+                </form>
+              </product-form>
+            </div>
+            {pt.whatsapp.href && (
+              <ul class="icon-with-text icon-with-text--vertical list-unstyled">
+                <li class="icon-with-text__item"><Fragment set:html={iconHtml(T.whatsappIcon)} /><span class="h4 inline-richtext"><a href={pt.whatsapp.href} target="_blank" rel="noopener">{pt.whatsapp.label}</a></span></li>
+              </ul>
+            )}
+            {p.bodyHtml && <div class="product__description rte quick-add-hidden" set:html={localizeHtml(p.bodyHtml)} />}
+            {blouse && <p class="product__text inline-richtext"><strong>What is included in the package?</strong> {blouse}</p>}
+            {groups.map((g) => (
+              <ul class="icon-with-text icon-with-text--horizontal list-unstyled">
+                {g.map((r) => (
+                  <li class="icon-with-text__item">
+                    <Fragment set:html={iconHtml(r.icon)} />
+                    <span class="h4 inline-richtext">{r.href ? <a href={r.href}>{r.label}</a> : `${r.label}: ${r.value}`}</span>
+                  </li>
+                ))}
+              </ul>
+            ))}
+            {accordions.map((acc) => (
+              <div class="product__accordion accordion quick-add-hidden">
+                <details id={`Details-${acc.id}-${sid}`}>
+                  <summary role="button" aria-expanded="false" aria-controls={`ProductAccordion-${acc.id}-${sid}`}>
+                    <div class="summary__title">
+                      <Fragment set:html={acc.svg || ''} />
+                      <h2 class="h4 accordion__title inline-richtext">{acc.heading}</h2>
+                    </div>
+                    <Icon name="caret" />
+                  </summary>
+                  <div class="accordion__content rte" id={`ProductAccordion-${acc.id}-${sid}`} set:html={acc.html} />
+                </details>
+              </div>
+            ))}
+            <share-button id={`Share-${sid}`} class="share-button quick-add-hidden" data-url={shareUrl}>
+              <button class="share-button__button" type="button" data-share><Icon name="share" />Share</button>
+              <span id={`ShareMessage-${sid}`} class="share-button__message hidden" role="status"></span>
+            </share-button>
+          </product-info>
+        </div>
+      </div>
+    </div>
+  </section>
+</Section>
+<script>
+  import '../scripts/product.js';
+</script>

@@ -1,0 +1,32 @@
+---
+// Craft related-products section. The live store fills it from Shopify's recommendations API; here it shows
+// the products next to this one in its most specific collection (the smallest one it belongs to).
+import Section from './Section.astro';
+import { templates, collectionMap, productMap, summary } from '../lib/data.js';
+import { cardHtml } from '../lib/card.js';
+interface Props { product: any; limit?: number }
+const { product: p, limit = 5 } = Astro.props;
+const R = templates.product.related;
+const G = templates.collection.grid;
+const pad = `section-${R.id}-padding`;
+const colls = p.collections.map((h) => collectionMap.get(h)).filter((c) => c && c.productHandles.length > 1).sort((a, b) => a.productHandles.length - b.productHandles.length);
+const pool = colls[0]?.productHandles || [];
+const at = pool.indexOf(p.handle);
+const picks = [];
+for (let k = 1; picks.length < limit && k < pool.length; k++) {
+  const q = productMap.get(pool[(at + k) % pool.length]);
+  if (q && q.handle !== p.handle && q.available) picks.push(q);
+}
+const sizes = '(min-width: 1600px) 293px, (min-width: 990px) calc((100vw - 140px) / 5), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)';
+const cards = picks.map((q) => cardHtml(summary(q), { sectionId: R.id, sizes, cardClass: G.card, ratioStyle: G.cardStyle, itemClass: 'grid__item' })).join('');
+---
+{picks.length > 0 && (
+  <Section id={R.id} tag={R.tag} class={R.class} style={R.style}>
+    <div class="color-background-1 gradient">
+      <div class={`related-products page-width ${pad} isolate`}>
+        <h2 class="related-products__heading inline-richtext h2">You may also like</h2>
+        <ul class="grid product-grid grid--5-col-desktop grid--2-col-tablet-down" role="list" set:html={cards} />
+      </div>
+    </div>
+  </Section>
+)}

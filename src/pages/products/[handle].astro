@@ -1,0 +1,17 @@
+---
+// Product page (Craft product template): main product + "You may also like" (same collection).
+import Base from '../../layouts/Base.astro';
+import ProductMain from '../../components/ProductMain.astro';
+import RelatedProducts from '../../components/RelatedProducts.astro';
+import { products, summary } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { handle: p.handle }, props: { p } }));
+}
+const { p } = Astro.props;
+const description = (p.description || p.title).slice(0, 160);
+---
+<Base title={`${p.title} – Silkenthread.in`} description={description}>
+  <ProductMain product={p} summary={summary(p)} />
+  <RelatedProducts product={p} />
+</Base>

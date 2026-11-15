@@ -1,0 +1,14 @@
+---
+// Craft main-collection-product-grid when there is nothing to show.
+import Section from './Section.astro';
+import { templates } from '../lib/data.js';
+const { message } = Astro.props;
+const G = templates.collection.grid;
+---
+<Section id={G.id} tag={G.tag} class={G.class} style={G.style}>
+  <div class={G.padding}>
+    <div class="collection collection--empty page-width" id="product-grid">
+      <div class="title-wrapper center"><h2 class="title title--primary">{message}</h2><slot /></div>
+    </div>
+  </div>
+</Section>

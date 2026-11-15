@@ -1,0 +1,119 @@
+---
+// Craft main-collection-product-grid: vertical facets (desktop), "Filter and sort" drawer (mobile), sort,
+// product count, grid and pagination. The first page is rendered at build time; src/scripts/collection.js
+// re-renders from /data/catalog.json when filters/sort/page change (state lives in the URL, like Shopify).
+// Used by collection pages and the search page (mode="search").
+import Section from './Section.astro';
+import { templates, site } from '../lib/data.js';
+import { cardHtml } from '../lib/card.js';
+import { run } from '../lib/catalog.js';
+import { facetIcons } from '../lib/icons.js';
+import { desktopFacetsHtml, mobileFacetsHtml, activeFacetsHtml, paginationHtml, productsLabel, sortSelectHtml } from '../lib/facets-html.js';
+
+interface Props { list: any[]; ids: number[]; base: string; defaultSort?: string; mode?: 'collection' | 'search' }
+const { list, ids, base, defaultSort = 'manual', mode = 'collection' } = Astro.props;
+const G = templates.collection.grid;
+const sid = G.id;
+const state = { sort: defaultSort, page: 1, filters: {}, gte: null, lte: null, q: '' };
+const r = run(list, state, defaultSort);
+const max = list.reduce((m, s) => Math.max(m, s.p), 0);
+const ctx = { sid, icons: facetIcons, counts: r.counts, state, max, base, defaultSort };
+const sortOptions = site.sortOptions.filter((o) => mode === 'search' || o.value !== 'most-relevant');
+const cards = r.items.map((s) => cardHtml(s, { sectionId: sid, sizes: G.imageSizes, cardClass: G.card, ratioStyle: G.cardStyle, itemClass: G.item })).join('');
+const config = { base, defaultSort, mode, ids, sid };
+const sortSelect = (id, cls) => sortSelectHtml(id, cls, sortOptions, defaultSort);
+---
+<Section id={G.id} tag={G.tag} class={G.class} style={G.style}>
+  <div class={G.padding}>
+    <collection-products data-config={JSON.stringify(config)}>
+      <div class="facets facets-vertical-sort page-width small-hide">
+          <form class="facets-vertical-form" id="FacetSortForm">
+            <div class="facet-filters sorting caption">
+              <div class="facet-filters__field">
+                <h2 class="facet-filters__label caption-large text-body"><label for="SortBy">Sort by:</label></h2>
+                <div class="select">
+                  <Fragment set:html={sortSelect('SortBy', 'facet-filters__sort select__select caption-large')} />
+                  <Fragment set:html={facetIcons.caret} />
+                </div>
+              </div>
+            </div>
+            <div class="product-count-vertical light" role="status">
+              <h2 class="product-count__text text-body"><span id="ProductCountDesktop" data-product-count>{productsLabel(r.total)}</span></h2>
+            </div>
+          </form>
+        </div>
+      <div class="facets-vertical page-width">
+          <aside aria-labelledby="verticalTitle" class="facets-wrapper" id="main-collection-filters">
+            <div class="facets-container">
+              <div class="facets small-hide">
+                <form id="FacetFiltersForm" class="facets__form-vertical" data-facets-form>
+                  <div id="FacetsWrapperDesktop">
+                    <div class="active-facets active-facets-desktop" data-active-facets="vertical"><Fragment set:html={activeFacetsHtml(ctx, { vertical: true })} /></div>
+                    <div data-facets="desktop"><Fragment set:html={desktopFacetsHtml(ctx)} /></div>
+                  </div>
+                </form>
+              </div>
+              <div class="mobile-facets__wrapper medium-hide large-up-hide">
+                <details class="mobile-facets__disclosure disclosure-has-popup" data-mobile-facets>
+                  <summary class="mobile-facets__open-wrapper focus-offset">
+                    <span class="mobile-facets__open">
+                      <Fragment set:html={facetIcons.filter} />
+                      <span class="mobile-facets__open-label button-label medium-hide large-up-hide">Filter and sort</span>
+                      <span class="mobile-facets__open-label button-label small-hide">Filter</span>
+                    </span>
+                    <span tabindex="0" class="mobile-facets__close mobile-facets__close--no-js"><Fragment set:html={facetIcons.close} /></span>
+                  </summary>
+                  <form id="FacetFiltersFormMobile" class="mobile-facets" data-facets-form>
+                    <div class="mobile-facets__inner gradient">
+                      <div class="mobile-facets__header">
+                        <div class="mobile-facets__header-inner">
+                          <h2 class="mobile-facets__heading medium-hide large-up-hide">Filter and sort</h2>
+                          <h2 class="mobile-facets__heading small-hide">Filter</h2>
+                          <p class="mobile-facets__count" data-product-count>{productsLabel(r.total)}</p>
+                        </div>
+                      </div>
+                      <div class="mobile-facets__main has-submenu gradient">
+                        <div data-facets="mobile"><Fragment set:html={mobileFacetsHtml(ctx)} /></div>
+                        <div class="mobile-facets__details js-filter">
+                          <div class="mobile-facets__summary">
+                            <div class="mobile-facets__sort">
+                              <label for="SortBy-mobile">Sort by:</label>
+                              <div class="select">
+                                <Fragment set:html={sortSelect('SortBy-mobile', 'select__select')} />
+                                <Fragment set:html={facetIcons.caret} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mobile-facets__footer">
+                          <facet-remove class="mobile-facets__clear-wrapper"><a href={base} class="mobile-facets__clear underlined-link" role="button" data-facet-remove>Remove all</a></facet-remove>
+                          <button type="button" class="button button--primary" data-facets-apply>Apply</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </details>
+              </div>
+              <div class="active-facets active-facets-mobile medium-hide large-up-hide" data-active-facets="mobile"><Fragment set:html={activeFacetsHtml(ctx)} /></div>
+              <div class="product-count light medium-hide large-up-hide" role="status">
+                <h2 class="product-count__text text-body"><span id="ProductCount" data-product-count>{productsLabel(r.total)}</span></h2>
+              </div>
+            </div>
+          </aside>
+        <div class="product-grid-container" id="ProductGridContainer">
+            <div class="collection" data-collection>
+              <div class="loading-overlay gradient"></div>
+              <ul id="product-grid" class={G.productGrid} data-grid set:html={cards} />
+              <div class="collection--empty" data-empty hidden>
+                <div class="title-wrapper center"><h2 class="title title--primary">No products found<br />Use fewer filters or <a class="underlined-link link" href={base} data-facet-remove>remove all</a></h2></div>
+              </div>
+              <div class="pagination-wrapper" data-pagination set:html={paginationHtml(ctx, r.page, r.pages)} />
+            </div>
+        </div>
+      </div>
+    </collection-products>
+  </div>
+</Section>
+<script>
+  import '../scripts/collection.js';
+</script>

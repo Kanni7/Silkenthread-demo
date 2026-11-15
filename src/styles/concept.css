@@ -12,3 +12,121 @@
 .concept-notice[hidden] {
   display: none;
 }
+
+/* ---- Pages the demo didn't have: policy text, search header, cart, account, variant pills ---- */
+.shopify-policy__container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+.shopify-policy__title h1 {
+  margin: 0 0 2.4rem;
+}
+.st-search-header {
+  padding-top: 3.6rem;
+}
+.st-search-header .template-search__search {
+  max-width: 47.8rem;
+  margin: 2.4rem auto 0;
+}
+.st-search-status {
+  margin-top: 2rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+.st-cart {
+  padding-top: 3.6rem;
+  padding-bottom: 6rem;
+}
+.st-cart .title-wrapper-with-link {
+  margin-bottom: 3rem;
+}
+.st-cart .cart__warnings {
+  text-align: center;
+  padding: 4rem 0;
+}
+.st-cart__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.2rem;
+  margin-top: 3rem;
+  text-align: right;
+}
+.st-cart__footer .totals__total {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.st-cart__footer .button {
+  min-width: 26rem;
+}
+.st-cart__footer .concept-notice {
+  max-width: 44rem;
+  text-align: left;
+}
+.st-cart__remove {
+  margin-left: 1rem;
+  min-width: 0;
+  padding: 0 1rem;
+}
+.st-collections-list,
+.st-account {
+  padding-top: 3.6rem;
+  padding-bottom: 6rem;
+}
+.st-collections-list .card__caption {
+  margin: 0.4rem 0 0;
+}
+/* Shopify's "Buy it now" (unbranded): full-width cocoa button under "Add to cart" */
+.shopify-payment-button__button--unbranded {
+  background-color: rgb(var(--st-text));
+  color: rgb(var(--st-surface-warm));
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  margin-top: 1rem;
+}
+.shopify-payment-button__button--unbranded:hover:not([disabled]) {
+  background-color: rgb(var(--st-cta));
+}
+/* Variant pills (Craft component-product-variant-picker, not loaded by the captured product) */
+.product-form__input--pill {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.6rem;
+}
+.product-form__input--pill .form__label {
+  margin-bottom: 0.6rem;
+}
+.product-form__input--pill input[type='radio'] {
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+.product-form__input--pill input[type='radio'] + label {
+  border: 0.1rem solid rgba(var(--color-foreground), 0.55);
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  border-radius: 4rem;
+  display: inline-block;
+  margin: 0.7rem 0.5rem 0.2rem 0;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.product-form__input--pill input[type='radio']:checked + label {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+}
+.product-form__input--pill input[type='radio'].disabled + label {
+  border-color: rgba(var(--color-foreground), 0.1);
+  color: rgba(var(--color-foreground), 0.6);
+  text-decoration: line-through;
+}
+.product-form__input--pill input[type='radio']:focus-visible + label {
+  outline: 0.2rem solid rgb(var(--st-text));
+  outline-offset: 0.2rem;
+}

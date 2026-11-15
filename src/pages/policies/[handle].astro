@@ -1,0 +1,19 @@
+---
+// Shopify policy pages (/policies/*): title + policy text, in Shopify's own policy container markup.
+import Base from '../../layouts/Base.astro';
+import pages from '../../data/pages.json';
+import { localizeHtml } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return Object.values(pages)
+    .filter((p) => p.policy && p.html)
+    .map((p) => ({ params: { handle: p.handle }, props: { page: p } }));
+}
+const { page } = Astro.props;
+---
+<Base title={page.metaTitle || `${page.title} – Silkenthread.in`}>
+  <div class="shopify-policy__container">
+    <div class="shopify-policy__title"><h1>{page.title}</h1></div>
+    <div class="shopify-policy__body"><div class="rte" set:html={localizeHtml(page.html)} /></div>
+  </div>
+</Base>

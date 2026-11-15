@@ -7,13 +7,11 @@ export const formatMoney = (n) => 'Rs. ' + Number(n).toLocaleString('en-US', { m
 
 const WIDTHS = [165, 360, 533, 720, 940, 1066];
 export function imgSrc(i, w) {
-  if (i.l) return i.l;
   const u = new URL(i.u);
   u.searchParams.set('width', String(w));
   return u.toString();
 }
 export function imgSrcset(i) {
-  if (i.l) return `${i.l} ${Math.min(1000, i.w || 1000)}w`;
   return WIDTHS.filter((w) => !i.w || w <= i.w).map((w) => `${imgSrc(i, w)} ${w}w`).join(', ');
 }
 

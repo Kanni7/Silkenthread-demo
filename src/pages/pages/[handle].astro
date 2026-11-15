@@ -1,0 +1,17 @@
+---
+// Online-store pages (/pages/*): the live page's sections (main-page rich text, contact form,
+// collection lists, featured collections …) rendered with the shared section components.
+import Base from '../../layouts/Base.astro';
+import Sections from '../../components/Sections.astro';
+import pages from '../../data/pages.json';
+
+export function getStaticPaths() {
+  return Object.values(pages)
+    .filter((p) => !p.policy && !p.missing && p.url.startsWith('/pages/'))
+    .map((p) => ({ params: { handle: p.handle }, props: { page: p } }));
+}
+const { page } = Astro.props;
+---
+<Base title={page.metaTitle || `${page.title} – Silkenthread.in`} description={page.metaDescription}>
+  <Sections sections={page.sections} />
+</Base>

@@ -1,0 +1,38 @@
+---
+// /collections: every collection as a card grid (Craft main-list-collections), alphabetical.
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import { collections, productMap, imageUrl, imageSrcset } from '../../lib/data.js';
+const list = collections
+  .filter((c) => !c.builtIn && c.productHandles.length)
+  .map((c) => ({ ...c, img: c.image || productMap.get(c.productHandles[0])?.images[0] }))
+  .sort((a, b) => a.title.localeCompare(b.title));
+---
+<Base title="Collections – Silkenthread.in">
+  <Section id="main-list-collections" class="shopify-section section">
+    <div class="page-width st-collections-list">
+      <h1 class="title title--primary">Collections</h1>
+      <ul class="collection-list grid grid--2-col-tablet-down grid--4-col-desktop" role="list">
+        {list.map((c) => (
+          <li class="collection-list__item grid__item">
+            <div class="card-wrapper collection-card-wrapper animate-arrow">
+              <div class="card card--card card--media color-background-1 gradient" style="--ratio-percent: 100%;">
+                <div class="card__inner ratio" style="--ratio-percent: 100%;">
+                  {c.img && (
+                    <div class="card__media"><div class="media media--transparent media--hover-effect">
+                      <img srcset={imageSrcset(c.img, [165, 330, 535, 750])} src={imageUrl(c.img, 535)} sizes="(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), calc((100vw - 35px) / 2)" alt="" loading="lazy" width={c.img.width || 1000} height={c.img.height || 1000} />
+                    </div></div>
+                  )}
+                </div>
+                <div class="card__content"><div class="card__information">
+                  <h3 class="card__heading"><a href={`/collections/${c.handle}`} class="full-unstyled-link">{c.title}</a></h3>
+                  <p class="card__caption caption-with-letter-spacing">{c.productHandles.length} products</p>
+                </div></div>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+</Base>

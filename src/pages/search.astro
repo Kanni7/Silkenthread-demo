@@ -1,0 +1,41 @@
+---
+// Search results (/search?q=…). Static page: results are found in the browser from /data/catalog.json +
+// /data/search.json, with the same filters/sort/pagination as collection pages (src/scripts/collection.js).
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import CollectionProducts from '../components/CollectionProducts.astro';
+---
+<Base title="Search – Silkenthread.in">
+  <Section id="main-search-header" class="shopify-section section">
+    <div class="template-search__header page-width center st-search-header">
+      <h1 class="h2" data-search-title>Search results</h1>
+      <div class="template-search__search">
+        <form action="/search" method="get" role="search" class="search">
+          <div class="field">
+            <input class="search__input field__input" id="Search-In-Template" type="search" name="q" value="" placeholder="Search" autocomplete="off" />
+            <label class="field__label" for="Search-In-Template">Search</label>
+            <button type="submit" class="search__button field__button" aria-label="Search">
+              <svg class="icon icon-search" aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+      <p class="st-search-status" role="status" data-search-status></p>
+    </div>
+  </Section>
+  <CollectionProducts list={[]} ids={[]} base="/search" defaultSort="most-relevant" mode="search" />
+</Base>
+<script>
+  // Mirror ?q= into the search field and heading; the result grid itself is rendered by collection.js.
+  const q = new URLSearchParams(location.search).get('q') || '';
+  const input = document.getElementById('Search-In-Template') as HTMLInputElement;
+  input.value = q;
+  const title = document.querySelector('[data-search-title]');
+  if (q && title) title.textContent = `Search results for “${q}”`;
+  const status = document.querySelector('[data-search-status]');
+  const grid = document.querySelector('collection-products');
+  if (!q) {
+    if (grid) (grid as HTMLElement).hidden = true;
+    if (status) status.textContent = 'Type a saree name, weave, fabric or colour to search the catalogue.';
+  }
+</script>

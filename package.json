@@ -6,7 +6,7 @@
     "recon": "node scripts/recon.mjs",
     "capture": "node scripts/capture.mjs",
     "data": "node scripts/data.mjs",
-    "images": "node scripts/images.mjs",
+    "content": "node scripts/content.mjs",
     "data:offline": "node scripts/data.mjs --offline",
     "styles": "node scripts/styles.mjs --offline",
     "dev": "astro dev",
