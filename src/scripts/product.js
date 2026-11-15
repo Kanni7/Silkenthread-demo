@@ -1,7 +1,7 @@
 // Product page: variant pills (price, availability, gallery image), add to cart / buy it now into the
 // front-end cart (src/scripts/cart-store.js), share/copy link.
 import { addToCart } from './cart-store.js';
-import { priceHtml } from '../lib/card.js';
+import { priceHtml, SOLD_OUT } from '../lib/card.js';
 
 class ProductInfo extends HTMLElement {
   connectedCallback() {
@@ -36,7 +36,7 @@ class ProductInfo extends HTMLElement {
     if (!v) { this.button.disabled = true; label.textContent = 'Unavailable'; return; }
     this.form.querySelector('[name=id]').value = v.id;
     this.button.disabled = !v.available;
-    label.textContent = v.available ? 'Add to cart' : 'Sold out';
+    label.textContent = v.available ? 'Add to cart' : SOLD_OUT;
     this.querySelector('.shopify-payment-button').hidden = !v.available;
     this.querySelector('[data-price]').innerHTML = priceHtml({ p: v.price, c: v.compareAtPrice, a: v.available }, { extraClass: 'price--large price--show-badge', badges: true });
     const slide = v.imageKey && document.querySelector(`[data-media-key="${CSS.escape(v.imageKey)}"]`);

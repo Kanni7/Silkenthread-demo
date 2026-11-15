@@ -1,0 +1,76 @@
+---
+// Blog index (Craft main-blog, collage layout, text cards, 6 per page like the live blog).
+// All pages are in the HTML; ?page=N shows that page (small script below), so live URLs keep working.
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import blogs from '../../data/blogs.json';
+import { excerptOf } from '../../lib/blog.js';
+
+export function getStaticPaths() {
+  return Object.values(blogs).map((b) => ({ params: { blog: b.handle }, props: { blog: b } }));
+}
+const { blog } = Astro.props;
+const PER_PAGE = 6;
+const pages = Math.max(1, Math.ceil(blog.articles.length / PER_PAGE));
+const id = 'template--17223805468916__main';
+const style = `.section-${id}-padding { padding-top: 30px; padding-bottom: 66px; } @media screen and (min-width: 750px) { .section-${id}-padding { padding-top: 40px; padding-bottom: 88px; } }`;
+---
+<Base title={blog.metaTitle || `${blog.title} – Silkenthread.in`} description={blog.metaDescription}>
+  <Section id={id} style={style}>
+    <div class={`main-blog page-width section-${id}-padding`}>
+      <h1 class="title--primary">{blog.title}</h1>
+      <div class="blog-articles blog-articles--collage" data-blog-pages={pages}>
+        {blog.articles.map((a, i) => (
+          <div class="blog-articles__article article" data-page={Math.floor(i / PER_PAGE) + 1} hidden={i >= PER_PAGE}>
+            <div class="article-card-wrapper card-wrapper underline-links-hover">
+              <div class=" card article-card card--standard article-card__image--medium card--text " style="--ratio-percent: 100%;">
+                <div class="card__inner color-background-2 gradient" style="--ratio-percent: 100%;">
+                  <div class="card__content">
+                    <div class="card__information">
+                      <h3 class="card__heading h2"><a href={a.url} class="full-unstyled-link">{a.title}</a></h3>
+                      <div class="article-card__info caption-with-letter-spacing h5"><span class="circle-divider"><time datetime={a.date}>{a.dateLabel}</time></span></div>
+                      <p class="article-card__excerpt rte-width">{excerptOf(a)}</p>
+                      <div class="article-card__footer"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="card__information">
+                    <h3 class="card__heading h2"><a href={a.url} class="full-unstyled-link">{a.title}</a></h3>
+                    <div class="article-card__info caption-with-letter-spacing h5"><span class="circle-divider"><time datetime={a.date}>{a.dateLabel}</time></span></div>
+                    <p class="article-card__excerpt rte-width">{excerptOf(a)}</p>
+                    <div class="article-card__footer"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {pages > 1 && (
+        <div class="pagination-wrapper">
+          <nav class="pagination" role="navigation" aria-label="Pagination">
+            <ul class="pagination__list list-unstyled" role="list" data-blog-pagination></ul>
+          </nav>
+        </div>
+      )}
+      {blog.articles.length === 0 && <p class="center">There are no posts in this blog yet.</p>}
+    </div>
+  </Section>
+</Base>
+<script>
+  import { pageLinks } from '../../lib/catalog.js';
+  const list = document.querySelector('[data-blog-pages]') as HTMLElement | null;
+  const nav = document.querySelector('[data-blog-pagination]');
+  if (list && nav) {
+    const pages = +list.dataset.blogPages!;
+    const page = Math.min(pages, Math.max(1, parseInt(new URLSearchParams(location.search).get('page') || '1', 10) || 1));
+    list.querySelectorAll<HTMLElement>('[data-page]').forEach((el) => (el.hidden = +el.dataset.page! !== page));
+    const href = (n: number) => (n === 1 ? location.pathname : `${location.pathname}?page=${n}`);
+    const caret = '<svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path></svg>';
+    nav.innerHTML =
+      (page > 1 ? `<li><a href="${href(page - 1)}" class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce" aria-label="Previous page">${caret}</a></li>` : '') +
+      pageLinks(page, pages).map((l) => (l.gap ? '<li><span class="pagination__item">…</span></li>' : l.current ? `<li><a role="link" aria-disabled="true" class="pagination__item pagination__item--current light" aria-current="page" aria-label="Page ${l.n}">${l.n}</a></li>` : `<li><a href="${href(l.n!)}" class="pagination__item link" aria-label="Page ${l.n}">${l.n}</a></li>`)).join('') +
+      (page < pages ? `<li><a href="${href(page + 1)}" class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce" aria-label="Next page">${caret}</a></li>` : '');
+  }
+</script>

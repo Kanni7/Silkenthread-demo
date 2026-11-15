@@ -44,7 +44,7 @@ const articleOf = ($, url) => {
     title: txt(a.find('h1').first().text()) || txt($('title').text()),
     date: time.attr('datetime') || null,
     dateLabel: txt(time.text()) || null,
-    author: txt(a.find('.article-template__title + span, [itemprop=author], .caption-with-letter-spacing').first().text()).replace(/^by\s+/i, '') || null,
+    author: txt(a.find('[itemprop=author]').first().text()).replace(/^by\s+/i, '') || null,
     image: hero.length ? image($, hero) : null,
     html: a.find('.article-template__content, .rte').first().html()?.trim() || null,
     ...meta($),
@@ -63,7 +63,7 @@ for (const url of inv.blogs) {
     // Index order (newest first) + excerpts, from the listing cards
     blogs[blog].listing = $('.blog-articles .article-card, .blog-articles__article').map((i, el) => {
       const c = $(el);
-      return { href: c.find('a[href*="/blogs/"]').first().attr('href'), excerpt: txt(c.find('.article-card__excerpt').text()) || null };
+      return { href: c.find('a[href*="/blogs/"]').first().attr('href'), excerpt: txt(c.find('.article-card__excerpt').first().text()) || null };
     }).get();
   } else {
     blogs[blog].articles.push(articleOf($, url));
@@ -76,5 +76,27 @@ for (const b of Object.values(blogs)) {
   b.articles.sort((x, y) => (y.date || '').localeCompare(x.date || '') || order.indexOf(x.url) - order.indexOf(y.url));
 }
 write('blogs.json', blogs);
+
+// ---------- theme CSS used by these templates but not by the pages captured earlier (blog, article) ----------
+const cssSeen = new Map();
+for (const url of [...inv.blogs.slice(0, 3), ...inv.pages]) {
+  const $ = await get(url);
+  if (!$) continue;
+  $('link[rel=stylesheet][href*="/assets/"]').each((i, l) => {
+    const href = $(l).attr('href');
+    const m = href.match(/\/cdn\/shop\/t\/\d+\/assets\/([\w.-]+\.css)/); // theme assets only, not app extensions
+    if (m && !cssSeen.has(m[1])) cssSeen.set(m[1], { href: new URL(href, ORIGIN).toString(), page: path(url) });
+  });
+}
+const newCss = [];
+for (const [file, { href, page }] of cssSeen) {
+  const out = `src/styles/original/${file}`;
+  if (fs.existsSync(out)) continue;
+  const r = await politeFetch(href).catch(() => null);
+  if (!r || r.status !== 200) continue;
+  fs.writeFileSync(out, `/* Source: ${href}\n   First seen on: ${page}. Verbatim copy, (c) Shopify / app vendor. Reference only. */\n${r.body.toString('utf8')}`);
+  newCss.push(file);
+}
+console.log('new theme stylesheets:', newCss.join(', ') || 'none');
 console.log(Object.values(pages).filter((p) => p.missing).map((p) => `missing page ${p.handle}`).join('\n') || 'all pages ok');
 console.log(Object.values(blogs).map((b) => `${b.handle}: ${b.articles.length} articles`).join('\n'));

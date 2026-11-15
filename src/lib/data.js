@@ -20,9 +20,14 @@ export const money = (n) => site.moneyFormat.replace('{{amount}}', Number(n).toL
 
 // Images are served straight from the Shopify CDN (the live store's own image hosting), resized
 // on the fly with ?width=.
+// silkenthread.in/cdn/shop/<path> is the same file as cdn.shopify.com/s/files/1/0657/5613/5668/<path>;
+// the CDN host is used so image requests never go through the store's own domain (which rate-limits).
+const SHOP_CDN = 'https://cdn.shopify.com/s/files/1/0657/5613/5668/';
+export const cdnSrc = (src) => src.replace(/^(?:https?:)?\/\/(?:www\.)?silkenthread\.in\/cdn\/shop\//, SHOP_CDN);
+
 export function imageUrl(image, width = 1000) {
   if (!image?.src) return null;
-  const u = new URL(image.src);
+  const u = new URL(cdnSrc(image.src));
   u.searchParams.set('width', String(width));
   return u.toString();
 }
@@ -52,4 +57,4 @@ export function summary(p) {
 export const localHref = (href) => (href || '').replace(/^https?:\/\/(www\.)?silkenthread\.in/, '') || '/';
 
 // Rich text from the live store: links to the live domain become local links (images stay on the CDN).
-export const localizeHtml = (html) => (html || '').replace(/href="(?:https?:)?\/\/(?:www\.)?silkenthread\.in(\/[^"]*)?"/g, (m, path) => `href="${path || '/'}"`);
+export const localizeHtml = (html) => (html || '').replace(/(?:https?:)?\/\/(?:www\.)?silkenthread\.in\/cdn\/shop\//g, SHOP_CDN).replace(/href="(?:https?:)?\/\/(?:www\.)?silkenthread\.in(\/[^"]*)?"/g, (m, path) => `href="${path || '/'}"`);

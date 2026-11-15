@@ -29,6 +29,7 @@
 @import './original/component-show-more.css';
 @import './original/component-visual-display.css';
 @import './original/component-pagination.css';
+@import './original/accelerated-checkout-backwards-compat.css';
 @import './original/section-main-product.css';
 @import './original/component-accordion.css';
 @import './original/component-deferred-media.css';
@@ -36,7 +37,10 @@
 @import './original/section-related-products.css';
 @import './original/section-main-page.css';
 @import './original/section-contact-form.css';
-@import './original/accelerated-checkout-backwards-compat.css';
+@import './original/component-article-card.css';
+@import './original/newsletter-section.css';
+@import './original/section-blog-post.css';
+@import './original/section-main-blog.css';
 @import './concept.css';
 @import './redesign.css';
 @import './redesign-nav.css';

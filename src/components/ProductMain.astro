@@ -5,7 +5,7 @@
 import Section from './Section.astro';
 import Icon from './Icon.astro';
 import { templates, imageUrl, imageSrcset, localizeHtml } from '../lib/data.js';
-import { priceHtml } from '../lib/card.js';
+import { priceHtml, SOLD_OUT } from '../lib/card.js';
 import pt from '../data/product-template.json';
 
 interface Props { product: any; summary: any }
@@ -86,7 +86,7 @@ const iconHtml = (icon) => icon?.svg || (icon?.img ? `<img src="${imageUrl(icon.
                       return (
                         <Fragment>
                           <input type="radio" id={`${sid}-${oi}-${vi}`} name={`${o.name}-${oi + 1}`} value={v} form={`product-form-${sid}`} checked={first.options[oi] === v} class:list={{ disabled: !avail }} />
-                          <label for={`${sid}-${oi}-${vi}`}>{v}{!avail && <span class="visually-hidden label-unavailable">Sold out</span>}</label>
+                          <label for={`${sid}-${oi}-${vi}`}>{v}{!avail && <span class="visually-hidden label-unavailable">{SOLD_OUT}</span>}</label>
                         </Fragment>
                       );
                     })}
@@ -101,7 +101,7 @@ const iconHtml = (icon) => icon?.svg || (icon?.img ? `<img src="${imageUrl(icon.
                   <input type="hidden" name="id" value={first.id} class="product-variant-id" />
                   <div class="product-form__buttons">
                     <button id={`ProductSubmitButton-${sid}`} type="submit" name="add" class="product-form__submit button button--full-width button--secondary" disabled={!first.available}>
-                      <span>{first.available ? pt.buttons.addToCart : 'Sold out'}</span>
+                      <span>{first.available ? pt.buttons.addToCart : SOLD_OUT}</span>
                     </button>
                     <div class="shopify-payment-button" hidden={!first.available}>
                       <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded" data-buy-now>{pt.buttons.buyNow}</button>

@@ -1,6 +1,9 @@
 // Product card markup (Craft card-product.liquid), shared by the build and the browser so that
 // server-rendered grids and client-filtered grids are identical. Input is a summary() record.
 
+// The live store relabels Shopify's "Sold out" as "Manual Check" (ask on WhatsApp whether it can be sourced).
+export const SOLD_OUT = 'Manual Check';
+
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
 export const formatMoney = (n) => 'Rs. ' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -16,14 +19,14 @@ export function imgSrcset(i) {
 }
 
 export function priceHtml(s, { extraClass = '', badges = false } = {}) {
-  const badgeHtml = badges ? '<span class="badge price__badge-sale color-accent-2"> Sale </span><span class="badge price__badge-sold-out color-inverse"> Sold out </span>' : '';
+  const badgeHtml = badges ? '<span class="badge price__badge-sale color-accent-2"> Sale </span><span class="badge price__badge-sold-out color-inverse"> ' + SOLD_OUT + ' </span>' : '';
   const onSale = s.c && s.c > s.p;
   const cls = ['price', extraClass, onSale ? 'price--on-sale' : '', !s.a ? 'price--sold-out' : ''].filter(Boolean).join(' ');
   return `<div class=" ${cls} "><div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span><span class="price-item price-item--regular"> ${formatMoney(s.p)} </span></div><div class="price__sale"><span class="visually-hidden visually-hidden--inline">Regular price</span><span><s class="price-item price-item--regular">${onSale ? ` ${formatMoney(s.c)} ` : ''}</s></span><span class="visually-hidden visually-hidden--inline">Sale price</span><span class="price-item price-item--sale price-item--last"> ${formatMoney(s.p)} </span></div><small class="unit-price caption hidden"><span class="visually-hidden">Unit price</span><span class="price-item price-item--last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></span></small></div>${badgeHtml}</div>`;
 }
 
 function badge(s, id) {
-  if (!s.a) return `<span id="${id}" class="badge badge--bottom-left color-inverse">Sold out</span>`;
+  if (!s.a) return `<span id="${id}" class="badge badge--bottom-left color-inverse">${SOLD_OUT}</span>`;
   if (s.c && s.c > s.p) return `<span id="${id}" class="badge badge--bottom-left color-accent-2">Sale</span>`;
   return '';
 }

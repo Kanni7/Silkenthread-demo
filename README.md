@@ -6,60 +6,80 @@ See [SOURCES.md](SOURCES.md) for attribution.
 
 ## Status
 
-| Phase | State |
-|---|---|
-| 1. Recon (inventory, screenshots, rendered HTML) | done |
-| 2. Data (JSON endpoints, normalised data, images) | done |
-| 3. Styles (theme CSS, design tokens, fonts) | done |
-| 4. Components and pages (Astro) | – |
-| 5. Fidelity check → tag `v0-baseline` | – |
-| 6. Redesign (`redesign` branch) | – |
+The whole storefront is built as a static Astro site (about 5,400 pages), with the redesign applied
+everywhere. Data was refreshed from the live store on 2026-11-16.
+
+| Page type | Route | Count |
+|---|---|---|
+| Homepage | `/` | 1 |
+| Collections (filters, sort, pagination) | `/collections/{handle}`, `/collections/all`, `/collections` | 156 + 2 |
+| Products | `/products/{handle}` | 5,163 |
+| Pages (about, contact, hubs, forms …) | `/pages/{handle}` | 20 |
+| Policies | `/policies/{handle}` | 5 |
+| Blog + articles | `/blogs/silken-stories`, `/blogs/news`, `/blogs/silken-stories/{article}` | 2 + 48 |
+| Search, cart, account notice | `/search`, `/cart`, `/account/login` | 3 |
 
 ## Run
 
-Requires Node 20+. Playwright uses the locally installed Google Chrome (`channel: 'chrome'`), so no
-browser download is needed.
+Requires Node 20+. Playwright uses the locally installed Google Chrome (`channel: 'chrome'`).
 
 ```sh
 npm install
-npm run recon     # robots.txt + sitemaps -> reference/inventory.json
-npm run capture   # screenshots + rendered HTML -> reference/  (optional: npm run capture -- home 1440)
-npm run data      # public Shopify JSON + saved HTML -> src/data/*.json
-npm run data:offline  # same, but only from .cache/ (never touches the network)
-npm run images    # images used on the captured pages, width=1000 -> public/images/
-npm run styles    # cached theme CSS -> src/styles/original/, tokens -> src/styles/tokens.css (offline)
+npm run dev       # local dev server (http://127.0.0.1:4321)
+npm run build     # static site -> dist/ (~40 s)
+npm run preview   # serve dist/
+
+# Data (polite crawler: robots.txt, 1 request at a time, stops on 429 / connection resets)
+npm run data -- --refresh=2026-11-16T00:00:00Z   # re-fetch catalogue JSON older than that date (resumable)
+npm run data:offline                             # rebuild src/data/ from .cache/ only
+npm run content   # every /pages/* and /blogs/* page -> pages.json, blogs.json (+ blog theme CSS)
+npm run styles    # cached theme CSS -> src/styles/original/, tokens.css, global.css (offline)
+npm run recon / npm run capture                  # sitemap inventory, reference screenshots
+
+# Checks
+node scripts/compare.mjs [page] [width]   # screenshot vs reference/screenshots -> .cache/compare/
+node scripts/dev/smoke.mjs                # browser test: filters, paging, sort, search, cart, mobile drawer
 ```
 
-`npm run dev` / `npm run build` arrive with the Astro site in Phase 4.
+If the store rate-limits a crawl (HTTP 429 or connection reset), wait 10–15 minutes and re-run the same
+command with a slower pace, e.g. `GAP_MS=5000 npm run data -- --refresh=<same date>`. Cached responses
+are never fetched twice.
+
+## How it works
+
+- **Images** are not stored in the repo. Every image loads from Shopify's CDN (`cdn.shopify.com`,
+  resized with `?width=`), including the ones the live theme serves from `silkenthread.in/cdn/shop/`
+  (same files, see `cdnSrc` in `src/lib/data.js`).
+- **Collections**: the first 24 products (default sort) are rendered at build time. Filters, sort and
+  pagination run in the browser (`src/scripts/collection.js`) from `/data/catalog.json`, a compact
+  catalogue built at build time (`src/lib/catalog-codec.js`, ~1.1 MB, gzips to ~0.2 MB). State lives in
+  the URL with the live parameter names (`?filter.p.m.custom.materials=Linen&sort_by=price-ascending&page=2`).
+  The filter/sort/paging logic (`src/lib/catalog.js`) and the markup (`src/lib/card.js`,
+  `src/lib/facets-html.js`) are shared by the build and the browser so both render the same HTML.
+- **Search** (`/search?q=`) uses the same grid and filters over the whole catalogue plus tags
+  (`/data/search.json`); products whose title contains every word come first.
+- **Cart** is a front-end mock (`src/scripts/cart-store.js`, localStorage). Checkout shows a notice and
+  each item links to the product on silkenthread.in. Contact, comment and newsletter forms send nothing.
+- **Sold-out** products show "Manual Check", as on the live store.
+- **Product specs** ("Fabric: …", "Origin: …") only show values read from the product's own text; derived
+  guesses (`"mocked": true`) are never shown as facts on product pages. "More about the saree" appears for
+  Kanjeevaram products (the only genre text captured).
+- **Related products** ("You may also like") are the next available products in the product's smallest
+  collection (the live store uses Shopify's recommendations API, which robots.txt disallows).
 
 ## Folder structure
 
 ```
-scripts/lib/polite.mjs   polite fetcher: robots.txt, 1 req/s serial queue, UA, .cache/ disk cache, stops on blocks
-scripts/recon.mjs        sitemap crawl -> reference/inventory.json
-scripts/capture.mjs      Playwright captures (every browser request goes through the polite queue)
-reference/inventory.json every product, collection, page and blog URL from the sitemaps
-reference/screenshots/   {page}-{375|768|1440}.png, menu-desktop-*.png, menu-mobile-drawer*.png
-reference/html/          rendered DOM per page ({page}.html at 1440, {page}-mobile.html at 375)
-reference/capture-log.json   product picked, widths, list of blocked third-party requests
-scripts/data.mjs         builds src/data/ ; scripts/lib/parse.mjs = Craft/Dawn section parsers
-scripts/images.mjs       downloads images referenced by reference/html/ -> public/images/
-src/data/products.json   5,767 products: variants, images, collections, derived/mocked filter attributes
-src/data/collections.json  158 collections + built-in "all", ordered product handles, default sort
-src/data/filters.json    facet definitions (labels, params, values) taken from the live filter sidebar
-src/data/menu.json       announcements, logo, main menu tree, footer blocks/newsletter/policies
-src/data/home.json       homepage sections in order (type, items, colour scheme classes, padding CSS)
-src/data/pages.json      about, contact, what's new, size chart, refund/shipping pages, 5 /policies/
-src/data/product-template.json  shared product-page bits (WhatsApp link, policy links, accordions)
-src/data/site.json       money format, products per page (24), sort options
-src/data/images.json     imageKey -> local /images/... path (anything not listed uses the Shopify CDN)
-scripts/styles.mjs       copies theme CSS from .cache/, extracts tokens (computed styles at 375/768/1440)
-src/styles/original/     36 Craft stylesheets + theme-inline.css (verbatim) + 2 app stylesheets (reference only)
-src/styles/tokens.css    design tokens: --st-* palette/fonts/type scale + Craft settings and colour schemes
-reference/styles-report.json  raw computed-style data (colour/size/radius frequencies, element metrics)
-public/images/           135 images used on the replicated pages (~97 MB)
-docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
-.cache/                  HTTP cache (git-ignored)
+src/pages/               routes (index, collections/, products/, pages/, policies/, blogs/, search, cart, data/*.json)
+src/components/          Craft sections as Astro components (header, footer, product, collection, …)
+src/lib/                 data access, catalogue logic, shared card/facet markup, navigation resolver
+src/scripts/             browser scripts (header, slider, collection filters, product, cart, forms)
+src/styles/              tokens.css, original/ (verbatim theme CSS), concept.css, redesign*.css
+src/data/                products, collections, filters, menu, home, pages, blogs, navigation, templates …
+scripts/                 recon, capture, data, content, styles, templates, compare; lib/ (polite fetcher, parsers)
+scripts/dev/             smoke test, outline/crop/menu helpers
+reference/               inventory.json, screenshots/, html/ (rendered DOM of the captured pages)
+.cache/                  HTTP cache + build/compare output (git-ignored)
 ```
 
 ## Capture notes and limitations
@@ -79,15 +99,17 @@ docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
 
 - **Filter attributes are partly mocked.** The live filters use product metafields that the public
   JSON doesn't expose. Each product's `attributes.*` is either derived (`"source": "text"`, `"tags"`,
-  `"variant-option/tags"`, `"product-page-html"`) or `"mocked": true`. Coverage across 5,767 products:
-  genre 86% derived, material 96%, colour family 97%, Silk Mark 58%, origin 53%, craft 36%,
-  dimensions 20%, zari type 5 products only; blouse and shipping speed are all mocked.
+  `"variant-option/tags"`, `"product-page-html"`) or `"mocked": true`. Coverage across 5,163 products:
+  genre 86% derived, material 96%, colour family 97%, Silk Mark 58%, origin 52%, craft 41%,
+  dimensions 17%, zari type almost none; blouse and shipping speed are all mocked. The collection
+  filters use these values (mocked ones included), so filter results are approximate.
   Only the captured product (`pur2092026kiara`) has real values from its page.
 - Collection product counts use the JSON membership list (`productHandles`), which matches the live
   page ("178 products"); `productsCount` from `collections.json` is higher (it counts hidden products).
 - Default sort is known only for the two captured collections (`created-descending`); the JSON order
   matches their first page exactly, so other collections use the JSON order.
-- 51 of the downloaded images are photos uploaded to Shopify as PNG (2–3 MB each at 1000 px).
+- Some collection/homepage images are photos uploaded to Shopify as PNG (2–3 MB each at 1500 px), as on the live site.
+- Between 2026-10-29 and 2026-11-16 the store removed ~2,300 products, added ~1,700 and deleted 3 collections.
 ## Style notes
 
 - **Fonts:** body Asul (400/700), headings Libre Caslon Text (400): the same families the live theme
@@ -102,7 +124,7 @@ docs/                    audit.md (UI/UX audit), later CHANGES.md and compare/
 ## Redesign
 
 All work is on `main` (the faithful, pre-redesign homepage is commit `655bb89`). `src/styles/redesign.css`,
-loaded last, re-skins the site only through Craft's CSS variables (no markup, data or image changes):
+loaded last, re-skins every page only through Craft's CSS variables (no markup, data or image changes):
 
 - Palette tokens: turquoise `#00AEB5` (brand), terracotta `#C76B4A` (non-text accents) with a deeper
   step `#A8553A` for filled CTAs/badges (white text 5.2:1), warm ivory `#F5E8D8`, cocoa `#3D2925` (text).
@@ -116,7 +138,7 @@ loaded last, re-skins the site only through Craft's CSS variables (no markup, da
   each linking to its live hub page) with Shop by occasion / Sale shortcuts. Mobile drawer uses accordions.
   About us / Contact moved to the drawer and the footer's Quick links.
 - Search: field-style trigger on desktop, clearer placeholder, quick links to weave/fabric/craft/colour
-  collections in the search panel. Queries still submit to `/search` (Shopify search on the live store).
+  collections in the search panel. Queries go to the replica's own `/search` page.
 - Homepage: new "Shop by category" section after the hero (`src/components/CategoryTiles.astro`).
 - `src/styles/redesign-nav.css` holds the navigation/search/tiles styles.
 - Price bands (`src/components/PriceBands.astro`): the four laurel price images are now ivory cards with

@@ -39,7 +39,7 @@
   --st-type-body: 18px; /* line-height 30px, Asul */
 
   /* ---- Breakpoints (CSS variables can't be used inside @media; listed for reference) ----
-     Most used in the theme CSS: min 750px (111x), max 749px (51x), min 990px (32x), max 989px (22x), min 749px (3x), max 990px (2x) */
+     Most used in the theme CSS: min 750px (123x), max 749px (52x), min 990px (37x), max 989px (23x), min 749px (3x), max 990px (2x) */
   --st-bp-tablet: 750px;
   --st-bp-desktop: 990px;
 

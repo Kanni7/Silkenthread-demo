@@ -591,5 +591,2101 @@
   "title": "Contact information",
   "metaTitle": "Contact information – Silkenthread.in",
   "html": "<div class=\"rte\">\n        <p>Trade name: Silkenthread.in</p>\n<p>Phone number: 9663748945</p>\n<p>Email: cs@silkenthread.in</p>\n<p>Physical address: Silkenthread India Private Limited, Kalashree, 39/24A, Erandawane, Office Number 4, 411004 Pune MH, India</p>\n    </div>"
+ },
+ "are-you-a-weaver-or-a-manufacturer-of-sarees": {
+  "handle": "are-you-a-weaver-or-a-manufacturer-of-sarees",
+  "url": "/pages/are-you-a-weaver-or-a-manufacturer-of-sarees",
+  "title": "Are you a weaver or a manufacturer of sarees?",
+  "metaTitle": "Are you a weaver or a manufacturer of sarees? – Silkenthread.in",
+  "metaDescription": "Want to get your products featured on silkenthread? Please reach out to us using our whatsapp or on phone (+91 72043 20680)  or through the form below.",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805632756__main",
+    "title": "Are you a weaver or a manufacturer of sarees?",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805632756__main-padding"
+    ],
+    "style": ".section-template--17223805632756__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p>Want to get your products featured on silkenthread? Please reach out to us using our whatsapp or on phone (+91 72043 20680)&nbsp; or through the form below.</p>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805632756__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17223805632756__form",
+    "title": "Contact form",
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17223805632756__form-padding {\n    padding-top: 0px;\n    padding-bottom: 66px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__form-padding {\n      padding-top: 0px;\n      padding-bottom: 88px;\n    }\n  }",
+    "type": "contact-form",
+    "fields": [
+     {
+      "name": "contact[Name]",
+      "type": "text",
+      "label": "Name",
+      "required": false
+     },
+     {
+      "name": "contact[email]",
+      "type": "email",
+      "label": "Email *",
+      "required": true
+     },
+     {
+      "name": "contact[Phone number]",
+      "type": "tel",
+      "label": "Phone number",
+      "required": false
+     },
+     {
+      "name": "contact[Comment]",
+      "type": "textarea",
+      "label": "Comment",
+      "required": false
+     }
+    ],
+    "submitLabel": "Send",
+    "layout": {
+     "container": {
+      "class": "contact page-width page-width--narrow section-template--17223805632756__form-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "visually-hidden",
+      "style": null,
+      "tag": "h2"
+     },
+     "form": {
+      "class": "isolate scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "form"
+     }
+    }
+   }
+  ]
+ },
+ "bridal-party-consultations": {
+  "handle": "bridal-party-consultations",
+  "url": "/pages/bridal-party-consultations",
+  "title": "Bridal Party Consultations",
+  "metaTitle": "Bridal Party Consultations – Silkenthread.in",
+  "metaDescription": "Work with dedicated designers to ensure that your outfit is brought to life. We put in utmost effort to ensure that your outfit is as perfect as you on your special day.   ",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805632756__main",
+    "title": "Bridal Party Consultations",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805632756__main-padding"
+    ],
+    "style": ".section-template--17223805632756__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p>Work with dedicated designers to ensure that your outfit is brought to life. We put in utmost effort to ensure that your outfit is as perfect as you on your special day.&nbsp;</p>\n<p>&nbsp;</p>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805632756__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17223805632756__form",
+    "title": "Contact form",
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17223805632756__form-padding {\n    padding-top: 0px;\n    padding-bottom: 66px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__form-padding {\n      padding-top: 0px;\n      padding-bottom: 88px;\n    }\n  }",
+    "type": "contact-form",
+    "fields": [
+     {
+      "name": "contact[Name]",
+      "type": "text",
+      "label": "Name",
+      "required": false
+     },
+     {
+      "name": "contact[email]",
+      "type": "email",
+      "label": "Email *",
+      "required": true
+     },
+     {
+      "name": "contact[Phone number]",
+      "type": "tel",
+      "label": "Phone number",
+      "required": false
+     },
+     {
+      "name": "contact[Comment]",
+      "type": "textarea",
+      "label": "Comment",
+      "required": false
+     }
+    ],
+    "submitLabel": "Send",
+    "layout": {
+     "container": {
+      "class": "contact page-width page-width--narrow section-template--17223805632756__form-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "visually-hidden",
+      "style": null,
+      "tag": "h2"
+     },
+     "form": {
+      "class": "isolate scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "form"
+     }
+    }
+   }
+  ]
+ },
+ "bundles": {
+  "handle": "bundles",
+  "url": "/pages/bundles",
+  "title": "Bundles",
+  "metaTitle": "Bundles – Silkenthread.in",
+  "metaDescription": null,
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805665524__main",
+    "title": "Bundles",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805665524__main-padding"
+    ],
+    "style": ".section-template--17223805665524__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805665524__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<div class=\"rbrFastBundlePage\"></div>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805665524__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   }
+  ]
+ },
+ "collection-bundle": {
+  "handle": "collection-bundle",
+  "url": "/pages/collection-bundle",
+  "title": "Mix and Match",
+  "metaTitle": "Mix and Match – Silkenthread.in",
+  "metaDescription": null,
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805665524__main",
+    "title": "Mix and Match",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805665524__main-padding"
+    ],
+    "style": ".section-template--17223805665524__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805665524__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<div class=\"rbrBundleBuilder\"></div>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805665524__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   }
+  ]
+ },
+ "data-sharing-opt-out": {
+  "handle": "data-sharing-opt-out",
+  "url": "/pages/data-sharing-opt-out",
+  "title": "Your Privacy Choices",
+  "metaTitle": "Your Privacy Choices – Silkenthread.in",
+  "metaDescription": "As described in our Privacy Policy, we collect personal information from your interactions with us and our website, including through cookies and similar technologies. We may also share this personal information with third parties, including advertising partners. We do this in order to show you ads on other websites th",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805665524__main",
+    "title": "Your Privacy Choices",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805665524__main-padding"
+    ],
+    "style": ".section-template--17223805665524__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805665524__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<link rel=\"stylesheet\" type=\"text/css\" href=\"https:////cdn.shopify.com/shopifycloud/privacy-banner/data-sale-opt-out.css\">\n<meta charset=\"utf-8\"> <p>As described in our Privacy Policy, we collect personal information from your interactions with us and our website, including through cookies and similar technologies. We may also share this personal information with third parties, including advertising partners. We do this in order to show you ads on other websites that are more relevant to your interests and for other reasons outlined in our privacy policy.</p> <p>Sharing of personal information for targeted advertising based on your interaction on different websites may be considered \"sales\", \"sharing\", or \"targeted advertising\" under certain U.S. state privacy laws. Depending on where you live, you may have the right to opt out of these activities. If you would like to exercise this opt-out right, please follow the instructions below.</p> <p>If you visit our website with the Global Privacy Control opt-out preference signal enabled, depending on where you are, we will treat this as a request to opt-out of activity that may be considered a “sale” or “sharing” of personal information or other uses that may be considered targeted advertising for the device and browser you used to visit our website.</p>\n<div id=\"pc--optOutFormContainer\" data-not-applicable=\"To opt out of the &quot;sale&quot; or &quot;sharing&quot; of your personal information collected using cookies and other device-based identifiers as described above, you must be browsing from one of the applicable US states referred to above.\" data-description=\"If you would like to opt out of activity that may be considered a &quot;sale&quot; or &quot;share,&quot; or &quot;targeted advertising&quot;, please submit your email.\" data-email-label=\"Email\" data-success=\"Opted-out successfully\" data-error=\"A problem occurred, try submitting your email again\" data-form-description=\"By clicking “opt out“, the browser on this device will be opted out of sharing personal data. If you select the checkbox and enter an email, the related customer account will also be opted out.\" data-form-email-label=\"Email\" data-form-opt-out-account-label=\"Don't share data from my account (optional)\" data-form-button-text=\"Opt out\" data-form-opted-out=\"The browser on this device is opted out\" data-form-success=\"You have successfully opted out\" data-form-error=\"A problem occurred, please try again\"></div>\n<script src=\"https:////cdn.shopify.com/shopifycloud/privacy-banner/data-sale-opt-out.js\" defer=\"\"></script> <script src=\"https://js.hcaptcha.com/1/api.js?onload=optOutOnLoad\" defer=\"\"></script>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805665524__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   }
+  ]
+ },
+ "embroideries": {
+  "handle": "embroideries",
+  "url": "/pages/embroideries",
+  "title": "Embroideries & Trimmings",
+  "metaTitle": "Embroideries & Trimmings – Silkenthread.in",
+  "metaDescription": "Embroidery in India includes dozens of embroidery styles that vary by region and clothing styles. Designs in Indian embroidery are formed on the basis of the texture and the design of the fabric and the stitch.  Below is a review of some of the styles of embroidery available with us. ",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17239808016628__main",
+    "title": "Embroideries & Trimmings",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17239808016628__main-padding"
+    ],
+    "style": ".section-template--17239808016628__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17239808016628__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p data-mce-fragment=\"1\"><b data-mce-fragment=\"1\">Embroidery in India</b><span data-mce-fragment=\"1\">&nbsp;</span>includes dozens of<span data-mce-fragment=\"1\">&nbsp;</span>embroidery<span data-mce-fragment=\"1\">&nbsp;</span>styles that vary by region and<span data-mce-fragment=\"1\">&nbsp;</span>clothing styles. Designs in Indian embroidery are formed on the basis of the texture and the design of the fabric and the stitch.&nbsp;</p>\n<p data-mce-fragment=\"1\">Below is a review of some of the styles of embroidery available with us.&nbsp;</p>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17239808016628__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17239808016628__collection_list_zngneR",
+    "title": null,
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17239808016628__collection_list_zngneR-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17239808016628__collection_list_zngneR-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "collection-list",
+    "items": [
+     {
+      "title": "Chic Chikankari",
+      "href": "/collections/chic-chikankari",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/IMG-20220914-WA0902.jpg?v=1741438058",
+       "key": "collections/IMG-20220914-WA0902.jpg",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Gota Patti work",
+      "href": "/collections/gota-embroidery",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/download_880d68de-71d2-46d2-9860-9a48cc52a6db.jpg?v=1786647558",
+       "key": "files/download_880d68de-71d2-46d2-9860-9a48cc52a6db.jpg",
+       "alt": "",
+       "width": 900,
+       "height": 1600,
+       "style": null
+      }
+     },
+     {
+      "title": "Kasuti",
+      "href": "/collections/kasuti",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/download_5d1a76a5-2009-4176-be77-1c10c9085764.jpg?v=1792155088",
+       "key": "files/download_5d1a76a5-2009-4176-be77-1c10c9085764.jpg",
+       "alt": "",
+       "width": 720,
+       "height": 1280,
+       "style": null
+      }
+     },
+     {
+      "title": "Kantha",
+      "href": "/collections/kantha-sarees",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/download_651076f5-6ab7-442c-a124-c520a8636ea6.jpg?v=1794336912",
+       "key": "files/download_651076f5-6ab7-442c-a124-c520a8636ea6.jpg",
+       "alt": "",
+       "width": 721,
+       "height": 1280,
+       "style": null
+      }
+     },
+     {
+      "title": "Kutchi",
+      "href": "/collections/kutchi",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/kutchi_cover.jpg?v=1704985225",
+       "key": "collections/kutchi_cover.jpg",
+       "alt": "",
+       "width": 574,
+       "height": 1020,
+       "style": null
+      }
+     },
+     {
+      "title": "Parsi",
+      "href": "/collections/parsi",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/Copy_of_Copy_of_blue.png?v=1756153208",
+       "key": "collections/Copy_of_Copy_of_blue.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080,
+       "style": null
+      }
+     },
+     {
+      "title": "Phulkari",
+      "href": "/collections/phulkari",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/phulkari_cover.jpg?v=1704985275",
+       "key": "collections/phulkari_cover.jpg",
+       "alt": "",
+       "width": 3024,
+       "height": 4032,
+       "style": null
+      }
+     },
+     {
+      "title": "Zardosi",
+      "href": "/collections/zardosi",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/Zardosi_screenshot.png?v=1704980182",
+       "key": "collections/Zardosi_screenshot.png",
+       "alt": "",
+       "width": 416,
+       "height": 586,
+       "style": null
+      }
+     }
+    ],
+    "layout": {
+     "wrapper": {
+      "class": "collection-list-wrapper page-width isolate no-heading no-mobile-link section-template--17239808016628__collection_list_zngneR-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down collection-list--8-items",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "collection-list__item grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "cardWrapper": {
+      "class": "card-wrapper animate-arrow collection-card-wrapper",
+      "style": null,
+      "tag": "div"
+     },
+     "card": {
+      "class": "card card--standard card--media",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner color-accent-1 gradient ratio",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardMedia": {
+      "class": "media media--transparent media--hover-effect",
+      "style": null,
+      "tag": "div"
+     },
+     "heading": {
+      "class": "card__heading",
+      "style": null,
+      "tag": "h3"
+     }
+    }
+   }
+  ]
+ },
+ "fabrics": {
+  "handle": "fabrics",
+  "url": "/pages/fabrics",
+  "title": "Fabrics",
+  "metaTitle": "Fabrics – Silkenthread.in",
+  "metaDescription": null,
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--18117044338932__main",
+    "title": "Fabrics",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--18117044338932__main-padding"
+    ],
+    "style": ".section-template--18117044338932__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--18117044338932__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": null,
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--18117044338932__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--18117044338932__collection_list_AiaPA8",
+    "title": null,
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--18117044338932__collection_list_AiaPA8-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--18117044338932__collection_list_AiaPA8-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "collection-list",
+    "items": [
+     {
+      "title": "Pure Silk collections",
+      "href": "/collections/fabric-collections",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/download_0fd2a373-b876-4666-8491-5ef610cea2e5.jpg?v=1794722215",
+       "key": "files/download_0fd2a373-b876-4666-8491-5ef610cea2e5.jpg",
+       "alt": "",
+       "width": 1200,
+       "height": 1600,
+       "style": null
+      }
+     },
+     {
+      "title": "Blended silks",
+      "href": "/collections/blended-silks",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/rn-image_picker_lib_temp_0e9169eb-f53c-44a9-acf3-6f2b3b1abb88.jpg?v=1772657909",
+       "key": "files/rn-image_picker_lib_temp_0e9169eb-f53c-44a9-acf3-6f2b3b1abb88.jpg",
+       "alt": "",
+       "width": 900,
+       "height": 1600,
+       "style": null
+      }
+     },
+     {
+      "title": "Tussar silk",
+      "href": "/collections/tussar-silk",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_95eb6358-438c-4b1e-8aad-2f52d793194c.png?v=1756154235",
+       "key": "collections/rn-image_picker_lib_temp_95eb6358-438c-4b1e-8aad-2f52d793194c.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080,
+       "style": null
+      }
+     },
+     {
+      "title": "Organza",
+      "href": "/collections/organza",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/rn-image_picker_lib_temp_a5849115-cbf3-4510-afc1-f3359ab544ac.jpg?v=1771780547",
+       "key": "files/rn-image_picker_lib_temp_a5849115-cbf3-4510-afc1-f3359ab544ac.jpg",
+       "alt": "",
+       "width": 3120,
+       "height": 4160,
+       "style": null
+      }
+     },
+     {
+      "title": "Cotton Concepts",
+      "href": "/collections/cotton-collections",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/download_f3ebc270-4684-4d2e-9dba-9a953c72281f.jpg?v=1794679407",
+       "key": "files/download_f3ebc270-4684-4d2e-9dba-9a953c72281f.jpg",
+       "alt": "",
+       "width": 3120,
+       "height": 4160,
+       "style": null
+      }
+     },
+     {
+      "title": "Linen collection",
+      "href": "/collections/linen-collection",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/download_09173f78-aa50-4d92-a87d-5ddbc5d9e0a5.jpg?v=1787647331",
+       "key": "files/download_09173f78-aa50-4d92-a87d-5ddbc5d9e0a5.jpg",
+       "alt": "",
+       "width": 738,
+       "height": 1600,
+       "style": null
+      }
+     },
+     {
+      "title": "Chiffon Georgette",
+      "href": "/collections/chiffon-georgette",
+      "image": null
+     },
+     {
+      "title": "Georgette",
+      "href": "/collections/georgette",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/rn-image_picker_lib_temp_0c351fe9-4c45-4b9b-9e9e-b795c3feff5e.jpg?v=1772658918",
+       "key": "files/rn-image_picker_lib_temp_0c351fe9-4c45-4b9b-9e9e-b795c3feff5e.jpg",
+       "alt": "",
+       "width": 900,
+       "height": 1600,
+       "style": null
+      }
+     },
+     {
+      "title": "Tissue",
+      "href": "/collections/tissue",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/rn-image_picker_lib_temp_f9fd6783-192b-4c17-afd2-907d13acc1de.jpg?v=1793826999",
+       "key": "files/rn-image_picker_lib_temp_f9fd6783-192b-4c17-afd2-907d13acc1de.jpg",
+       "alt": "",
+       "width": 900,
+       "height": 1600,
+       "style": null
+      }
+     },
+     {
+      "title": "Kota Doria",
+      "href": "/collections/kota-doria",
+      "image": null
+     }
+    ],
+    "layout": {
+     "wrapper": {
+      "class": "collection-list-wrapper page-width isolate no-heading no-mobile-link section-template--18117044338932__collection_list_AiaPA8-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down collection-list--10-items",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "collection-list__item grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "cardWrapper": {
+      "class": "card-wrapper animate-arrow collection-card-wrapper",
+      "style": null,
+      "tag": "div"
+     },
+     "card": {
+      "class": "card card--standard card--media",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner color-accent-1 gradient ratio",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardMedia": {
+      "class": "media media--transparent media--hover-effect",
+      "style": null,
+      "tag": "div"
+     },
+     "heading": {
+      "class": "card__heading",
+      "style": null,
+      "tag": "h3"
+     }
+    }
+   }
+  ]
+ },
+ "prints": {
+  "handle": "prints",
+  "url": "/pages/prints",
+  "title": "Prints",
+  "metaTitle": "Prints – Silkenthread.in",
+  "metaDescription": "The roots of Indian fabric prints and patterns can be traced back to the Indus Valley Civilization. The art of printing flourished during the Mauryan rule, during which trade in these garments extended as far as the Roman Empire. During the Medieval period, the influence of Persian and Central Asia led to designs and m",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17239987224820__main",
+    "title": "Prints",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17239987224820__main-padding"
+    ],
+    "style": ".section-template--17239987224820__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17239987224820__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p data-mce-fragment=\"1\"><span style=\"font-weight: 400;\" data-mce-fragment=\"1\"></span><span style=\"font-weight: 400;\" data-mce-fragment=\"1\">The roots of Indian fabric prints and patterns can be traced back to the Indus Valley Civilization. The art of printing flourished during the Mauryan rule, during which trade in these garments extended as far as the Roman Empire. During the Medieval period, the influence of Persian and Central Asia led to designs and motifs such as Paisley and batik being added to an already extensive repertoire. During the colonial period, the British exported Indian textiles to Europe where these patterns and designs were replicated.</span></p>\n<p data-mce-fragment=\"1\"><span style=\"font-weight: 400;\" data-mce-fragment=\"1\">The Indian textile industry&nbsp;has thus evolved over several millenia with artisans carrying on the traditional techniques and&nbsp;even fusing styles to suit current tastes.&nbsp;</span><span style=\"font-weight: 400;\" data-mce-fragment=\"1\">Indian fabrics and prints have played a major role in contributing to the rich cultural heritage of the nation.&nbsp;</span></p>\n<p data-mce-fragment=\"1\">Below is an exploration of the a few prints available in the Indian market today.&nbsp;</p>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17239987224820__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17239987224820__collection_list_yqB4kT",
+    "title": null,
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17239987224820__collection_list_yqB4kT-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17239987224820__collection_list_yqB4kT-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "collection-list",
+    "items": [
+     {
+      "title": "Ajrakh",
+      "href": "/collections/ajrakh",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/ajrakh.jpg?v=1741437479",
+       "key": "collections/ajrakh.jpg",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Block prints",
+      "href": "/collections/bagru",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_28d6ed9e-9aac-4b99-91bf-fb73d93e6b54.png?v=1741439681",
+       "key": "collections/rn-image_picker_lib_temp_28d6ed9e-9aac-4b99-91bf-fb73d93e6b54.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Kalamkari",
+      "href": "/collections/kalamkari",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_b160e003-7f4d-4e5b-ac4f-8f62337c0296.png?v=1741814508",
+       "key": "collections/rn-image_picker_lib_temp_b160e003-7f4d-4e5b-ac4f-8f62337c0296.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Batik",
+      "href": "/collections/batik",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_e6516f59-9a70-4af8-a006-e974d6424db9.png?v=1741814809",
+       "key": "collections/rn-image_picker_lib_temp_e6516f59-9a70-4af8-a006-e974d6424db9.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Bandhej Bandhani",
+      "href": "/collections/bandhej-bandhani",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_ff2cde8c-9826-4b5c-97f1-fd11962e12cd.png?v=1741815055",
+       "key": "collections/rn-image_picker_lib_temp_ff2cde8c-9826-4b5c-97f1-fd11962e12cd.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Shibori",
+      "href": "/collections/shibori",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_7eca7c58-c992-4e1b-a7b0-7077099c69b3.png?v=1741816111",
+       "key": "collections/rn-image_picker_lib_temp_7eca7c58-c992-4e1b-a7b0-7077099c69b3.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Lehariya",
+      "href": "/collections/leheriya",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_38a9ac16-9594-45fa-bed0-98ec31dc5a3e.png?v=1741816505",
+       "key": "collections/rn-image_picker_lib_temp_38a9ac16-9594-45fa-bed0-98ec31dc5a3e.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Digital Prints",
+      "href": "/collections/digital-prints",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_9591720b-97ef-41b8-aa57-78b175ba2e15.png?v=1741816732",
+       "key": "collections/rn-image_picker_lib_temp_9591720b-97ef-41b8-aa57-78b175ba2e15.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Screen Prints",
+      "href": "/collections/screen-prints",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/files/download_f7d8c917-a332-49b0-9e4d-913760086fbf.jpg?v=1792776419",
+       "key": "files/download_f7d8c917-a332-49b0-9e4d-913760086fbf.jpg",
+       "alt": "",
+       "width": 960,
+       "height": 1280,
+       "style": null
+      }
+     }
+    ],
+    "layout": {
+     "wrapper": {
+      "class": "collection-list-wrapper page-width isolate no-heading no-mobile-link section-template--17239987224820__collection_list_yqB4kT-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down collection-list--9-items",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "collection-list__item grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "cardWrapper": {
+      "class": "card-wrapper animate-arrow collection-card-wrapper",
+      "style": null,
+      "tag": "div"
+     },
+     "card": {
+      "class": "card card--standard card--media",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner color-accent-1 gradient ratio",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardMedia": {
+      "class": "media media--transparent media--hover-effect",
+      "style": null,
+      "tag": "div"
+     },
+     "heading": {
+      "class": "card__heading",
+      "style": null,
+      "tag": "h3"
+     }
+    }
+   }
+  ]
+ },
+ "saris": {
+  "handle": "saris",
+  "url": "/pages/saris",
+  "title": "Saris",
+  "metaTitle": "Saris – Silkenthread.in",
+  "metaDescription": "All the sarees available in our collection",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805665524__main",
+    "title": "Saris",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805665524__main-padding"
+    ],
+    "style": ".section-template--17223805665524__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805665524__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p>All the sarees available in our collection</p>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805665524__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   }
+  ]
+ },
+ "stitching-services": {
+  "handle": "stitching-services",
+  "url": "/pages/stitching-services",
+  "title": "Stitching services",
+  "metaTitle": "Stitching services – Silkenthread.in",
+  "metaDescription": "At silkenthread, we provide you with bespoke stiching and customisation services to ensure a hassle free shopping experience. We try to offer a low effort, no hiccups service-with regular updates and easy alterations!     ",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805632756__main",
+    "title": "Stitching services",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805632756__main-padding"
+    ],
+    "style": ".section-template--17223805632756__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p>At silkenthread, we provide you with bespoke stiching and customisation services to ensure a hassle free shopping experience. We try to offer a low effort, no hiccups service-with regular updates and easy alterations!&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805632756__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17223805632756__form",
+    "title": "Contact form",
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17223805632756__form-padding {\n    padding-top: 0px;\n    padding-bottom: 66px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__form-padding {\n      padding-top: 0px;\n      padding-bottom: 88px;\n    }\n  }",
+    "type": "contact-form",
+    "fields": [
+     {
+      "name": "contact[Name]",
+      "type": "text",
+      "label": "Name",
+      "required": false
+     },
+     {
+      "name": "contact[email]",
+      "type": "email",
+      "label": "Email *",
+      "required": true
+     },
+     {
+      "name": "contact[Phone number]",
+      "type": "tel",
+      "label": "Phone number",
+      "required": false
+     },
+     {
+      "name": "contact[Comment]",
+      "type": "textarea",
+      "label": "Comment",
+      "required": false
+     }
+    ],
+    "submitLabel": "Send",
+    "layout": {
+     "container": {
+      "class": "contact page-width page-width--narrow section-template--17223805632756__form-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "visually-hidden",
+      "style": null,
+      "tag": "h2"
+     },
+     "form": {
+      "class": "isolate scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "form"
+     }
+    }
+   }
+  ]
+ },
+ "want-to-be-an-affiliate": {
+  "handle": "want-to-be-an-affiliate",
+  "url": "/pages/want-to-be-an-affiliate",
+  "title": "Want to be an affiliate?",
+  "metaTitle": "Want to be an affiliate? – Silkenthread.in",
+  "metaDescription": "Sign up on the form below, and we'll email your special code to you! x Terms and Conditions:  You will receive 10% of the amount paid by the customer for the product using your code.  No COD. Returns on orders thru affiliates will not be accepted. If the product is defective, the customer will need to prove that the pr",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805632756__main",
+    "title": "Want to be an affiliate?",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805632756__main-padding"
+    ],
+    "style": ".section-template--17223805632756__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "<p>Sign up on the form below, and we'll email your special code to you! x</p>\n<p>Terms and Conditions:&nbsp;</p>\n<ol>\n<li>You will receive 10% of the amount paid by the customer for the product using your code.&nbsp;</li>\n<li>No COD.</li>\n<li>Returns on orders thru affiliates will not be accepted. If the product is defective, the customer will need to prove that the product was damaged when they received it.<br>\n</li>\n</ol>\n<p>Welcome to the world of Silkenthread, we are so happy to have you!</p>\n<p>&nbsp;</p>",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805632756__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17223805632756__form",
+    "title": "Contact form",
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17223805632756__form-padding {\n    padding-top: 0px;\n    padding-bottom: 66px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805632756__form-padding {\n      padding-top: 0px;\n      padding-bottom: 88px;\n    }\n  }",
+    "type": "contact-form",
+    "fields": [
+     {
+      "name": "contact[Name]",
+      "type": "text",
+      "label": "Name",
+      "required": false
+     },
+     {
+      "name": "contact[email]",
+      "type": "email",
+      "label": "Email *",
+      "required": true
+     },
+     {
+      "name": "contact[Phone number]",
+      "type": "tel",
+      "label": "Phone number",
+      "required": false
+     },
+     {
+      "name": "contact[Comment]",
+      "type": "textarea",
+      "label": "Comment",
+      "required": false
+     }
+    ],
+    "submitLabel": "Send",
+    "layout": {
+     "container": {
+      "class": "contact page-width page-width--narrow section-template--17223805632756__form-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "visually-hidden",
+      "style": null,
+      "tag": "h2"
+     },
+     "form": {
+      "class": "isolate scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "form"
+     }
+    }
+   }
+  ]
+ },
+ "weaves": {
+  "handle": "weaves",
+  "url": "/pages/weaves",
+  "title": "Weaves",
+  "metaTitle": "Weaves – Silkenthread.in",
+  "metaDescription": "Patterns from all over India that are woven into fabric. Over time, these particular weaves have attained iconic stature, with their own peculiar style, colours or motifs.",
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17240308809972__main",
+    "title": "Weaves",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17240308809972__main-padding"
+    ],
+    "style": ".section-template--17240308809972__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17240308809972__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": "Patterns from all over India that are woven into fabric. Over time, these particular weaves have attained iconic stature, with their own peculiar style, colours or motifs.",
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17240308809972__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17240308809972__collection_list_yqB4kT",
+    "title": null,
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17240308809972__collection_list_yqB4kT-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17240308809972__collection_list_yqB4kT-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "collection-list",
+    "items": [
+     {
+      "title": "Banarasi / Benarasi!",
+      "href": "/collections/dil-hai-benarasee",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_1763cf86-1873-413d-b1b7-97439de7d04d.png?v=1741437064",
+       "key": "collections/rn-image_picker_lib_temp_1763cf86-1873-413d-b1b7-97439de7d04d.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Chanderi",
+      "href": "/collections/chanderi",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_dd182494-f5c7-4dcb-bb4e-0d1a68a2444a.png?v=1741434630",
+       "key": "collections/rn-image_picker_lib_temp_dd182494-f5c7-4dcb-bb4e-0d1a68a2444a.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Dhakai-Jamdani",
+      "href": "/collections/dhakai-jamdani",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_ad0efbaa-d912-417d-b3b6-b98b8ff2a7bf.png?v=1741438279",
+       "key": "collections/rn-image_picker_lib_temp_ad0efbaa-d912-417d-b3b6-b98b8ff2a7bf.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Gadwals",
+      "href": "/collections/the-royal-gadwals",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_cf7727bc-3ca6-4a5e-9ca3-3fa9d9f79c43.png?v=1741436587",
+       "key": "collections/rn-image_picker_lib_temp_cf7727bc-3ca6-4a5e-9ca3-3fa9d9f79c43.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Ilkal",
+      "href": "/collections/ilkal",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_248ac846-ebf4-436d-afcd-4b1f0893c201.png?v=1741437323",
+       "key": "collections/rn-image_picker_lib_temp_248ac846-ebf4-436d-afcd-4b1f0893c201.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Kanjeevaram",
+      "href": "/collections/the-curated-kanjivarams",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/IMG-20220828-WA3363.jpg?v=1741434602",
+       "key": "collections/IMG-20220828-WA3363.jpg",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Mangalagiri",
+      "href": "/collections/mangalgiri",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_7d1c651b-42fd-4ae4-b141-1d245173bd07.png?v=1741801366",
+       "key": "collections/rn-image_picker_lib_temp_7d1c651b-42fd-4ae4-b141-1d245173bd07.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Maheshwari",
+      "href": "/collections/maheshwari",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_53416f5d-70e1-45ba-96b4-51aa719288d0.png?v=1791960650",
+       "key": "collections/rn-image_picker_lib_temp_53416f5d-70e1-45ba-96b4-51aa719288d0.png",
+       "alt": "",
+       "width": 700,
+       "height": 700,
+       "style": null
+      }
+     },
+     {
+      "title": "Narayanpet Saree",
+      "href": "/collections/narayan-peth-saree",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/1000133128.png?v=1741801772",
+       "key": "collections/1000133128.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Odisha Weaves | Where Tradition weaves a rich tapestry",
+      "href": "/collections/odisha-weaves",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_20136c24-86b3-4fe9-8dc9-f6981c0c7d0b.png?v=1741811103",
+       "key": "collections/rn-image_picker_lib_temp_20136c24-86b3-4fe9-8dc9-f6981c0c7d0b.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Paithanis",
+      "href": "/collections/the-perfect-paithanis",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/303247E5-8934-404F-BAA2-1CC74F59AB0D.jpg?v=1741436109",
+       "key": "collections/303247E5-8934-404F-BAA2-1CC74F59AB0D.jpg",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Patolas",
+      "href": "/collections/patolas",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/patolas_image.jpg?v=1741812448",
+       "key": "collections/patolas_image.jpg",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Pochampally Ikat",
+      "href": "/collections/the-ikat-collection",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_41c9c6e5-3177-4cdc-812f-a4a8646188b3.png?v=1741802143",
+       "key": "collections/rn-image_picker_lib_temp_41c9c6e5-3177-4cdc-812f-a4a8646188b3.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Unique uppadas",
+      "href": "/collections/unique-uppadas",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_bcc3ae2b-f1cf-4dbc-be6c-64a45a591dd4.png?v=1741810961",
+       "key": "collections/rn-image_picker_lib_temp_bcc3ae2b-f1cf-4dbc-be6c-64a45a591dd4.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Venkatagiri",
+      "href": "/collections/venkatagiri",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_52530a81-a2a1-4996-b285-85e23f4ecc62.png?v=1741435003",
+       "key": "collections/rn-image_picker_lib_temp_52530a81-a2a1-4996-b285-85e23f4ecc62.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     }
+    ],
+    "layout": {
+     "wrapper": {
+      "class": "collection-list-wrapper page-width isolate no-heading no-mobile-link section-template--17240308809972__collection_list_yqB4kT-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down collection-list--15-items",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "collection-list__item grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "cardWrapper": {
+      "class": "card-wrapper animate-arrow collection-card-wrapper",
+      "style": null,
+      "tag": "div"
+     },
+     "card": {
+      "class": "card card--standard card--media",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner color-accent-1 gradient ratio",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardMedia": {
+      "class": "media media--transparent media--hover-effect",
+      "style": null,
+      "tag": "div"
+     },
+     "heading": {
+      "class": "card__heading",
+      "style": null,
+      "tag": "h3"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17240308809972__collection_list_N9nfna",
+    "title": null,
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17240308809972__collection_list_N9nfna-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17240308809972__collection_list_N9nfna-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "collection-list",
+    "items": [
+     {
+      "title": "Patteda Anchu",
+      "href": "/collections/patteda-anchu",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_0a42b760-e2e3-45da-8313-b1783d39b98b.png?v=1791954521",
+       "key": "collections/rn-image_picker_lib_temp_0a42b760-e2e3-45da-8313-b1783d39b98b.png",
+       "alt": "",
+       "width": 700,
+       "height": 700,
+       "style": null
+      }
+     },
+     {
+      "title": "Telia Rumal",
+      "href": "/collections/telia-rumal",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_12804557-2d6b-47e7-9e6d-f58cc0bb7bfa.png?v=1756153972",
+       "key": "collections/rn-image_picker_lib_temp_12804557-2d6b-47e7-9e6d-f58cc0bb7bfa.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080,
+       "style": null
+      }
+     },
+     {
+      "title": "Baluchari & Swarnachari",
+      "href": "/collections/baluchari-swarnachari",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/Copy_of_blue.png?v=1756152756",
+       "key": "collections/Copy_of_blue.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080,
+       "style": null
+      }
+     }
+    ],
+    "layout": {
+     "wrapper": {
+      "class": "collection-list-wrapper page-width isolate no-heading no-mobile-link section-template--17240308809972__collection_list_N9nfna-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down collection-list--3-items",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "collection-list__item grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "cardWrapper": {
+      "class": "card-wrapper animate-arrow collection-card-wrapper",
+      "style": null,
+      "tag": "div"
+     },
+     "card": {
+      "class": "card card--standard card--media",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner color-accent-1 gradient ratio",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardMedia": {
+      "class": "media media--transparent media--hover-effect",
+      "style": null,
+      "tag": "div"
+     },
+     "heading": {
+      "class": "card__heading",
+      "style": null,
+      "tag": "h3"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17240308809972__featured_collection_KcGtxp",
+    "title": "Weaves:",
+    "classes": [
+     "color-background-1",
+     "isolate",
+     "gradient"
+    ],
+    "style": ".section-template--17240308809972__featured_collection_KcGtxp-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17240308809972__featured_collection_KcGtxp-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "featured-collection",
+    "settings": {
+     "carousel": true
+    },
+    "productHandles": [
+     "bom9102026ojaswini",
+     "ven6102026vyom",
+     "charika-chanderi-saree",
+     "dig5102026bhavana",
+     "pur5102026ila",
+     "sarayu-pure-patan-patola-saree",
+     "cot4102026diksha",
+     "bom9102026ojaswi",
+     "bom9102026ovi",
+     "bom9102026ojasvita",
+     "bom9102026omesh",
+     "bom9102026oorja",
+     "bom9102026omprakash",
+     "bom9102026oviya",
+     "bom9102026onkar",
+     "bom9102026omkar",
+     "bom9102026om",
+     "bom9102026ojas",
+     "chahita-pure-katan-silk-chanderi-saree",
+     "pur6102026chandini",
+     "pur6102026chesta",
+     "pur6102026chandrakala",
+     "pur6102026chameli",
+     "pur6102026chandramohan",
+     "pur6102026chitragupta"
+    ],
+    "layout": {
+     "collection": {
+      "class": "collection section-template--17240308809972__featured_collection_KcGtxp-padding collection--full-width",
+      "style": null,
+      "tag": "div"
+     },
+     "titleWrapper": {
+      "class": "collection__title title-wrapper title-wrapper--no-top-margin page-width",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "title inline-richtext h2 scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "h2"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter slider-component-full-width page-width scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "grid product-grid contains-card contains-card--product grid--5-col-desktop grid--2-col-tablet-down",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "card": {
+      "class": "card card--card card--media color-accent-1 gradient",
+      "style": "--ratio-percent: 133.33333333333334%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner ratio",
+      "style": "--ratio-percent: 133.33333333333334%;",
+      "tag": "div"
+     }
+    }
+   }
+  ]
+ },
+ "whatsnew": {
+  "handle": "whatsnew",
+  "url": "/pages/whatsnew",
+  "title": "What's new",
+  "metaTitle": "What's new – Silkenthread.in",
+  "metaDescription": null,
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17240308809972__main",
+    "title": "What's new",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17240308809972__main-padding"
+    ],
+    "style": ".section-template--17240308809972__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17240308809972__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": null,
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17240308809972__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17240308809972__collection_list_yqB4kT",
+    "title": null,
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17240308809972__collection_list_yqB4kT-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17240308809972__collection_list_yqB4kT-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "collection-list",
+    "items": [
+     {
+      "title": "Banarasi / Benarasi!",
+      "href": "/collections/dil-hai-benarasee",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_1763cf86-1873-413d-b1b7-97439de7d04d.png?v=1741437064",
+       "key": "collections/rn-image_picker_lib_temp_1763cf86-1873-413d-b1b7-97439de7d04d.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Chanderi",
+      "href": "/collections/chanderi",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_dd182494-f5c7-4dcb-bb4e-0d1a68a2444a.png?v=1741434630",
+       "key": "collections/rn-image_picker_lib_temp_dd182494-f5c7-4dcb-bb4e-0d1a68a2444a.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Dhakai-Jamdani",
+      "href": "/collections/dhakai-jamdani",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_ad0efbaa-d912-417d-b3b6-b98b8ff2a7bf.png?v=1741438279",
+       "key": "collections/rn-image_picker_lib_temp_ad0efbaa-d912-417d-b3b6-b98b8ff2a7bf.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Gadwals",
+      "href": "/collections/the-royal-gadwals",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_cf7727bc-3ca6-4a5e-9ca3-3fa9d9f79c43.png?v=1741436587",
+       "key": "collections/rn-image_picker_lib_temp_cf7727bc-3ca6-4a5e-9ca3-3fa9d9f79c43.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Ilkal",
+      "href": "/collections/ilkal",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_248ac846-ebf4-436d-afcd-4b1f0893c201.png?v=1741437323",
+       "key": "collections/rn-image_picker_lib_temp_248ac846-ebf4-436d-afcd-4b1f0893c201.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Kanjeevaram",
+      "href": "/collections/the-curated-kanjivarams",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/IMG-20220828-WA3363.jpg?v=1741434602",
+       "key": "collections/IMG-20220828-WA3363.jpg",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Mangalagiri",
+      "href": "/collections/mangalgiri",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_7d1c651b-42fd-4ae4-b141-1d245173bd07.png?v=1741801366",
+       "key": "collections/rn-image_picker_lib_temp_7d1c651b-42fd-4ae4-b141-1d245173bd07.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Maheshwari",
+      "href": "/collections/maheshwari",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_53416f5d-70e1-45ba-96b4-51aa719288d0.png?v=1791960650",
+       "key": "collections/rn-image_picker_lib_temp_53416f5d-70e1-45ba-96b4-51aa719288d0.png",
+       "alt": "",
+       "width": 700,
+       "height": 700,
+       "style": null
+      }
+     },
+     {
+      "title": "Narayanpet Saree",
+      "href": "/collections/narayan-peth-saree",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/1000133128.png?v=1741801772",
+       "key": "collections/1000133128.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Odisha Weaves | Where Tradition weaves a rich tapestry",
+      "href": "/collections/odisha-weaves",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_20136c24-86b3-4fe9-8dc9-f6981c0c7d0b.png?v=1741811103",
+       "key": "collections/rn-image_picker_lib_temp_20136c24-86b3-4fe9-8dc9-f6981c0c7d0b.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Paithanis",
+      "href": "/collections/the-perfect-paithanis",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/303247E5-8934-404F-BAA2-1CC74F59AB0D.jpg?v=1741436109",
+       "key": "collections/303247E5-8934-404F-BAA2-1CC74F59AB0D.jpg",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     },
+     {
+      "title": "Patolas",
+      "href": "/collections/patolas",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/patolas_image.jpg?v=1741812448",
+       "key": "collections/patolas_image.jpg",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Pochampally Ikat",
+      "href": "/collections/the-ikat-collection",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_41c9c6e5-3177-4cdc-812f-a4a8646188b3.png?v=1741802143",
+       "key": "collections/rn-image_picker_lib_temp_41c9c6e5-3177-4cdc-812f-a4a8646188b3.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Unique uppadas",
+      "href": "/collections/unique-uppadas",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_bcc3ae2b-f1cf-4dbc-be6c-64a45a591dd4.png?v=1741810961",
+       "key": "collections/rn-image_picker_lib_temp_bcc3ae2b-f1cf-4dbc-be6c-64a45a591dd4.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1350,
+       "style": null
+      }
+     },
+     {
+      "title": "Venkatagiri",
+      "href": "/collections/venkatagiri",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_52530a81-a2a1-4996-b285-85e23f4ecc62.png?v=1741435003",
+       "key": "collections/rn-image_picker_lib_temp_52530a81-a2a1-4996-b285-85e23f4ecc62.png",
+       "alt": "",
+       "width": 2000,
+       "height": 2000,
+       "style": null
+      }
+     }
+    ],
+    "layout": {
+     "wrapper": {
+      "class": "collection-list-wrapper page-width isolate no-heading no-mobile-link section-template--17240308809972__collection_list_yqB4kT-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down collection-list--15-items",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "collection-list__item grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "cardWrapper": {
+      "class": "card-wrapper animate-arrow collection-card-wrapper",
+      "style": null,
+      "tag": "div"
+     },
+     "card": {
+      "class": "card card--standard card--media",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner color-accent-1 gradient ratio",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardMedia": {
+      "class": "media media--transparent media--hover-effect",
+      "style": null,
+      "tag": "div"
+     },
+     "heading": {
+      "class": "card__heading",
+      "style": null,
+      "tag": "h3"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17240308809972__collection_list_N9nfna",
+    "title": null,
+    "classes": [
+     "color-background-1",
+     "gradient"
+    ],
+    "style": ".section-template--17240308809972__collection_list_N9nfna-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17240308809972__collection_list_N9nfna-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "collection-list",
+    "items": [
+     {
+      "title": "Patteda Anchu",
+      "href": "/collections/patteda-anchu",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_0a42b760-e2e3-45da-8313-b1783d39b98b.png?v=1791954521",
+       "key": "collections/rn-image_picker_lib_temp_0a42b760-e2e3-45da-8313-b1783d39b98b.png",
+       "alt": "",
+       "width": 700,
+       "height": 700,
+       "style": null
+      }
+     },
+     {
+      "title": "Telia Rumal",
+      "href": "/collections/telia-rumal",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/rn-image_picker_lib_temp_12804557-2d6b-47e7-9e6d-f58cc0bb7bfa.png?v=1756153972",
+       "key": "collections/rn-image_picker_lib_temp_12804557-2d6b-47e7-9e6d-f58cc0bb7bfa.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080,
+       "style": null
+      }
+     },
+     {
+      "title": "Baluchari & Swarnachari",
+      "href": "/collections/baluchari-swarnachari",
+      "image": {
+       "src": "https://silkenthread.in/cdn/shop/collections/Copy_of_blue.png?v=1756152756",
+       "key": "collections/Copy_of_blue.png",
+       "alt": "",
+       "width": 1080,
+       "height": 1080,
+       "style": null
+      }
+     }
+    ],
+    "layout": {
+     "wrapper": {
+      "class": "collection-list-wrapper page-width isolate no-heading no-mobile-link section-template--17240308809972__collection_list_N9nfna-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "collection-list contains-card contains-card--collection grid grid--5-col-desktop grid--1-col-tablet-down collection-list--3-items",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "collection-list__item grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "cardWrapper": {
+      "class": "card-wrapper animate-arrow collection-card-wrapper",
+      "style": null,
+      "tag": "div"
+     },
+     "card": {
+      "class": "card card--standard card--media",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner color-accent-1 gradient ratio",
+      "style": "--ratio-percent: 100%;",
+      "tag": "div"
+     },
+     "cardMedia": {
+      "class": "media media--transparent media--hover-effect",
+      "style": null,
+      "tag": "div"
+     },
+     "heading": {
+      "class": "card__heading",
+      "style": null,
+      "tag": "h3"
+     }
+    }
+   },
+   {
+    "tag": "section",
+    "id": "template--17240308809972__featured_collection_KcGtxp",
+    "title": "Weaves:",
+    "classes": [
+     "color-background-1",
+     "isolate",
+     "gradient"
+    ],
+    "style": ".section-template--17240308809972__featured_collection_KcGtxp-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17240308809972__featured_collection_KcGtxp-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "featured-collection",
+    "settings": {
+     "carousel": true
+    },
+    "productHandles": [
+     "bom9102026ojaswini",
+     "ven6102026vyom",
+     "charika-chanderi-saree",
+     "dig5102026bhavana",
+     "pur5102026ila",
+     "sarayu-pure-patan-patola-saree",
+     "cot4102026diksha",
+     "bom9102026ojaswi",
+     "bom9102026ovi",
+     "bom9102026ojasvita",
+     "bom9102026omesh",
+     "bom9102026oorja",
+     "bom9102026omprakash",
+     "bom9102026oviya",
+     "bom9102026onkar",
+     "bom9102026omkar",
+     "bom9102026om",
+     "bom9102026ojas",
+     "chahita-pure-katan-silk-chanderi-saree",
+     "pur6102026chandini",
+     "pur6102026chesta",
+     "pur6102026chandrakala",
+     "pur6102026chameli",
+     "pur6102026chandramohan",
+     "pur6102026chitragupta"
+    ],
+    "layout": {
+     "collection": {
+      "class": "collection section-template--17240308809972__featured_collection_KcGtxp-padding collection--full-width",
+      "style": null,
+      "tag": "div"
+     },
+     "titleWrapper": {
+      "class": "collection__title title-wrapper title-wrapper--no-top-margin page-width",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "title inline-richtext h2 scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "h2"
+     },
+     "slider": {
+      "class": "slider-mobile-gutter slider-component-full-width page-width scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "slider-component"
+     },
+     "list": {
+      "class": "grid product-grid contains-card contains-card--product grid--5-col-desktop grid--2-col-tablet-down",
+      "style": null,
+      "tag": "ul"
+     },
+     "item": {
+      "class": "grid__item scroll-trigger animate--slide-in",
+      "style": "--animation-order: 1;",
+      "tag": "li"
+     },
+     "card": {
+      "class": "card card--card card--media color-accent-1 gradient",
+      "style": "--ratio-percent: 133.33333333333334%;",
+      "tag": "div"
+     },
+     "cardInner": {
+      "class": "card__inner ratio",
+      "style": "--ratio-percent: 133.33333333333334%;",
+      "tag": "div"
+     }
+    }
+   }
+  ]
+ },
+ "womenswear": {
+  "handle": "womenswear",
+  "url": "/pages/womenswear",
+  "title": "Womenswear",
+  "metaTitle": "Womenswear – Silkenthread.in",
+  "metaDescription": null,
+  "sections": [
+   {
+    "tag": "section",
+    "id": "template--17223805665524__main",
+    "title": "Womenswear",
+    "classes": [
+     "page-width",
+     "page-width--narrow",
+     "section-template--17223805665524__main-padding"
+    ],
+    "style": ".section-template--17223805665524__main-padding {\n    padding-top: 27px;\n    padding-bottom: 27px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--17223805665524__main-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }",
+    "type": "main-page",
+    "html": null,
+    "layout": {
+     "container": {
+      "class": "page-width page-width--narrow section-template--17223805665524__main-padding",
+      "style": null,
+      "tag": "div"
+     },
+     "title": {
+      "class": "main-page-title page-title h0 scroll-trigger animate--fade-in",
+      "style": null,
+      "tag": "h1"
+     },
+     "rte": {
+      "class": "rte scroll-trigger animate--slide-in",
+      "style": null,
+      "tag": "div"
+     }
+    }
+   }
+  ]
  }
 }
